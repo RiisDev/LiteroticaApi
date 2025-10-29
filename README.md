@@ -1,7 +1,7 @@
 ﻿# 📚 LiteroticaApi
 ### A Modern, Fully Asynchronous .NET API for Accessing data from Literotica.com with EPUB Export Capabilities
 
-![C#](https://img.shields.io/badge/-.NET%208.0-blueviolet?style=for-the-badge&logo=windows&logoColor=white)
+![C#](https://img.shields.io/badge/-.NET%20Standard-blueviolet?style=for-the-badge&logo=windows&logoColor=white)
 [![Support Server](https://img.shields.io/discord/477201632204161025.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/yyuggrH)
 ![GitHub](https://img.shields.io/github/license/RiisDev/LiteroticaApi?style=for-the-badge)
 ![Nuget All Releases](https://img.shields.io/nuget/dt/LiteroticaApi?label=Nuget%20Downloads&style=for-the-badge)
