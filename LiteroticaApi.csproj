@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<Nullable>enable</Nullable>
+	<LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<DeterministicSourcePaths>true</DeterministicSourcePaths>
+		<PathMap>$(MSBuildThisFileDirectory)=./</PathMap>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SignAssembly>False</SignAssembly>
+		<Title>LiteroticaApi</Title>
+		<Authors>IrisDev</Authors>
+		<Copyright>IrisDev</Copyright>
+		<PackageProjectUrl>https://github.com/RiisDev/LiteroticaApi</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/RiisDev/LiteroticaApi</RepositoryUrl>
+		<PackageTags>literotica, epub, epubwriter, api</PackageTags>
+		<PackageReleaseNotes>Initial release after testing and build.</PackageReleaseNotes>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>LiteroticaApi is a modern, asynchronous .NET SDK for retrieving stories, series, authors, tags, and metadata from Literotica.com.  
+It includes a fully featured EPUB writer that can export stories or entire series into EPUB 3.0 format, complete with metadata, chapters, cover pages, and navigation files.  
+
+- Async/await-based API access  
+- Story and series fetching  
+- Tag and category search  
+- Automatic EPUB generation  
+- Strongly typed C# data models  </Description>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="System.Net.Http.Json" Version="9.0.10" />
+	  <PackageReference Include="System.Text.Json" Version="9.0.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove=".gitattributes" />
+		<None Remove=".gitignore" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="EpubWriter\Standards\" />
+	  <EmbeddedResource Include="EpubWriter\Standards\**\*" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<DeterministicSourcePaths>true</DeterministicSourcePaths>
+		<PathMap>$(MSBuildThisFileDirectory)=./</PathMap>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+</Project>
