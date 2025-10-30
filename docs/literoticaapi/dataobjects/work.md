@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a minimal reference to a work, containing its ID and URL.
+
 ```csharp
 public class Work : System.IEquatable`1[[LiteroticaApi.DataObjects.Work, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public string Url { get; set; }
 ## Constructors
 
 ### **Work(Nullable&lt;Int32&gt;, String)**
+
+Represents a minimal reference to a work, containing its ID and URL.
 
 ```csharp
 public Work(Nullable<int> Id, string Url)

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a paginated list of top-rated or most popular submissions.
+
 ```csharp
 public class Top : System.IEquatable`1[[LiteroticaApi.DataObjects.Top, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -75,6 +77,8 @@ public IReadOnlyList<Submission> Data { get; set; }
 ## Constructors
 
 ### **Top(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Submission&gt;)**
+
+Represents a paginated list of top-rated or most popular submissions.
 
 ```csharp
 public Top(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<Submission> Data)

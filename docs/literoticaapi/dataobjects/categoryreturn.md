@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents detailed information about a category, including its name, descriptions, and submission count.
+
 ```csharp
 public class CategoryReturn : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryReturn, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -115,6 +117,8 @@ public Nullable<int> SubmissionCount { get; set; }
 ## Constructors
 
 ### **CategoryReturn(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, String, String, String, String, Nullable&lt;Int32&gt;)**
+
+Represents detailed information about a category, including its name, descriptions, and submission count.
 
 ```csharp
 public CategoryReturn(Nullable<int> Id, Nullable<int> Language, string Ldesc, string Name, string PageUrl, string Sdesc, string TopUrl, string Type, Nullable<int> SubmissionCount)

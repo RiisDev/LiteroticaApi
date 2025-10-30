@@ -89,3 +89,22 @@ The directory where the EPUB file should be created.
 
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown if the story or author information cannot be retrieved.
+
+## Events
+
+### **OnLog**
+
+Occurs whenever a log message is emitted by the API, EPUB writer, or internal operations.
+
+```csharp
+public static event OnLogEventHandler OnLog;
+```
+
+**Remarks:**
+
+Subscribe to this event to receive real-time logging output without requiring a console or file logger.
+ For example:
+
+```csharp
+StoryWriter.OnLog += message => Console.WriteLine($"[LOG] {message}");
+```

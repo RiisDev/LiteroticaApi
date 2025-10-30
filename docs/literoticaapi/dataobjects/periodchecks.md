@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents available statistical checks across multiple time periods such as week, month, and today.
+
 ```csharp
 public class PeriodChecks : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodChecks, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -65,6 +67,8 @@ public Nullable<int> Allperiod { get; set; }
 ## Constructors
 
 ### **PeriodChecks(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+
+Represents available statistical checks across multiple time periods such as week, month, and today.
 
 ```csharp
 public PeriodChecks(Nullable<int> Month, Nullable<int> Week, Nullable<int> Today, Nullable<int> Allperiod)

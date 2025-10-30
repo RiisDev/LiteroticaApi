@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a collection of newly registered or recently active authors.
+
 ```csharp
 public class NewAuthors : System.IEquatable`1[[LiteroticaApi.DataObjects.NewAuthors, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -35,6 +37,8 @@ public IReadOnlyList<Author> Data { get; set; }
 ## Constructors
 
 ### **NewAuthors(IReadOnlyList&lt;Author&gt;)**
+
+Represents a collection of newly registered or recently active authors.
 
 ```csharp
 public NewAuthors(IReadOnlyList<Author> Data)

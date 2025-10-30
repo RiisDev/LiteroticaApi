@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a paginated list of favorite works, such as stories, poems, or series.
+
 ```csharp
 public class FavouriteWork : System.IEquatable`1[[LiteroticaApi.DataObjects.FavouriteWork, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -75,6 +77,8 @@ public IReadOnlyList<Story> Data { get; set; }
 ## Constructors
 
 ### **FavouriteWork(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Story&gt;)**
+
+Represents a paginated list of favorite works, such as stories, poems, or series.
 
 ```csharp
 public FavouriteWork(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<Story> Data)

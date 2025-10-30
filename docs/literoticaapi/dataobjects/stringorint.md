@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a flexible data structure that can store either a string or an integer value.
+
 ```csharp
 public struct StringOrInt
 ```
@@ -13,6 +15,8 @@ Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullable
 
 ### **StringOrInt(String)**
 
+Internal usage only: converts the StringOrInt to a string.
+
 ```csharp
 StringOrInt(string value)
 ```
@@ -22,6 +26,8 @@ StringOrInt(string value)
 `value` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 ### **StringOrInt(Int32)**
+
+Internal usage only: converts the StringOrInt to a string.
 
 ```csharp
 StringOrInt(int value)
@@ -34,6 +40,8 @@ StringOrInt(int value)
 ## Methods
 
 ### **ToString()**
+
+Internal usage only: converts the StringOrInt to a string.
 
 ```csharp
 string ToString()

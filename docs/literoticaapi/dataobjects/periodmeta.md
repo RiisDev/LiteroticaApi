@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents metadata that contains available period-based statistics.
+
 ```csharp
 public class PeriodMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -35,6 +37,8 @@ public PeriodChecks PeriodChecks { get; set; }
 ## Constructors
 
 ### **PeriodMeta(PeriodChecks)**
+
+Represents metadata that contains available period-based statistics.
 
 ```csharp
 public PeriodMeta(PeriodChecks PeriodChecks)

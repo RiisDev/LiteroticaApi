@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents pagination and metadata information for a user's comment history on a specific story.
+
 ```csharp
 public class CommentHistoryMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -75,6 +77,8 @@ public Story Work { get; set; }
 ## Constructors
 
 ### **CommentHistoryMeta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Story)**
+
+Represents pagination and metadata information for a user's comment history on a specific story.
 
 ```csharp
 public CommentHistoryMeta(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, Story Work)

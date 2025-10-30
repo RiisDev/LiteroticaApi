@@ -43,12 +43,12 @@ Thrown if the story cannot be parsed or retrieved from the API.
 Retrieves detailed information about a specific story by its URL.
 
 ```csharp
-public static Task<StoryInfo> GetStoryInfoAsync(string seriesUrl)
+public static Task<StoryInfo> GetStoryInfoAsync(string storyUrl)
 ```
 
 #### Parameters
 
-`seriesUrl` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+`storyUrl` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 The URL of the story to retrieve information for.
 
 #### Returns

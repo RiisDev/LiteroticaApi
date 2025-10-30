@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents detailed information about a specific tag, including category, language, and usage metrics.
+
 ```csharp
 public class TagInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.TagInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -95,6 +97,8 @@ public Nullable<int> IsBanned { get; set; }
 ## Constructors
 
 ### **TagInfo(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+
+Represents detailed information about a specific tag, including category, language, and usage metrics.
 
 ```csharp
 public TagInfo(Nullable<int> Id, string Tag, Nullable<int> Language, Nullable<int> Tagid, Nullable<int> Category, Nullable<int> Cnt, Nullable<int> IsBanned)

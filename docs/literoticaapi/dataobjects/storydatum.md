@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents detailed metadata and content information for a story or work, including author and category data.
+
 ```csharp
 public class StoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -385,6 +387,8 @@ public string Status { get; set; }
 ## Constructors
 
 ### **StoryDatum(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;, String, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Part&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Author, String, CategoryInfo, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Double&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Tag&gt;, String, Nullable&lt;Boolean&gt;, String)**
+
+Represents detailed metadata and content information for a story or work, including author and category data.
 
 ```csharp
 public StoryDatum(Nullable<int> Id, Nullable<int> UserId, string Url, Nullable<DateTime> CreatedAt, Nullable<DateTime> ModifiedAt, string Title, Nullable<int> Language, string State, string Description, Nullable<int> ViewCount, Nullable<int> CommentsCount, Nullable<int> FavoritesCount, Nullable<int> ListsCount, Nullable<int> WorkCount, IReadOnlyList<Part> Parts, Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author, string Authorname, CategoryInfo CategoryInfo, Nullable<int> Category, Nullable<int> CommentCount, Nullable<int> ContestWinner, string DateApprove, Nullable<int> EnableComments, Nullable<int> FavoriteCount, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<int> Newlanguage, string Rank, Nullable<double> RateAll, Nullable<int> ReadingListsCount, IReadOnlyList<Tag> Tags, string Type, Nullable<bool> WritersPick, string Status)

@@ -143,3 +143,7 @@
 [EpubStory](./literoticaapi/epubwriter/epubstory.md)
 
 [StoryWriter](./literoticaapi/epubwriter/storywriter.md)
+
+## LiteroticaApi.Util
+
+[UrlUtil](./literoticaapi/util/urlutil.md)

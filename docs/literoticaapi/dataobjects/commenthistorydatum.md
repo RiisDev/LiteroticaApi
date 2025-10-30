@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a single comment entry within a user's comment history.
+
 ```csharp
 public class CommentHistoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -95,6 +97,8 @@ public Author Author { get; set; }
 ## Constructors
 
 ### **CommentHistoryDatum(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Author)**
+
+Represents a single comment entry within a user's comment history.
 
 ```csharp
 public CommentHistoryDatum(Nullable<int> Id, Nullable<int> Date, Nullable<int> Rate, Nullable<int> Type, string Text, string Title, Author Author)

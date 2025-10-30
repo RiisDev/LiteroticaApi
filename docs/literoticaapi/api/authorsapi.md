@@ -202,6 +202,7 @@ The number of authors per page. Defaults to 50, maximum 200.
 The time period filter (e.g., day, week, month, all). Defaults to .
 
 `language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+The language ID. Defaults to 1/&gt;.
 
 #### Returns
 

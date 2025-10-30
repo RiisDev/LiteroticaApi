@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a tag that is related to another tag, including its ID, display text, and usage count.
+
 ```csharp
 public class RelatedTag : System.IEquatable`1[[LiteroticaApi.DataObjects.RelatedTag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -55,6 +57,8 @@ public Nullable<int> Cnt { get; set; }
 ## Constructors
 
 ### **RelatedTag(Nullable&lt;Int32&gt;, StringOrInt, Nullable&lt;Int32&gt;)**
+
+Represents a tag that is related to another tag, including its ID, display text, and usage count.
 
 ```csharp
 public RelatedTag(Nullable<int> Id, StringOrInt Tag, Nullable<int> Cnt)

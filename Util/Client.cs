@@ -1,10 +1,15 @@
 ﻿using System.Collections.Concurrent;
 using System.Diagnostics;
-
-#pragma warning disable IDE0130 // Disable namespace check
+// ReSharper disable CheckNamespace
+#pragma warning disable IDE0130
 
 namespace LiteroticaApi
 {
+	/// <summary>
+	/// Provides a centralized HTTP client used by the Literotica API SDK.
+	/// This static client manages all outbound HTTP requests and supports both
+	/// a default internal client and user-supplied custom clients.
+	/// </summary>
 	public static class Client
 	{
 		private static readonly Lazy<HttpClient> LazyClient = new(() =>
@@ -18,6 +23,15 @@ namespace LiteroticaApi
 			return client;
 		});
 
+		/// <summary>
+		/// Gets or sets the active <see cref="HttpClient"/> instance used by all API operations.
+		/// </summary>
+		/// <remarks>
+		/// By default, this property returns the internal shared client.
+		/// If you wish to override it with your own client (for example, to
+		/// add custom headers, proxy configurations, or handlers), simply set
+		/// <see cref="HttpClientInstance"/> to your own <see cref="HttpClient"/>.
+		/// </remarks>
 		public static HttpClient HttpClientInstance
 		{
 			get => _customClient ?? LazyClient.Value;

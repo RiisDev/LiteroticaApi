@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a series of related stories or works, including parts, metadata, and creation details.
+
 ```csharp
 public class Series : System.IEquatable`1[[LiteroticaApi.DataObjects.Series, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -175,6 +177,8 @@ public IReadOnlyList<Part> Parts { get; set; }
 ## Constructors
 
 ### **Series(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;, String, Nullable&lt;Int32&gt;, String, Object, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Part&gt;)**
+
+Represents a series of related stories or works, including parts, metadata, and creation details.
 
 ```csharp
 public Series(Nullable<int> Id, Nullable<int> UserId, string Url, Nullable<DateTime> CreatedAt, Nullable<DateTime> ModifiedAt, string Title, Nullable<int> Language, string State, object Description, Nullable<int> ViewCount, Nullable<int> CommentsCount, Nullable<int> FavoritesCount, Nullable<int> ListsCount, Nullable<int> WorkCount, IReadOnlyList<Part> Parts)

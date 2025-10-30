@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents an individual part or chapter of a story, including metadata such as title, category, and view count.
+
 ```csharp
 public class Part : System.IEquatable`1[[LiteroticaApi.DataObjects.Part, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -245,6 +247,8 @@ public Nullable<int> CommentCount { get; set; }
 ## Constructors
 
 ### **Part(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, CategoryInfo, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Double&gt;, Nullable&lt;Int32&gt;, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;)**
+
+Represents an individual part or chapter of a story, including metadata such as title, category, and view count.
 
 ```csharp
 public Part(Nullable<int> AllowVote, Nullable<int> AllowDownload, string Authorname, CategoryInfo CategoryInfo, Nullable<int> Category, Nullable<int> ContestWinner, string DateApprove, string Description, Nullable<int> EnableComments, Nullable<int> FavoriteCount, Nullable<int> Id, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<int> Language, Nullable<double> RateAll, Nullable<int> ReadingListsCount, string Title, string Type, string Url, Nullable<int> ViewCount, Nullable<bool> WritersPick, Nullable<int> CommentCount)

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents the root object for detailed story information including metadata and submission content.
+
 ```csharp
 public class StoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -55,6 +57,8 @@ public string PageText { get; set; }
 ## Constructors
 
 ### **StoryInfo(Meta, Submission, String)**
+
+Represents the root object for detailed story information including metadata and submission content.
 
 ```csharp
 public StoryInfo(Meta Meta, Submission Submission, string PageText)

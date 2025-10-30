@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a detailed submission (story) including author information, metadata, rating, and tags.
+
 ```csharp
 public class Submission : System.IEquatable`1[[LiteroticaApi.DataObjects.Submission, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -345,6 +347,8 @@ public IReadOnlyList<object> Contests { get; set; }
 ## Constructors
 
 ### **Submission(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Author, StringOrInt, CategoryInfo, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Object, Nullable&lt;Double&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Tag&gt;, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, String, IReadOnlyList&lt;Nullable&lt;Int32&gt;&gt;, SeriesDatum, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Object&gt;)**
+
+Represents a detailed submission (story) including author information, metadata, rating, and tags.
 
 ```csharp
 public Submission(Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author, StringOrInt Authorname, CategoryInfo CategoryInfo, Nullable<int> Category, Nullable<int> CommentCount, Nullable<int> ContestWinner, string DateApprove, string Description, Nullable<int> EnableComments, Nullable<int> FavoriteCount, Nullable<int> Id, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<int> Language, Nullable<int> Newlanguage, object Rank, Nullable<double> RateAll, Nullable<int> ReadingListsCount, IReadOnlyList<Tag> Tags, string Title, string Type, string Url, Nullable<int> ViewCount, Nullable<bool> WritersPick, string Status, IReadOnlyList<Nullable<int>> FollowedAuthors, SeriesDatum Series, Nullable<int> ReadingTime, Nullable<int> WordsCount, IReadOnlyList<object> Contests)

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents metadata specific to tag-based search queries.
+
 ```csharp
 public class SearchByTagMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTagMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public PeriodChecks PeriodChecks { get; set; }
 ## Constructors
 
 ### **SearchByTagMeta(Nullable&lt;Int32&gt;, PeriodChecks)**
+
+Represents metadata specific to tag-based search queries.
 
 ```csharp
 public SearchByTagMeta(Nullable<int> SubmissionsCount, PeriodChecks PeriodChecks)

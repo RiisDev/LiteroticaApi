@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a collection of comments and associated metadata for a given story or author.
+
 ```csharp
 public class CommentHistory : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistory, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public IReadOnlyList<CommentHistoryDatum> Data { get; set; }
 ## Constructors
 
 ### **CommentHistory(CommentHistoryMeta, IReadOnlyList&lt;CommentHistoryDatum&gt;)**
+
+Represents a collection of comments and associated metadata for a given story or author.
 
 ```csharp
 public CommentHistory(CommentHistoryMeta Meta, IReadOnlyList<CommentHistoryDatum> Data)

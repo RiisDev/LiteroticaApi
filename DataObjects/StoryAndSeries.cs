@@ -1,5 +1,8 @@
 ﻿namespace LiteroticaApi.DataObjects
 {
+	/// <summary>
+	/// Represents information about a story category, including its name, description, and type.
+	/// </summary>
 	public record CategoryInfo(
 		[property: JsonPropertyName("id")] int? Id,
 		[property: JsonPropertyName("name")] string Name,
@@ -9,6 +12,9 @@
 		[property: JsonPropertyName("pageUrl")] string PageUrl
 	);
 
+	/// <summary>
+	/// Represents detailed metadata and content information for a story or work, including author and category data.
+	/// </summary>
 	public record StoryDatum(
 		[property: JsonPropertyName("id")] int? Id,
 		[property: JsonPropertyName("user_id")] int? UserId,
@@ -48,6 +54,9 @@
 		[property: JsonPropertyName("status")] string Status
 	);
 
+	/// <summary>
+	/// Represents an individual part or chapter of a story, including metadata such as title, category, and view count.
+	/// </summary>
 	public record Part(
 		[property: JsonPropertyName("allow_vote")] int? AllowVote,
 		[property: JsonPropertyName("allow_download")] int? AllowDownload,
@@ -73,6 +82,9 @@
 		[property: JsonPropertyName("comment_count")] int? CommentCount
 	);
 
+	/// <summary>
+	/// Represents paginated data containing multiple stories or works, including series indicators and metadata.
+	/// </summary>
 	public record WorksData(
 		[property: JsonPropertyName("current_page")] int? CurrentPage,
 		[property: JsonPropertyName("last_page")] int? LastPage,
@@ -82,6 +94,9 @@
 		[property: JsonPropertyName("data")] IReadOnlyList<StoryDatum> Data
 	);
 
+	/// <summary>
+	/// Represents a series of related stories or works, including parts, metadata, and creation details.
+	/// </summary>
 	public record Series(
 		[property: JsonPropertyName("id")] int? Id,
 		[property: JsonPropertyName("user_id")] int? UserId,
@@ -100,6 +115,9 @@
 		[property: JsonPropertyName("parts")] IReadOnlyList<Part> Parts
 	);
 
+	/// <summary>
+	/// Represents a full story entity, including author data, metadata, and its relation to series or collections.
+	/// </summary>
 	public record Story(
 		[property: JsonPropertyName("allow_vote")] int? AllowVote,
 		[property: JsonPropertyName("allow_download")] int? AllowDownload,

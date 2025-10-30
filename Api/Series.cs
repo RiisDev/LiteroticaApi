@@ -23,10 +23,10 @@ namespace LiteroticaApi.Api
 		/// </exception>
 		public static async Task<Series?> GetSeriesInfoAsync(string seriesUrl)
 		{
-			string seriesId = UrlUtil.GetSeriesId(seriesUrl);
-			
-			InternalSeriesRoot internalSeries = await Client.Get<InternalSeriesRoot>($"series/{seriesId}").ConfigureAwait(false);
+			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
 
+			InternalSeriesRoot internalSeries = await Client.Get<InternalSeriesRoot>($"series/{seriesId}").ConfigureAwait(false);
+			
 			if (internalSeries.Data.UserId == null)
 				throw new Exception("Author ID is null.");
 
@@ -51,7 +51,7 @@ namespace LiteroticaApi.Api
 		/// <exception cref="Exception">Thrown if the provided <paramref name="seriesUrl"/> is invalid.</exception>
 		public static async Task<Cover> GetSeriesCoverAsync(string seriesUrl)
 		{
-			string seriesId = UrlUtil.GetSeriesId(seriesUrl);
+			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
 
 			return await Client.Get<Cover>($"series/{seriesId}/cover").ConfigureAwait(false);
 		}
@@ -68,7 +68,7 @@ namespace LiteroticaApi.Api
 		/// <exception cref="Exception">Thrown if the provided <paramref name="seriesUrl"/> is invalid.</exception>
 		public static async Task<IReadOnlyList<Story>?> GetSeriesWorksAsync(string seriesUrl)
 		{
-			string seriesId = UrlUtil.GetSeriesId(seriesUrl);
+			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
 
 			return await Client.Get<IReadOnlyList<Story>?>($"series/{seriesId}/works").ConfigureAwait(false);
 		}
@@ -193,6 +193,7 @@ namespace LiteroticaApi.Api
 		/// <param name="category">The category to filter series by, defined in <see cref="Types.Categories"/>.</param>
 		/// <param name="letter">The first letter of the series titles to retrieve (A–Z).</param>
 		/// <param name="page">The page number to retrieve. Defaults to 1.</param>
+		/// <param name="language">The language ID. Defaults to 1/>.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a read-only list of <see cref="Works"/> objects that match the specified criteria.

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a paginated collection of users who follow a specific author.
+
 ```csharp
 public class Followers : System.IEquatable`1[[LiteroticaApi.DataObjects.Followers, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -75,6 +77,8 @@ public IReadOnlyList<Author> Data { get; set; }
 ## Constructors
 
 ### **Followers(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Author&gt;)**
+
+Represents a paginated collection of users who follow a specific author.
 
 ```csharp
 public Followers(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<Author> Data)

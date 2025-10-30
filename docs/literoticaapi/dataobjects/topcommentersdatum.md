@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a single top commenter entry with basic identification and activity metrics.
+
 ```csharp
 public class TopCommentersDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -55,6 +57,8 @@ public Nullable<int> TotalComments { get; set; }
 ## Constructors
 
 ### **TopCommentersDatum(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;)**
+
+Represents a single top commenter entry with basic identification and activity metrics.
 
 ```csharp
 public TopCommentersDatum(Nullable<int> Id, string Name, Nullable<int> TotalComments)

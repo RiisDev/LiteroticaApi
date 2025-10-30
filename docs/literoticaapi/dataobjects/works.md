@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents an individual work, including metadata, author details, and associated categories.
+
 ```csharp
 public class Works : System.IEquatable`1[[LiteroticaApi.DataObjects.Works, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -185,6 +187,8 @@ public IReadOnlyList<Work> WorksInfo { get; set; }
 ## Constructors
 
 ### **Works(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Object, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;, String, Nullable&lt;Int32&gt;, String, Object, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, IReadOnlyList&lt;Category&gt;, IReadOnlyList&lt;Work&gt;)**
+
+Represents an individual work, including metadata, author details, and associated categories.
 
 ```csharp
 public Works(Nullable<int> Id, Nullable<int> UserId, object Url, Nullable<DateTime> CreatedAt, Nullable<DateTime> ModifiedAt, string Title, Nullable<int> Language, string State, object Description, Nullable<int> ViewCount, Nullable<int> CommentsCount, Nullable<int> FavoritesCount, Nullable<int> ListsCount, string AuthorName, IReadOnlyList<Category> Categories, IReadOnlyList<Work> WorksInfo)

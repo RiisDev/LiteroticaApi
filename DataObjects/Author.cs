@@ -1,5 +1,11 @@
 ﻿namespace LiteroticaApi.DataObjects
 {
+	/// <summary>
+	/// Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
+	/// </summary>
+	/// <remarks>
+	/// Book lists are user-curated collections of works (stories, poems, series, etc.) that can be used for categorization, reading lists, or favorites.
+	/// </remarks>
 	public record BookList(
 		[property: JsonPropertyName("id")] int? Id,
 		[property: JsonPropertyName("description")] string Description,
@@ -12,11 +18,24 @@
 		[property: JsonPropertyName("updated_at")] DateTime? UpdatedAt
 	);
 
+	/// <summary>
+	/// Represents the root response for an author data request.
+	/// </summary>
+	/// <remarks>
+	/// This model wraps the author object along with success status, as returned by Literotica's API.
+	/// </remarks>
 	public record RootAuthor(
 		[property: JsonPropertyName("success")] bool? Success,
 		[property: JsonPropertyName("user")] Author User
 	);
 
+	/// <summary>
+	/// Represents an author profile on Literotica, including biography, statistics, and personal attributes.
+	/// </summary>
+	/// <remarks>
+	/// Contains detailed metadata such as follower counts, story counts, favorite works, and optional personal information
+	/// like location, orientation, and interests.
+	/// </remarks>
 	public record Author(
 		[property: JsonPropertyName("aim")] string Aim,
 		[property: JsonPropertyName("bio")] string Bio,
@@ -79,6 +98,9 @@
 		[property: JsonPropertyName("support_me_link")] string? SupportMeLink
 	);
 
+	/// <summary>
+	/// Represents a paginated collection of users who follow a specific author.
+	/// </summary>
 	public record Followers(
 		[property: JsonPropertyName("current_page")] int? CurrentPage,
 		[property: JsonPropertyName("last_page")] int? LastPage,
@@ -87,6 +109,9 @@
 		[property: JsonPropertyName("data")] IReadOnlyList<Author> Data
 	);
 
+	/// <summary>
+	/// Represents a paginated list of authors marked as favorites by a user.
+	/// </summary>
 	public record FavouriteAuthor(
 		[property: JsonPropertyName("current_page")] int? CurrentPage,
 		[property: JsonPropertyName("last_page")] int? LastPage,
@@ -95,6 +120,9 @@
 		[property: JsonPropertyName("data")] IReadOnlyList<Author> Data
 	);
 
+	/// <summary>
+	/// Represents a paginated list of favorite works, such as stories, poems, or series.
+	/// </summary>
 	public record FavouriteWork(
 		[property: JsonPropertyName("current_page")] int? CurrentPage,
 		[property: JsonPropertyName("last_page")] int? LastPage,
@@ -102,10 +130,17 @@
 		[property: JsonPropertyName("per_page")] int? PerPage,
 		[property: JsonPropertyName("data")] IReadOnlyList<Story> Data
 	);
+
+	/// <summary>
+	/// Represents the response for a top-followed authors request.
+	/// </summary>
 	public record TopFollowedAuthorsResponse(
 		[property: JsonPropertyName("data")] TopFollowedAuthor Data
 	);
 
+	/// <summary>
+	/// Represents a paginated list of the most-followed authors on Literotica.
+	/// </summary>
 	public record TopFollowedAuthor(
 		[property: JsonPropertyName("current_page")] int? CurrentPage,
 		[property: JsonPropertyName("last_page")] int? LastPage,
@@ -114,6 +149,9 @@
 		[property: JsonPropertyName("data")] IReadOnlyList<Author> Data
 	);
 
+	/// <summary>
+	/// Represents a collection of newly registered or recently active authors.
+	/// </summary>
 	public record NewAuthors(
 		[property: JsonPropertyName("data")] IReadOnlyList<Author> Data
 	);

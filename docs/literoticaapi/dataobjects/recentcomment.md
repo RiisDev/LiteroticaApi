@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a recent comment made on a work, typically used in global or author-wide comment feeds.
+
 ```csharp
 public class RecentComment : System.IEquatable`1[[LiteroticaApi.DataObjects.RecentComment, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -105,6 +107,8 @@ public Author Author { get; set; }
 ## Constructors
 
 ### **RecentComment(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Story, String, String, Author)**
+
+Represents a recent comment made on a work, typically used in global or author-wide comment feeds.
 
 ```csharp
 public RecentComment(Nullable<int> Id, Nullable<int> Date, Nullable<int> Rate, Nullable<int> Type, Story Story, string Text, string Title, Author Author)

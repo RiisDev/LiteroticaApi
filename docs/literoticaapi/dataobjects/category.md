@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a story or work category, including its unique identifier and URL.
+
 ```csharp
 public class Category : System.IEquatable`1[[LiteroticaApi.DataObjects.Category, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public string Url { get; set; }
 ## Constructors
 
 ### **Category(Nullable&lt;Int32&gt;, String)**
+
+Represents a story or work category, including its unique identifier and URL.
 
 ```csharp
 public Category(Nullable<int> Id, string Url)

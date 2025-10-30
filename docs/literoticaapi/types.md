@@ -2,16 +2,10 @@
 
 Namespace: LiteroticaApi
 
+Contains common Literotica API enumerations and type definitions.
+
 ```csharp
-public class Types
+public static class Types
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Types](./literoticaapi/types.md)
-
-## Constructors
-
-### **Types()**
-
-```csharp
-public Types()
-```

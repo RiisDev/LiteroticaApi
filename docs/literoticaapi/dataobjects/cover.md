@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a cover image response, containing resolution-specific asset metadata.
+
 ```csharp
 public class Cover : System.IEquatable`1[[LiteroticaApi.DataObjects.Cover, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public Assets Data { get; set; }
 ## Constructors
 
 ### **Cover(Nullable&lt;Boolean&gt;, Assets)**
+
+Represents a cover image response, containing resolution-specific asset metadata.
 
 ```csharp
 public Cover(Nullable<bool> Success, Assets Data)

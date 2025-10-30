@@ -19,15 +19,12 @@ namespace LiteroticaApi.Api
 		/// <exception cref="LitEroticaApiException">Thrown when the API response contains null or invalid data.</exception>
 		public static async Task<Author?> GetAuthorByIdAsync(int authorId)
 		{
-			List<InternalAuthor> authorData = await Client.Get<List<InternalAuthor>>($"authors/{authorId}").ConfigureAwait(false);
-
-			if (authorData == null)
-				throw new LitEroticaApiException("Author data is null.");
-
-			if (authorData.Count == 0 || string.IsNullOrEmpty(authorData[0].Username))
+			List<InternalAuthor>? authorData = await Client.Get<List<InternalAuthor>>($"authors/{authorId}").ConfigureAwait(false);
+			
+			if (authorData?.Count == 0 || string.IsNullOrEmpty(authorData?[0].Username))
 				throw new LitEroticaApiException("Username data is null.");
 
-			RootAuthor? rootAuthor = await Client.Get<RootAuthor>($"users/{authorData[0].Username}").ConfigureAwait(false);
+			RootAuthor? rootAuthor = await Client.Get<RootAuthor>($"users/{authorData?[0].Username}").ConfigureAwait(false);
 			return rootAuthor?.User;
 		}
 
@@ -232,6 +229,7 @@ namespace LiteroticaApi.Api
 		/// <param name="page">The page number to retrieve. Defaults to 1.</param>
 		/// <param name="pageSize">The number of authors per page. Defaults to 50, maximum 200.</param>
 		/// <param name="period">The time period filter (e.g., day, week, month, all). Defaults to <see cref="Period.All"/>.</param>
+		/// <param name="language">The language ID. Defaults to 1/>.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation. The task result contains a <see cref="TopFollowedAuthor"/> object.
 		/// </returns>

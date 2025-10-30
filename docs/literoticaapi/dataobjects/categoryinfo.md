@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents information about a story category, including its name, description, and type.
+
 ```csharp
 public class CategoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -85,6 +87,8 @@ public string PageUrl { get; set; }
 ## Constructors
 
 ### **CategoryInfo(Nullable&lt;Int32&gt;, String, String, String, String, String)**
+
+Represents information about a story category, including its name, description, and type.
 
 ```csharp
 public CategoryInfo(Nullable<int> Id, string Name, string Ldesc, string Sdesc, string Type, string PageUrl)

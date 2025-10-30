@@ -4,7 +4,7 @@ namespace LiteroticaApi.EpubWriter.Util
 {
 	internal static class ResourceExtractor
 	{
-		public static void WriteEpubManifest(string outputDirectory)
+		internal static void WriteEpubManifest(string outputDirectory)
 		{
 			if (string.IsNullOrWhiteSpace(outputDirectory))
 				throw new ArgumentException("Output directory cannot be null or empty.", nameof(outputDirectory));
@@ -31,11 +31,8 @@ namespace LiteroticaApi.EpubWriter.Util
 		private static void WriteEmbeddedFile(Assembly assembly, string resourceName, string outputPath)
 		{
 			using Stream? stream = assembly.GetManifestResourceStream(resourceName);
-			if (stream == null)
-				throw new FileNotFoundException($"Embedded resource not found: {resourceName}");
-
 			using FileStream fileStream = new(outputPath, FileMode.Create, FileAccess.Write);
-			stream.CopyTo(fileStream);
+			stream?.CopyTo(fileStream);
 		}
 	}
 }

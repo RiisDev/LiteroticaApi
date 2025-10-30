@@ -96,7 +96,7 @@ namespace LiteroticaApi.Api
 				{ "sort", "created-desc" }
 			};
 
-			string storySlug = UrlUtil.GetStorySlug(storyUrl);
+			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
 			return await Client.Get<CommentHistory>($"stories/{storySlug}/comments/history", parameters).ConfigureAwait(false); ;
 		}
 

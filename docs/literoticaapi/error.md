@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi
 
+Represents an error response returned by the Literotica API.
+
 ```csharp
 public class Error : System.IEquatable`1[[LiteroticaApi.Error, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public string Message { get; set; }
 ## Constructors
 
 ### **Error(Nullable&lt;Boolean&gt;, String)**
+
+Represents an error response returned by the Literotica API.
 
 ```csharp
 public Error(Nullable<bool> Success, string Message)

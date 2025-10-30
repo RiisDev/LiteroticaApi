@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi
 
+Represents an error that occurs due to an invalid response or issue returned from the Literotica API.
+
 ```csharp
 public class LitEroticaApiException : System.Exception, System.Runtime.Serialization.ISerializable
 ```
@@ -95,6 +97,8 @@ public string StackTrace { get; }
 
 ### **LitEroticaApiException(String)**
 
+Initializes a new instance of the [LitEroticaApiException](./literoticaapi/literoticaapiexception.md) class.
+
 ```csharp
 public LitEroticaApiException(string message)
 ```
@@ -102,6 +106,7 @@ public LitEroticaApiException(string message)
 #### Parameters
 
 `message` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+A message describing the API error.
 
 ## Events
 

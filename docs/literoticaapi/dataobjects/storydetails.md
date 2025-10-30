@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents the details of an individual story, including metadata such as category, language, and URL.
+
 ```csharp
 public class StoryDetails : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDetails, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -125,6 +127,8 @@ public string Url { get; set; }
 ## Constructors
 
 ### **StoryDetails(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, String, String, String)**
+
+Represents the details of an individual story, including metadata such as category, language, and URL.
 
 ```csharp
 public StoryDetails(Nullable<int> Category, string Description, Nullable<int> Id, Nullable<int> Language, Nullable<int> Newlanguage, string Name, Nullable<int> Storyid, string Tag, string Type, string Url)

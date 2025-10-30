@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents paginated data containing multiple stories or works, including series indicators and metadata.
+
 ```csharp
 public class WorksData : System.IEquatable`1[[LiteroticaApi.DataObjects.WorksData, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -85,6 +87,8 @@ public IReadOnlyList<StoryDatum> Data { get; set; }
 ## Constructors
 
 ### **WorksData(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, IReadOnlyList&lt;StoryDatum&gt;)**
+
+Represents paginated data containing multiple stories or works, including series indicators and metadata.
 
 ```csharp
 public WorksData(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, Nullable<bool> HasSeries, IReadOnlyList<StoryDatum> Data)

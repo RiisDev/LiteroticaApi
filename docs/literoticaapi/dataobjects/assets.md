@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents all available media assets (e.g., cover images) for both mobile and desktop displays.
+
 ```csharp
 public class Assets : System.IEquatable`1[[LiteroticaApi.DataObjects.Assets, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public Desktop Desktop { get; set; }
 ## Constructors
 
 ### **Assets(Mobile, Desktop)**
+
+Represents all available media assets (e.g., cover images) for both mobile and desktop displays.
 
 ```csharp
 public Assets(Mobile Mobile, Desktop Desktop)

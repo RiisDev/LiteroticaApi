@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
+
 ```csharp
 public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -9,6 +11,10 @@ public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList,
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [BookList](./literoticaapi/dataobjects/booklist.md)<br>
 Implements [IEquatable&lt;BookList&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1)<br>
 Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullablecontextattribute.md), [NullableAttribute](./system/runtime/compilerservices/nullableattribute.md)
+
+**Remarks:**
+
+Book lists are user-curated collections of works (stories, poems, series, etc.) that can be used for categorization, reading lists, or favorites.
 
 ## Properties
 
@@ -116,6 +122,8 @@ public Nullable<DateTime> UpdatedAt { get; set; }
 
 ### **BookList(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, String, String, String, Nullable&lt;Int32&gt;, String, Nullable&lt;DateTime&gt;)**
 
+Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
+
 ```csharp
 public BookList(Nullable<int> Id, string Description, Nullable<int> StoriesCount, string SubmissionType, string Title, string Urlname, Nullable<int> UserId, string CreatedAt, Nullable<DateTime> UpdatedAt)
 ```
@@ -139,6 +147,10 @@ public BookList(Nullable<int> Id, string Description, Nullable<int> StoriesCount
 `CreatedAt` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `UpdatedAt` [Nullable&lt;DateTime&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+**Remarks:**
+
+Book lists are user-curated collections of works (stories, poems, series, etc.) that can be used for categorization, reading lists, or favorites.
 
 ### **BookList(BookList)**
 

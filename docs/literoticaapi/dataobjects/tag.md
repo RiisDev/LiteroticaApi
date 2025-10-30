@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a tag entity used for categorizing stories, including its text and ban status.
+
 ```csharp
 public class Tag : System.IEquatable`1[[LiteroticaApi.DataObjects.Tag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -55,6 +57,8 @@ public Nullable<int> IsBanned { get; set; }
 ## Constructors
 
 ### **Tag(Nullable&lt;Int32&gt;, StringOrInt, Nullable&lt;Int32&gt;)**
+
+Represents a tag entity used for categorizing stories, including its text and ban status.
 
 ```csharp
 public Tag(Nullable<int> Id, StringOrInt TagText, Nullable<int> IsBanned)

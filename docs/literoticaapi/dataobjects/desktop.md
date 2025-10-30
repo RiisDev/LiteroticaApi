@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents desktop-specific asset resolutions (x1, x2, x3).
+
 ```csharp
 public class Desktop : System.IEquatable`1[[LiteroticaApi.DataObjects.Desktop, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -55,6 +57,8 @@ public X3 X3 { get; set; }
 ## Constructors
 
 ### **Desktop(X1, X2, X3)**
+
+Represents desktop-specific asset resolutions (x1, x2, x3).
 
 ```csharp
 public Desktop(X1 X1, X2 X2, X3 X3)

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents the root response for an author data request.
+
 ```csharp
 public class RootAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.RootAuthor, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -9,6 +11,10 @@ public class RootAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.RootAut
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [RootAuthor](./literoticaapi/dataobjects/rootauthor.md)<br>
 Implements [IEquatable&lt;RootAuthor&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1)<br>
 Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullablecontextattribute.md), [NullableAttribute](./system/runtime/compilerservices/nullableattribute.md)
+
+**Remarks:**
+
+This model wraps the author object along with success status, as returned by Literotica's API.
 
 ## Properties
 
@@ -46,6 +52,8 @@ public Author User { get; set; }
 
 ### **RootAuthor(Nullable&lt;Boolean&gt;, Author)**
 
+Represents the root response for an author data request.
+
 ```csharp
 public RootAuthor(Nullable<bool> Success, Author User)
 ```
@@ -55,6 +63,10 @@ public RootAuthor(Nullable<bool> Success, Author User)
 `Success` [Nullable&lt;Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `User` [Author](./literoticaapi/dataobjects/author.md)<br>
+
+**Remarks:**
+
+This model wraps the author object along with success status, as returned by Literotica's API.
 
 ### **RootAuthor(RootAuthor)**
 

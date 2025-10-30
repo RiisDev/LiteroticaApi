@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents metadata for newly added submissions.
+
 ```csharp
 public class NewMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.NewMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -35,6 +37,8 @@ public Nullable<int> SubmissionsCount { get; set; }
 ## Constructors
 
 ### **NewMeta(Nullable&lt;Int32&gt;)**
+
+Represents metadata for newly added submissions.
 
 ```csharp
 public NewMeta(Nullable<int> SubmissionsCount)

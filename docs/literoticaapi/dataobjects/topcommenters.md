@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents the response model containing a list of top commenters and pagination metadata.
+
 ```csharp
 public class TopCommenters : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommenters, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public IReadOnlyList<TopCommentersDatum> Data { get; set; }
 ## Constructors
 
 ### **TopCommenters(TopCommentersMeta, IReadOnlyList&lt;TopCommentersDatum&gt;)**
+
+Represents the response model containing a list of top commenters and pagination metadata.
 
 ```csharp
 public TopCommenters(TopCommentersMeta Meta, IReadOnlyList<TopCommentersDatum> Data)

@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents metadata information about a story, series, or submission, including pagination and ordering.
+
 ```csharp
 public class Meta : System.IEquatable`1[[LiteroticaApi.DataObjects.Meta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -95,6 +97,8 @@ public IReadOnlyList<Nullable<int>> Order { get; set; }
 ## Constructors
 
 ### **Meta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, String, String, IReadOnlyList&lt;Nullable&lt;Int32&gt;&gt;)**
+
+Represents metadata information about a story, series, or submission, including pagination and ordering.
 
 ```csharp
 public Meta(Nullable<int> PagesCount, Nullable<int> Id, string Title, string Url, string CreatedAt, string UpdatedAt, IReadOnlyList<Nullable<int>> Order)

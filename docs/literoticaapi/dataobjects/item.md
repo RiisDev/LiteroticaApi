@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a single story item within a series or category, including metadata and type.
+
 ```csharp
 public class Item : System.IEquatable`1[[LiteroticaApi.DataObjects.Item, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -85,6 +87,8 @@ public string Url { get; set; }
 ## Constructors
 
 ### **Item(Nullable&lt;Int32&gt;, CategoryInfo, Nullable&lt;Int32&gt;, String, String, String)**
+
+Represents a single story item within a series or category, including metadata and type.
 
 ```csharp
 public Item(Nullable<int> Id, CategoryInfo CategoryInfo, Nullable<int> Category, string Title, string Type, string Url)

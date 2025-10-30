@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents an author profile on Literotica, including biography, statistics, and personal attributes.
+
 ```csharp
 public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -9,6 +11,11 @@ public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, Lit
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Author](./literoticaapi/dataobjects/author.md)<br>
 Implements [IEquatable&lt;Author&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1)<br>
 Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullablecontextattribute.md), [NullableAttribute](./system/runtime/compilerservices/nullableattribute.md)
+
+**Remarks:**
+
+Contains detailed metadata such as follower counts, story counts, favorite works, and optional personal information
+ like location, orientation, and interests.
 
 ## Properties
 
@@ -616,6 +623,8 @@ public string SupportMeLink { get; set; }
 
 ### **Author(String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Object, String, String, String, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, StringOrInt, String, String, Nullable&lt;Int32&gt;, Nullable&lt;DateTime&gt;, String, String, Nullable&lt;Int32&gt;, String, String, String, String, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;BookList&gt;, Object, String, String)**
 
+Represents an author profile on Literotica, including biography, statistics, and personal attributes.
+
 ```csharp
 public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCount, Nullable<int> Customtitle, string Drink, string EditorStatus, Nullable<int> FollowedStoriesCount, Nullable<int> FollowersCount, Nullable<int> FollowingsCount, Nullable<int> HasPhoto, string Homepage, object Icq, string Joindate, string Location, string Status, Nullable<int> Options, string Pets, string Smoke, Nullable<int> StoriesCount, Nullable<int> PoemsCount, Nullable<int> IllustrationsCount, Nullable<int> AudiosCount, Nullable<int> SgsCount, Nullable<int> SeriesCount, Nullable<int> StoriesAndSeriesCount, Nullable<int> AudiosAndSeriesCount, Nullable<int> PoemsAndSeriesCount, Nullable<int> IllustrasAndSeriesCount, Nullable<int> SgsAndSeriesCount, Nullable<int> FavStoriesCount, Nullable<int> FavPoemsCount, Nullable<int> FavSgsCount, Nullable<int> FavArtworksCount, Nullable<int> FavAudiosCount, Nullable<int> FavAuthorsCount, Nullable<int> SubmissionsCount, Nullable<int> Userid, StringOrInt Username, string Userpic, string Usertitle, Nullable<int> FavoritesCount, Nullable<DateTime> LastUpdate, string JoindateApprox, string LastUpdateApprox, Nullable<int> FavoriteStoriesCount, string Sex, string Weight, string Height, string Orientation, string Interests, string Fetishes, string Datingstat, Nullable<int> Allowfeedback, Nullable<int> DisableAllFeedback, IReadOnlyList<BookList> Lists, object ListsContent, string SupportMeService, string SupportMeLink)
 ```
@@ -739,6 +748,11 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 `SupportMeService` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `SupportMeLink` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+
+**Remarks:**
+
+Contains detailed metadata such as follower counts, story counts, favorite works, and optional personal information
+ like location, orientation, and interests.
 
 ### **Author(Author)**
 

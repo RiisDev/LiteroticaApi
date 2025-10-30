@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents pagination metadata for search queries.
+
 ```csharp
 public class SearchMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public Nullable<int> Total { get; set; }
 ## Constructors
 
 ### **SearchMeta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+
+Represents pagination metadata for search queries.
 
 ```csharp
 public SearchMeta(Nullable<int> PageSize, Nullable<int> Total)

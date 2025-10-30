@@ -222,6 +222,7 @@ The first letter of the series titles to retrieve (A–Z).
 The page number to retrieve. Defaults to 1.
 
 `language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+The language ID. Defaults to 1/&gt;.
 
 #### Returns
 

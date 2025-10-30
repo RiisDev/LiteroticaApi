@@ -101,4 +101,4 @@ Thrown when the story slug cannot be extracted from the provided `storyUrl`.
 
 **Remarks:**
 
-This method uses  to resolve the story slug before performing the API request.
+This method uses [UrlUtil.GetStorySlug(String)](./literoticaapi/util/urlutil.md#getstoryslugstring) to resolve the story slug before performing the API request.

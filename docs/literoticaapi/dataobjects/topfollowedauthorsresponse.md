@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents the response for a top-followed authors request.
+
 ```csharp
 public class TopFollowedAuthorsResponse : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthorsResponse, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -35,6 +37,8 @@ public TopFollowedAuthor Data { get; set; }
 ## Constructors
 
 ### **TopFollowedAuthorsResponse(TopFollowedAuthor)**
+
+Represents the response for a top-followed authors request.
 
 ```csharp
 public TopFollowedAuthorsResponse(TopFollowedAuthor Data)

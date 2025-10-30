@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a paginated list of authors marked as favorites by a user.
+
 ```csharp
 public class FavouriteAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.FavouriteAuthor, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -75,6 +77,8 @@ public IReadOnlyList<Author> Data { get; set; }
 ## Constructors
 
 ### **FavouriteAuthor(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Author&gt;)**
+
+Represents a paginated list of authors marked as favorites by a user.
 
 ```csharp
 public FavouriteAuthor(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<Author> Data)

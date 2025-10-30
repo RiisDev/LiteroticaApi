@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Metadata and pagination structure for the top commenters API response.
+
 ```csharp
 public class TopCommentersMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -65,6 +67,8 @@ public Nullable<int> PerPage { get; set; }
 ## Constructors
 
 ### **TopCommentersMeta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+
+Metadata and pagination structure for the top commenters API response.
 
 ```csharp
 public TopCommentersMeta(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage)

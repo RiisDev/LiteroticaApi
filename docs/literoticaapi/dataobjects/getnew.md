@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a list of newly published submissions, including metadata.
+
 ```csharp
 public class GetNew : System.IEquatable`1[[LiteroticaApi.DataObjects.GetNew, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public IReadOnlyList<Submission> Submissions { get; set; }
 ## Constructors
 
 ### **GetNew(NewMeta, IReadOnlyList&lt;Submission&gt;)**
+
+Represents a list of newly published submissions, including metadata.
 
 ```csharp
 public GetNew(NewMeta Meta, IReadOnlyList<Submission> Submissions)

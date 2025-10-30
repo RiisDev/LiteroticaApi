@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a paginated list of search results, including the data and metadata.
+
 ```csharp
 public class Search : System.IEquatable`1[[LiteroticaApi.DataObjects.Search, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public SearchMeta Meta { get; set; }
 ## Constructors
 
 ### **Search(IReadOnlyList&lt;Submission&gt;, SearchMeta)**
+
+Represents a paginated list of search results, including the data and metadata.
 
 ```csharp
 public Search(IReadOnlyList<Submission> Data, SearchMeta Meta)

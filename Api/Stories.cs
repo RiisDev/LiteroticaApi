@@ -28,7 +28,7 @@ namespace LiteroticaApi.Api
 		/// </exception>
 		public static async Task<string[]> GetStoryContentAsync(string storyUrl)
 		{
-			string storySlug = UrlUtil.GetStorySlug(storyUrl);
+			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
 			List<string> pages = [];
 
 			StoryRoot? storyData = await Client.Get<StoryRoot>($"stories/{storySlug}",
@@ -58,17 +58,17 @@ namespace LiteroticaApi.Api
 		/// <summary>
 		/// Retrieves detailed information about a specific story by its URL.
 		/// </summary>
-		/// <param name="seriesUrl">
+		/// <param name="storyUrl">
 		/// The URL of the story to retrieve information for.
 		/// </param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a <see cref="StoryInfo"/> object with metadata about the story, or <c>null</c> if not found.
 		/// </returns>
-		public static async Task<StoryInfo?> GetStoryInfoAsync(string seriesUrl)
+		public static async Task<StoryInfo?> GetStoryInfoAsync(string storyUrl)
 		{
-			string seriesSlug = UrlUtil.GetStorySlug(seriesUrl);
-			return await Client.Get<StoryInfo>($"stories/{seriesSlug}").ConfigureAwait(false);
+			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
+			return await Client.Get<StoryInfo>($"stories/{storySlug}").ConfigureAwait(false);
 		}
 
 		/// <summary>

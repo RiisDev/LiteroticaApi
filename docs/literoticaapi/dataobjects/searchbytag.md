@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a collection of stories found under a specific tag, along with related metadata.
+
 ```csharp
 public class SearchByTag : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public IReadOnlyList<Submission> Submissions { get; set; }
 ## Constructors
 
 ### **SearchByTag(SearchByTagMeta, IReadOnlyList&lt;Submission&gt;)**
+
+Represents a collection of stories found under a specific tag, along with related metadata.
 
 ```csharp
 public SearchByTag(SearchByTagMeta Meta, IReadOnlyList<Submission> Submissions)

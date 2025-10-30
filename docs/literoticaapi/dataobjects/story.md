@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a full story entity, including author data, metadata, and its relation to series or collections.
+
 ```csharp
 public class Story : System.IEquatable`1[[LiteroticaApi.DataObjects.Story, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -305,6 +307,8 @@ public Nullable<int> SeriesCount { get; set; }
 ## Constructors
 
 ### **Story(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Author, String, CategoryInfo, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Double&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Tag&gt;, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, String, Nullable&lt;Int32&gt;)**
+
+Represents a full story entity, including author data, metadata, and its relation to series or collections.
 
 ```csharp
 public Story(Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author, string Authorname, CategoryInfo CategoryInfo, Nullable<int> Category, Nullable<int> CommentCount, Nullable<int> ContestWinner, string DateApprove, string Description, Nullable<int> EnableComments, Nullable<int> FavoriteCount, Nullable<int> Id, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<int> Language, Nullable<int> Newlanguage, string Rank, Nullable<double> RateAll, Nullable<int> ReadingListsCount, IReadOnlyList<Tag> Tags, string Title, string Type, string Url, Nullable<int> ViewCount, Nullable<bool> WritersPick, string Status, Nullable<int> SeriesCount)

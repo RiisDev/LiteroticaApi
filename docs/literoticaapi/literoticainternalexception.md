@@ -2,6 +2,9 @@
 
 Namespace: LiteroticaApi
 
+Represents an internal error that occurs within the Literotica API client library itself,
+ not due to an external HTTP or API response issue.
+
 ```csharp
 public class LitEroticaInternalException : System.Exception, System.Runtime.Serialization.ISerializable
 ```
@@ -95,6 +98,8 @@ public string StackTrace { get; }
 
 ### **LitEroticaInternalException(String)**
 
+Initializes a new instance of the [LitEroticaInternalException](./literoticaapi/literoticainternalexception.md) class.
+
 ```csharp
 public LitEroticaInternalException(string message)
 ```
@@ -102,6 +107,7 @@ public LitEroticaInternalException(string message)
 #### Parameters
 
 `message` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+A message describing the internal error.
 
 ## Events
 

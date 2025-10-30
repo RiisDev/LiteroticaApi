@@ -2,6 +2,8 @@
 
 Namespace: LiteroticaApi.DataObjects
 
+Represents a collection of top tags along with associated metadata for a specific period.
+
 ```csharp
 public class TopTags : System.IEquatable`1[[LiteroticaApi.DataObjects.TopTags, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
@@ -45,6 +47,8 @@ public IReadOnlyList<TagInfo> Tags { get; set; }
 ## Constructors
 
 ### **TopTags(PeriodMeta, IReadOnlyList&lt;TagInfo&gt;)**
+
+Represents a collection of top tags along with associated metadata for a specific period.
 
 ```csharp
 public TopTags(PeriodMeta Meta, IReadOnlyList<TagInfo> Tags)
