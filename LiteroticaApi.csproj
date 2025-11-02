@@ -31,7 +31,12 @@
 		<PackageProjectUrl>https://github.com/RiisDev/LiteroticaApi</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/RiisDev/LiteroticaApi</RepositoryUrl>
 		<PackageTags>literotica, epub, epubwriter, api</PackageTags>
-		<PackageReleaseNotes>* Added raw parameter to CreateEpub methods, which outputs the epub formatted structure, without the zipped archive format
+		<PackageReleaseNotes>* Fix Story parsing if series is []
+* Fix invalid path outputting using StoryWriter
+
+===
+
+* Added raw parameter to CreateEpub methods, which outputs the epub formatted structure, without the zipped archive format
 
 ===
 
@@ -92,6 +97,6 @@ It includes a fully featured EPUB writer that can export stories or entire serie
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<FileVersion>2.0.0</FileVersion>
 		<AssemblyVersion>2.0.0</AssemblyVersion>
-		<Version>2.0.1</Version>
+		<Version>2.0.3</Version>
 	</PropertyGroup>
 </Project>

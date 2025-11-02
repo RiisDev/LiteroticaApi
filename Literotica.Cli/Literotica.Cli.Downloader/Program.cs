@@ -9,6 +9,8 @@ namespace Literotica.Cli.Downloader
 {
 	public class Program
 	{
+		private static bool EventHandled { get; set; }
+
 		public static async Task<int> Main(string[] args)
 		{
 			Argument<string> sourceArgument = new("source")
@@ -104,8 +106,11 @@ namespace Literotica.Cli.Downloader
 				}
 				else
 				{
-					if (logEnabled)
+					if (logEnabled && !EventHandled)
+					{
+						EventHandled = true;
 						StoryWriter.OnLog += Console.WriteLine;
+					}
 
 					bool raw = format.Contains("raw", StringComparison.CurrentCultureIgnoreCase);
 
@@ -154,8 +159,8 @@ namespace Literotica.Cli.Downloader
 				if (logEnabled)
 					Console.WriteLine("[HandleSeries] Writing to single file...");
 
-				string seriesDir = Path.Combine(outputDir, author?.Username ?? "Unknown Author");
-				string seriesFilePath = Path.Combine(seriesDir, $"{seriesData.Title}.txt");
+				string seriesDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(author?.Username ?? "Unknown Author"));
+				string seriesFilePath = Path.Combine(seriesDir, $"{UrlUtil.ToSafeFileName(seriesData.Title)}.txt");
 
 				Directory.CreateDirectory(seriesDir);
 
@@ -190,14 +195,14 @@ namespace Literotica.Cli.Downloader
 				if (logEnabled)
 					Console.WriteLine("[HandleSeries] Writing chapters to individual files...");
 
-				string seriesDir = Path.Combine(outputDir, author?.Username ?? "Unknown Author", seriesData.Title);
+				string seriesDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(author?.Username ?? "Unknown Author"), UrlUtil.ToSafeFileName(seriesData.Title));
 				Directory.CreateDirectory(seriesDir);
 
 				foreach (KeyValuePair<string, string> chapter in chapters)
 				{
 					if (logEnabled)
 						Console.WriteLine($"[HandleSeries] Writing chapter file: {chapter.Key}...");
-					string chapterFilePath = Path.Combine(seriesDir, $"{chapter.Key}.txt");
+					string chapterFilePath = Path.Combine(seriesDir, UrlUtil.ToSafeFileName($"{chapter.Key}.txt"));
 					await File.WriteAllTextAsync(chapterFilePath, chapter.Value);
 				}
 
@@ -224,9 +229,9 @@ namespace Literotica.Cli.Downloader
 			string[] pages = await StoryApi.GetStoryContentAsync(storyData.Submission.Url);
 
 			string storyContent = string.Join(Environment.NewLine + Environment.NewLine, pages);
-			string authorDir = Path.Combine(outputDir, storyData.Submission.Author.Username);
+			string authorDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(storyData.Submission.Author.Username));
 			Directory.CreateDirectory(authorDir);
-			string storyFilePath = Path.Combine(authorDir, $"{storyData.Submission.Title}.txt");
+			string storyFilePath = Path.Combine(authorDir, UrlUtil.ToSafeFileName($"{storyData.Submission.Title}.txt"));
 			
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Writing story to file...");

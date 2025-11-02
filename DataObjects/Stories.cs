@@ -57,7 +57,7 @@
 		[property: JsonPropertyName("writers_pick")] bool? WritersPick,
 		[property: JsonPropertyName("status")] string Status,
 		[property: JsonPropertyName("followedAuthors")] IReadOnlyList<int?> FollowedAuthors,
-		[property: JsonPropertyName("series")] SeriesDatum Series,
+		[property: JsonPropertyName("series"), JsonConverter(typeof(SeriesDatumConverter))] SeriesDatum? Series,
 		[property: JsonPropertyName("reading_time")] int? ReadingTime,
 		[property: JsonPropertyName("words_count")] int? WordsCount,
 		[property: JsonPropertyName("contests")] IReadOnlyList<object> Contests
@@ -217,6 +217,68 @@
 		public override void Write(Utf8JsonWriter writer, StringOrInt value, JsonSerializerOptions options)
 		{
 			writer.WriteStringValue(value.ToString());
+		}
+	}
+
+	/// <summary>
+	/// Custom JSON converter for handling <see cref="SeriesDatum"/> objects that may appear
+	/// as either valid JSON objects, nulls, or unexpected arrays in the API response.
+	/// </summary>
+	public class SeriesDatumConverter : JsonConverter<SeriesDatum?>
+	{
+		/// <summary>
+		/// Reads and deserializes a <see cref="SeriesDatum"/> instance from the JSON input.
+		/// Handles inconsistent API responses where the property may be null, an array, or an object.
+		/// </summary>
+		/// <param name="reader">The JSON reader.</param>
+		/// <param name="typeToConvert">The target type.</param>
+		/// <param name="options">Serializer options.</param>
+		/// <returns>A deserialized <see cref="SeriesDatum"/> instance or <c>null</c> if invalid.</returns>
+		/// <exception cref="JsonException">Thrown when the JSON format is unexpected or invalid.</exception>
+		public override SeriesDatum? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+		{
+			switch (reader.TokenType)
+			{
+				case JsonTokenType.Null:
+					return null;
+				case JsonTokenType.StartArray:
+					reader.Skip();
+					return null;
+				case JsonTokenType.StartObject:
+				{
+					JsonDocument doc = JsonDocument.ParseValue(ref reader);
+					return JsonSerializer.Deserialize<SeriesDatum>(doc.RootElement.GetRawText(), options);
+				}
+				case JsonTokenType.None:
+				case JsonTokenType.EndObject:
+				case JsonTokenType.EndArray:
+				case JsonTokenType.PropertyName:
+				case JsonTokenType.Comment:
+				case JsonTokenType.String:
+				case JsonTokenType.Number:
+				case JsonTokenType.True:
+				case JsonTokenType.False:
+				default:
+					throw new JsonException($"Unexpected token {reader.TokenType} when parsing SeriesDatum");
+			}
+		}
+
+		/// <summary>
+		/// Writes the <see cref="SeriesDatum"/> instance to JSON.
+		/// </summary>
+		/// <param name="writer">The JSON writer.</param>
+		/// <param name="value">The <see cref="SeriesDatum"/> instance to serialize.</param>
+		/// <param name="options">Serializer options.</param>
+		public override void Write(Utf8JsonWriter writer, SeriesDatum? value, JsonSerializerOptions options)
+		{
+			if (value is null)
+			{
+				writer.WriteNullValue();
+			}
+			else
+			{
+				JsonSerializer.Serialize(writer, value, options);
+			}
 		}
 	}
 }

@@ -84,7 +84,7 @@ namespace LiteroticaApi.EpubWriter
 			string baseDirectory = string.IsNullOrEmpty(outputDirectory)
 				? AppDomain.CurrentDomain.BaseDirectory
 				: outputDirectory!;
-			string storyDirectory = Path.Combine(baseDirectory, story.Title);
+			string storyDirectory = Path.Combine(baseDirectory, UrlUtil.ToSafeFileName(story.Title));
 
 			OnLog?.Invoke("[CreateEpub] Writing EPUB base files...");
 			// Extract the default EPUB manifest structure from embedded resources.
@@ -147,7 +147,7 @@ namespace LiteroticaApi.EpubWriter
 			}
 
 			// Package all files into a final EPUB zip archive.);
-			string epubFilePath = Path.Combine(baseDirectory, $"{story.Title}.epub");
+			string epubFilePath = Path.Combine(baseDirectory, $"{UrlUtil.ToSafeFileName(story.Title)}.epub");
 			OnLog?.Invoke($"[CreateEpub] Creating final EPUB file {epubFilePath}");
 			if (File.Exists(epubFilePath)) File.Delete(epubFilePath);
 
@@ -217,13 +217,13 @@ namespace LiteroticaApi.EpubWriter
 			}
 
 			// Prepare temporary directory for writing chapter files.
-			string storyLocation = Path.Combine(TempDir, seriesData.Title, "Chapters");
+			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(seriesData.Title), "Chapters");
 			Directory.CreateDirectory(storyLocation);
 
 			OnLog?.Invoke("[CreateEpubFromSeries] Writing chapters to file...");
 			foreach (KeyValuePair<string, string> chapter in chapters)
 			{
-				string chapterFilePath = Path.Combine(storyLocation, $"{chapter.Key}.txt");
+				string chapterFilePath = Path.Combine(storyLocation, $"{UrlUtil.ToSafeFileName(chapter.Key)}.txt");
 				File.WriteAllText(chapterFilePath, chapter.Value);
 			}
 
@@ -264,11 +264,11 @@ namespace LiteroticaApi.EpubWriter
 			string[] storyText = await StoryApi.GetStoryContentAsync(storySlug);
 
 			// Prepare directory for temporary text file storage.
-			string storyLocation = Path.Combine(TempDir, storyData.Submission.Title, "Chapters");
+			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(storyData.Submission.Title), "Chapters");
 			Directory.CreateDirectory(storyLocation);
 
 			OnLog?.Invoke("[CreateEpubFromStory] Writing story to file...");
-			string chapterFilePath = Path.Combine(storyLocation, $"{storyData.Submission.Title}.txt");
+			string chapterFilePath = Path.Combine(storyLocation, $"{UrlUtil.ToSafeFileName(storyData.Submission.Title)}.txt");
 			File.WriteAllText(chapterFilePath, string.Join("\n\n", storyText));
 
 			OnLog?.Invoke("[CreateEpubFromStory] Generating Epub...");
