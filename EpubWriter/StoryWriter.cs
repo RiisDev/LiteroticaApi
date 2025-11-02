@@ -71,14 +71,15 @@ namespace LiteroticaApi.EpubWriter
 		/// </code>
 		/// </remarks>
 		public static event OnLogEventHandler? OnLog;
-		
+
 		/// <summary>
 		/// Creates an EPUB file from a given <see cref="EpubStory"/> object and outputs it to the specified directory.
 		/// </summary>
 		/// <param name="story">The <see cref="EpubStory"/> containing metadata, chapters, and optional cover.</param>
 		/// <param name="outputDirectory">The directory where the final EPUB file should be saved. Defaults to the base directory.</param>
+		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
 		/// <exception cref="Exception">Thrown when a required file cannot be written or an I/O operation fails.</exception>
-		public static void CreateEpub(EpubStory story, string? outputDirectory = null)
+		public static void CreateEpub(EpubStory story, string? outputDirectory = null, bool raw = false)
 		{
 			string baseDirectory = string.IsNullOrEmpty(outputDirectory)
 				? AppDomain.CurrentDomain.BaseDirectory
@@ -150,12 +151,18 @@ namespace LiteroticaApi.EpubWriter
 			OnLog?.Invoke($"[CreateEpub] Creating final EPUB file {epubFilePath}");
 			if (File.Exists(epubFilePath)) File.Delete(epubFilePath);
 
+			if (raw)
+			{
+				OnLog?.Invoke("[CreateEpub] Raw output requested, skipping .epub creation.");
+				goto Clean;
+			}
 			ZipFile.CreateFromDirectory(storyDirectory, epubFilePath, CompressionLevel.NoCompression, false);
 
 			OnLog?.Invoke("[CreateEpub] EPUB creation complete, cleaning up.");
 			// Clean up temporary working directory.
 			Directory.Delete(storyDirectory, true);
 
+			Clean:
 			if (!Directory.Exists(TempDir)) return;
 			try {Directory.Delete(TempDir, true);} catch{/**/}
 		}
@@ -165,8 +172,9 @@ namespace LiteroticaApi.EpubWriter
 		/// </summary>
 		/// <param name="seriesUrl">The URL of the Literotica series to download and convert.</param>
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
+		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
 		/// <exception cref="Exception">Thrown if the series cannot be found or has no valid stories.</exception>
-		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory)
+		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw = false)
 		{
 			OnLog?.Invoke("[CreateEpubFromSeries] Verifying series url...");
 			string seriesSlug = await UrlUtil.GetSeriesId(seriesUrl);
@@ -231,7 +239,7 @@ namespace LiteroticaApi.EpubWriter
 				Chapters: Directory.GetFiles(storyLocation)
 			);
 
-			CreateEpub(epubStory, outputDirectory);
+			CreateEpub(epubStory, outputDirectory, raw);
 		}
 
 		/// <summary>
@@ -239,8 +247,9 @@ namespace LiteroticaApi.EpubWriter
 		/// </summary>
 		/// <param name="storyUrl">The URL of the story to convert.</param>
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
+		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
 		/// <exception cref="Exception">Thrown if the story or author information cannot be retrieved.</exception>
-		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory)
+		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw = false)
 		{
 			OnLog?.Invoke("[CreateEpubFromStory] Verifying story url...");
 			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
@@ -274,7 +283,7 @@ namespace LiteroticaApi.EpubWriter
 				Chapters: Directory.GetFiles(storyLocation)
 			);
 
-			CreateEpub(epubStory, outputDirectory);
+			CreateEpub(epubStory, outputDirectory, raw);
 		}
 	}
 }

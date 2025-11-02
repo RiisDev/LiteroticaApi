@@ -38,11 +38,11 @@ namespace Literotica.Cli.Downloader
 			};
 			Option<string> formatOption = new("--format", "-f")
 			{
-				Description = "Output format: epub | txt | singlefile (default: singlefile)",
+				Description = "Output format: epub | epub-raw | txt | singlefile (default: singlefile)",
 				DefaultValueFactory = _ => "singlefile",
 
 			};
-			formatOption.AcceptOnlyFromAmong("singlefile", "txt", "epub");
+			formatOption.AcceptOnlyFromAmong("singlefile", "txt", "epub", "epub-raw");
 
 			Option<string> outputOption = new("--output", "-o")
 			{
@@ -65,6 +65,7 @@ namespace Literotica.Cli.Downloader
 				bool logEnabled = parseResult.GetRequiredValue(logOption);
 				string format = parseResult.GetRequiredValue(formatOption);
 				string outputDir = parseResult.GetRequiredValue(outputOption);
+
 				bool urlInput = source.Contains("literotica.com");
 
 				string[] urls = urlInput
@@ -96,7 +97,7 @@ namespace Literotica.Cli.Downloader
 				bool isSeries = url.Contains("/se/");
 				bool singleFile = format == "singlefile";
 
-				if (format != "epub")
+				if (!format.Contains("epub", StringComparison.CurrentCultureIgnoreCase))
 				{
 					if (isSeries) await HandleSeries(url, outputDir, singleFile, logEnabled);
 					else await HandleStory(url, outputDir, logEnabled);
@@ -106,8 +107,10 @@ namespace Literotica.Cli.Downloader
 					if (logEnabled)
 						StoryWriter.OnLog += Console.WriteLine;
 
-					if (isSeries) await StoryWriter.CreateEpubFromSeries(url, outputDir);
-					else await StoryWriter.CreateEpubFromStory(url, outputDir);
+					bool raw = format.Contains("raw", StringComparison.CurrentCultureIgnoreCase);
+
+					if (isSeries) await StoryWriter.CreateEpubFromSeries(url, outputDir, raw);
+					else await StoryWriter.CreateEpubFromStory(url, outputDir, raw);
 				}
 
 			}
