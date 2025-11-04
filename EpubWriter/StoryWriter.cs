@@ -109,23 +109,82 @@ namespace LiteroticaApi.EpubWriter
 			titlePageXhtml.Save(titlePagePath);
 
 			OnLog?.Invoke("[CreateEpub] Checking for cover art...");
-			// Handle optional cover image.
+			
 			if (!string.IsNullOrEmpty(story.CoverPath))
 			{
-				if (!File.Exists(story.CoverPath))
-				{
-					OnLog?.Invoke("[CreateEpub] CoverArt set, but file not found.");
-					return;
-				}
-
+				string coverSourcePath = story.CoverPath!;
 				string coverDestDir = Path.Combine(storyDirectory, "EPUB", "images");
 				Directory.CreateDirectory(coverDestDir);
-				string coverDest = Path.Combine(coverDestDir, "cover" + Path.GetExtension(story.CoverPath));
-				File.Copy(story.CoverPath!, coverDest, true);
+				string coverFileName = "cover" + Path.GetExtension(coverSourcePath);
+				string coverDestPath = Path.Combine(coverDestDir, coverFileName);
 
-				XDocument coverXhtml = WriterUtil.GenerateCoverPage(story);
-				coverXhtml.Save(Path.Combine(storyDirectory, "EPUB", "text", "cover.xhtml"));
+				if (coverSourcePath.StartsWith("https:", StringComparison.OrdinalIgnoreCase))
+				{
+					try
+					{
+						using HttpClient httpClient = new ();
+						HttpResponseMessage response = httpClient.GetAsync(coverSourcePath).Result;
+
+						if (response.IsSuccessStatusCode)
+						{
+							using FileStream fileStream = new (
+								coverDestPath,
+								FileMode.Create,
+								FileAccess.Write,
+								FileShare.None,
+								bufferSize: 8192,
+								useAsync: true);
+
+							response.Content.CopyToAsync(fileStream).Wait();
+							OnLog?.Invoke($"[CreateEpub] Downloaded cover from URL: {coverSourcePath}");
+						}
+						else
+						{
+							OnLog?.Invoke($"[CreateEpub] Failed to download cover (HTTP {response.StatusCode}) from {coverSourcePath}");
+							return;
+						}
+					}
+					catch (Exception ex)
+					{
+						OnLog?.Invoke($"[CreateEpub] Error downloading cover: {ex.Message}");
+						return;
+					}
+				}
+				else
+				{
+					if (!File.Exists(coverSourcePath))
+					{
+						OnLog?.Invoke("[CreateEpub] CoverArt set, but file not found.");
+						return;
+					}
+
+					try
+					{
+						File.Copy(coverSourcePath, coverDestPath, overwrite: true);
+						OnLog?.Invoke($"[CreateEpub] Copied cover from {coverSourcePath}");
+					}
+					catch (Exception ex)
+					{
+						OnLog?.Invoke($"[CreateEpub] Error copying cover file: {ex.Message}");
+						return;
+					}
+				}
+
+				try
+				{
+					XDocument coverXhtml = WriterUtil.GenerateCoverPage(story);
+					string coverTextDir = Path.Combine(storyDirectory, "EPUB", "text");
+					Directory.CreateDirectory(coverTextDir);
+					string coverXhtmlPath = Path.Combine(coverTextDir, "cover.xhtml");
+					coverXhtml.Save(coverXhtmlPath);
+					OnLog?.Invoke($"[CreateEpub] Generated cover.xhtml at {coverXhtmlPath}");
+				}
+				catch (Exception ex)
+				{
+					OnLog?.Invoke($"[CreateEpub] Error generating cover.xhtml: {ex.Message}");
+				}
 			}
+
 
 			OnLog?.Invoke("[CreateEpub] Writing chapters to file...");
 			// Write each chapter file into the EPUB structure.
@@ -139,11 +198,13 @@ namespace LiteroticaApi.EpubWriter
 					chapterContent,
 					i + 1
 				);
-
+				
 				string chapterOutputPath = Path.Combine(storyDirectory, "EPUB", "text", $"ch{i + 1:000}.xhtml");
 				chapterDoc.Save(chapterOutputPath);
-
+				
 				OnLog?.Invoke($"[CreateEpub] Writing ch{i + 1:000}.xhtml to file...");
+
+				WriterUtil.CleanChapterFile(chapterOutputPath, OnLog);
 			}
 
 			// Package all files into a final EPUB zip archive.);
