@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the details of an individual story, including metadata such as category, language, and URL.
 
 ```csharp
-public class StoryDetails : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDetails, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class StoryDetails : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDetails, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [StoryDetails](./literoticaapi/dataobjects/storydetails.md)<br>

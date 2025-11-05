@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a detailed submission (story) including author information, metadata, rating, and tags.
 
 ```csharp
-public class Submission : System.IEquatable`1[[LiteroticaApi.DataObjects.Submission, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Submission : System.IEquatable`1[[LiteroticaApi.DataObjects.Submission, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Submission](./literoticaapi/dataobjects/submission.md)<br>

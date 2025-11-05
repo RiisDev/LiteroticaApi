@@ -5,7 +5,7 @@ Namespace: LiteroticaApi
 Represents an error response returned by the Literotica API.
 
 ```csharp
-public class Error : System.IEquatable`1[[LiteroticaApi.Error, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Error : System.IEquatable`1[[LiteroticaApi.Error, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Error](./literoticaapi/error.md)<br>

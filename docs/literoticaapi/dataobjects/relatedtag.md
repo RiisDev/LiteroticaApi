@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a tag that is related to another tag, including its ID, display text, and usage count.
 
 ```csharp
-public class RelatedTag : System.IEquatable`1[[LiteroticaApi.DataObjects.RelatedTag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class RelatedTag : System.IEquatable`1[[LiteroticaApi.DataObjects.RelatedTag, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [RelatedTag](./literoticaapi/dataobjects/relatedtag.md)<br>

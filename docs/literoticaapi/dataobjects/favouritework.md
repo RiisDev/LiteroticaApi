@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a paginated list of favorite works, such as stories, poems, or series.
 
 ```csharp
-public class FavouriteWork : System.IEquatable`1[[LiteroticaApi.DataObjects.FavouriteWork, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class FavouriteWork : System.IEquatable`1[[LiteroticaApi.DataObjects.FavouriteWork, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [FavouriteWork](./literoticaapi/dataobjects/favouritework.md)<br>

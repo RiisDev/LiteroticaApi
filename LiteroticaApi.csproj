@@ -31,19 +31,7 @@
 		<PackageProjectUrl>https://github.com/RiisDev/LiteroticaApi</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/RiisDev/LiteroticaApi</RepositoryUrl>
 		<PackageTags>literotica, epub, epubwriter, api</PackageTags>
-		<PackageReleaseNotes>* Fix Story parsing if series is []
-* Fix invalid path outputting using StoryWriter
-
-===
-
-* Added raw parameter to CreateEpub methods, which outputs the epub formatted structure, without the zipped archive format
-
-===
-
-* Fix series issues when providing a series URL that is text based instead of ID
-* Opened up UrlUtil.Get* methods for user development
-* More methods &amp; datatypes should be documented for intellisense
-* StoryWriter now has a log event `StoryWriter.OnLog += string`
+		<PackageReleaseNotes>* Fix for story writer xhtml parsing, and alert user if it fails to parse correctly.
 </PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>LiteroticaApi is a modern, asynchronous .NET SDK for retrieving stories, series, authors, tags, and metadata from Literotica.com.  
@@ -97,6 +85,6 @@ It includes a fully featured EPUB writer that can export stories or entire serie
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<FileVersion>2.0.0</FileVersion>
 		<AssemblyVersion>2.0.0</AssemblyVersion>
-		<Version>2.0.3</Version>
+		<Version>2.0.4</Version>
 	</PropertyGroup>
 </Project>

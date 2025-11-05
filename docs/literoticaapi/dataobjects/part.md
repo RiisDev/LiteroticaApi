@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents an individual part or chapter of a story, including metadata such as title, category, and view count.
 
 ```csharp
-public class Part : System.IEquatable`1[[LiteroticaApi.DataObjects.Part, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Part : System.IEquatable`1[[LiteroticaApi.DataObjects.Part, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Part](./literoticaapi/dataobjects/part.md)<br>

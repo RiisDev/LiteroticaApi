@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the response for a top-followed authors request.
 
 ```csharp
-public class TopFollowedAuthorsResponse : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthorsResponse, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopFollowedAuthorsResponse : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthorsResponse, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopFollowedAuthorsResponse](./literoticaapi/dataobjects/topfollowedauthorsresponse.md)<br>

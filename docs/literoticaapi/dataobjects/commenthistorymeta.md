@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents pagination and metadata information for a user's comment history on a specific story.
 
 ```csharp
-public class CommentHistoryMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CommentHistoryMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CommentHistoryMeta](./literoticaapi/dataobjects/commenthistorymeta.md)<br>

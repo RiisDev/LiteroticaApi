@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a cover image response, containing resolution-specific asset metadata.
 
 ```csharp
-public class Cover : System.IEquatable`1[[LiteroticaApi.DataObjects.Cover, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Cover : System.IEquatable`1[[LiteroticaApi.DataObjects.Cover, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Cover](./literoticaapi/dataobjects/cover.md)<br>

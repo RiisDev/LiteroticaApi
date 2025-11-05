@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents all available media assets (e.g., cover images) for both mobile and desktop displays.
 
 ```csharp
-public class Assets : System.IEquatable`1[[LiteroticaApi.DataObjects.Assets, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Assets : System.IEquatable`1[[LiteroticaApi.DataObjects.Assets, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Assets](./literoticaapi/dataobjects/assets.md)<br>

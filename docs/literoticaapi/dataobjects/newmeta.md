@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata for newly added submissions.
 
 ```csharp
-public class NewMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.NewMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class NewMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.NewMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [NewMeta](./literoticaapi/dataobjects/newmeta.md)<br>

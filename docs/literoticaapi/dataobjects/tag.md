@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a tag entity used for categorizing stories, including its text and ban status.
 
 ```csharp
-public class Tag : System.IEquatable`1[[LiteroticaApi.DataObjects.Tag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Tag : System.IEquatable`1[[LiteroticaApi.DataObjects.Tag, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Tag](./literoticaapi/dataobjects/tag.md)<br>

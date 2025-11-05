@@ -73,3 +73,21 @@ Thrown when the URL does not contain a valid or verifiable series ID.
 **Remarks:**
 
 The series ID is validated using .
+
+### **ToSafeFileName(String)**
+
+Converts a string into a safe filename valid for both Windows and Unix systems.
+
+```csharp
+public static string ToSafeFileName(string input)
+```
+
+#### Parameters
+
+`input` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+The input string to sanitize.
+
+#### Returns
+
+[String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+A safe filename string.

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.EpubWriter
 Represents metadata about a story series, including its title and volume number.
 
 ```csharp
-public class EpubSeries : System.IEquatable`1[[LiteroticaApi.EpubWriter.EpubSeries, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class EpubSeries : System.IEquatable`1[[LiteroticaApi.EpubWriter.EpubSeries, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [EpubSeries](./literoticaapi/epubwriter/epubseries.md)<br>

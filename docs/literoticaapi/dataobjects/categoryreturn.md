@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents detailed information about a category, including its name, descriptions, and submission count.
 
 ```csharp
-public class CategoryReturn : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryReturn, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CategoryReturn : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryReturn, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CategoryReturn](./literoticaapi/dataobjects/categoryreturn.md)<br>

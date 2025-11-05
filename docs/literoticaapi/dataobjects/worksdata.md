@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents paginated data containing multiple stories or works, including series indicators and metadata.
 
 ```csharp
-public class WorksData : System.IEquatable`1[[LiteroticaApi.DataObjects.WorksData, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class WorksData : System.IEquatable`1[[LiteroticaApi.DataObjects.WorksData, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [WorksData](./literoticaapi/dataobjects/worksdata.md)<br>

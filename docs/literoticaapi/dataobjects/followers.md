@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a paginated collection of users who follow a specific author.
 
 ```csharp
-public class Followers : System.IEquatable`1[[LiteroticaApi.DataObjects.Followers, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Followers : System.IEquatable`1[[LiteroticaApi.DataObjects.Followers, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Followers](./literoticaapi/dataobjects/followers.md)<br>

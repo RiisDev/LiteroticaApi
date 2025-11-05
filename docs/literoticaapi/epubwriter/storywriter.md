@@ -19,12 +19,12 @@ This class uses the Literotica API to fetch story or series data, and then compi
 
 ## Methods
 
-### **CreateEpub(EpubStory, String)**
+### **CreateEpub(EpubStory, String, Boolean)**
 
 Creates an EPUB file from a given [EpubStory](./literoticaapi/epubwriter/epubstory.md) object and outputs it to the specified directory.
 
 ```csharp
-public static void CreateEpub(EpubStory story, string outputDirectory)
+public static void CreateEpub(EpubStory story, string outputDirectory, bool raw)
 ```
 
 #### Parameters
@@ -35,17 +35,20 @@ The [EpubStory](./literoticaapi/epubwriter/epubstory.md) containing metadata, ch
 `outputDirectory` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 The directory where the final EPUB file should be saved. Defaults to the base directory.
 
+`raw` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+If you don't want it to output .epub but instead the raw formatting.
+
 #### Exceptions
 
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown when a required file cannot be written or an I/O operation fails.
 
-### **CreateEpubFromSeries(String, String)**
+### **CreateEpubFromSeries(String, String, Boolean)**
 
 Generates an EPUB file from an entire series on Literotica, including all its parts (stories).
 
 ```csharp
-public static Task CreateEpubFromSeries(string seriesUrl, string outputDirectory)
+public static Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw)
 ```
 
 #### Parameters
@@ -56,6 +59,9 @@ The URL of the Literotica series to download and convert.
 `outputDirectory` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 The directory where the EPUB file should be created.
 
+`raw` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+If you don't want it to output .epub but instead the raw formatting.
+
 #### Returns
 
 [Task](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task)<br>
@@ -65,12 +71,12 @@ The directory where the EPUB file should be created.
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown if the series cannot be found or has no valid stories.
 
-### **CreateEpubFromStory(String, String)**
+### **CreateEpubFromStory(String, String, Boolean)**
 
 Generates an EPUB file from a single Literotica story.
 
 ```csharp
-public static Task CreateEpubFromStory(string storyUrl, string outputDirectory)
+public static Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw)
 ```
 
 #### Parameters
@@ -80,6 +86,9 @@ The URL of the story to convert.
 
 `outputDirectory` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 The directory where the EPUB file should be created.
+
+`raw` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+If you don't want it to output .epub but instead the raw formatting.
 
 #### Returns
 

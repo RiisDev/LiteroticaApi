@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a collection of stories found under a specific tag, along with related metadata.
 
 ```csharp
-public class SearchByTag : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTag, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SearchByTag : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTag, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SearchByTag](./literoticaapi/dataobjects/searchbytag.md)<br>

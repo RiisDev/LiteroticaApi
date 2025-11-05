@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata specific to tag-based search queries.
 
 ```csharp
-public class SearchByTagMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTagMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SearchByTagMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTagMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SearchByTagMeta](./literoticaapi/dataobjects/searchbytagmeta.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a recent comment made on a work, typically used in global or author-wide comment feeds.
 
 ```csharp
-public class RecentComment : System.IEquatable`1[[LiteroticaApi.DataObjects.RecentComment, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class RecentComment : System.IEquatable`1[[LiteroticaApi.DataObjects.RecentComment, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [RecentComment](./literoticaapi/dataobjects/recentcomment.md)<br>

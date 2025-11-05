@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a series of related stories or works, including parts, metadata, and creation details.
 
 ```csharp
-public class Series : System.IEquatable`1[[LiteroticaApi.DataObjects.Series, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Series : System.IEquatable`1[[LiteroticaApi.DataObjects.Series, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Series](./literoticaapi/dataobjects/series.md)<br>

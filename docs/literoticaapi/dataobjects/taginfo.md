@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents detailed information about a specific tag, including category, language, and usage metrics.
 
 ```csharp
-public class TagInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.TagInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TagInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.TagInfo, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TagInfo](./literoticaapi/dataobjects/taginfo.md)<br>

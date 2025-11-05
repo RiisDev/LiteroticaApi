@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single top commenter entry with basic identification and activity metrics.
 
 ```csharp
-public class TopCommentersDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopCommentersDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopCommentersDatum](./literoticaapi/dataobjects/topcommentersdatum.md)<br>

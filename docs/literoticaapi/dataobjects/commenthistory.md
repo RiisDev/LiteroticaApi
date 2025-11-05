@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a collection of comments and associated metadata for a given story or author.
 
 ```csharp
-public class CommentHistory : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistory, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CommentHistory : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistory, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CommentHistory](./literoticaapi/dataobjects/commenthistory.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata that contains available period-based statistics.
 
 ```csharp
-public class PeriodMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class PeriodMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [PeriodMeta](./literoticaapi/dataobjects/periodmeta.md)<br>

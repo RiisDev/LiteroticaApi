@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a collection of newly registered or recently active authors.
 
 ```csharp
-public class NewAuthors : System.IEquatable`1[[LiteroticaApi.DataObjects.NewAuthors, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class NewAuthors : System.IEquatable`1[[LiteroticaApi.DataObjects.NewAuthors, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [NewAuthors](./literoticaapi/dataobjects/newauthors.md)<br>

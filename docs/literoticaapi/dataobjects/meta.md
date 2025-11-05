@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata information about a story, series, or submission, including pagination and ordering.
 
 ```csharp
-public class Meta : System.IEquatable`1[[LiteroticaApi.DataObjects.Meta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Meta : System.IEquatable`1[[LiteroticaApi.DataObjects.Meta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Meta](./literoticaapi/dataobjects/meta.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents desktop-specific asset resolutions (x1, x2, x3).
 
 ```csharp
-public class Desktop : System.IEquatable`1[[LiteroticaApi.DataObjects.Desktop, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Desktop : System.IEquatable`1[[LiteroticaApi.DataObjects.Desktop, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Desktop](./literoticaapi/dataobjects/desktop.md)<br>

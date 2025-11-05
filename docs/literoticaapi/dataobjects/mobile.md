@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents mobile-specific asset resolutions (x1, x2, x3).
 
 ```csharp
-public class Mobile : System.IEquatable`1[[LiteroticaApi.DataObjects.Mobile, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Mobile : System.IEquatable`1[[LiteroticaApi.DataObjects.Mobile, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Mobile](./literoticaapi/dataobjects/mobile.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a full story entity, including author data, metadata, and its relation to series or collections.
 
 ```csharp
-public class Story : System.IEquatable`1[[LiteroticaApi.DataObjects.Story, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Story : System.IEquatable`1[[LiteroticaApi.DataObjects.Story, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Story](./literoticaapi/dataobjects/story.md)<br>

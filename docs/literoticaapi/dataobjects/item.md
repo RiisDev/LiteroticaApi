@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single story item within a series or category, including metadata and type.
 
 ```csharp
-public class Item : System.IEquatable`1[[LiteroticaApi.DataObjects.Item, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Item : System.IEquatable`1[[LiteroticaApi.DataObjects.Item, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Item](./literoticaapi/dataobjects/item.md)<br>

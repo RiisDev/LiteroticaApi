@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.EpubWriter
 Represents a story prepared for EPUB generation, containing its metadata and chapters.
 
 ```csharp
-public class EpubStory : System.IEquatable`1[[LiteroticaApi.EpubWriter.EpubStory, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class EpubStory : System.IEquatable`1[[LiteroticaApi.EpubWriter.EpubStory, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [EpubStory](./literoticaapi/epubwriter/epubstory.md)<br>

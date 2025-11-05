@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents pagination metadata for search queries.
 
 ```csharp
-public class SearchMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchMeta, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SearchMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SearchMeta](./literoticaapi/dataobjects/searchmeta.md)<br>

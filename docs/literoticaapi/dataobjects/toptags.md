@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a collection of top tags along with associated metadata for a specific period.
 
 ```csharp
-public class TopTags : System.IEquatable`1[[LiteroticaApi.DataObjects.TopTags, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopTags : System.IEquatable`1[[LiteroticaApi.DataObjects.TopTags, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopTags](./literoticaapi/dataobjects/toptags.md)<br>

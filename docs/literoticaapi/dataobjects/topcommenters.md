@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the response model containing a list of top commenters and pagination metadata.
 
 ```csharp
-public class TopCommenters : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommenters, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopCommenters : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommenters, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopCommenters](./literoticaapi/dataobjects/topcommenters.md)<br>

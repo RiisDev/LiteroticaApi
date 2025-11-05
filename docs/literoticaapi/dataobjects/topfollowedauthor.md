@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a paginated list of the most-followed authors on Literotica.
 
 ```csharp
-public class TopFollowedAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthor, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopFollowedAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthor, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopFollowedAuthor](./literoticaapi/dataobjects/topfollowedauthor.md)<br>

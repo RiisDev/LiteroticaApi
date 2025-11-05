@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a minimal reference to a work, containing its ID and URL.
 
 ```csharp
-public class Work : System.IEquatable`1[[LiteroticaApi.DataObjects.Work, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Work : System.IEquatable`1[[LiteroticaApi.DataObjects.Work, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Work](./literoticaapi/dataobjects/work.md)<br>

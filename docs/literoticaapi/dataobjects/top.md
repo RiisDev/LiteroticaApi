@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a paginated list of top-rated or most popular submissions.
 
 ```csharp
-public class Top : System.IEquatable`1[[LiteroticaApi.DataObjects.Top, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Top : System.IEquatable`1[[LiteroticaApi.DataObjects.Top, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Top](./literoticaapi/dataobjects/top.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
 
 ```csharp
-public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [BookList](./literoticaapi/dataobjects/booklist.md)<br>

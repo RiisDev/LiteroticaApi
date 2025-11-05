@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents available statistical checks across multiple time periods such as week, month, and today.
 
 ```csharp
-public class PeriodChecks : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodChecks, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class PeriodChecks : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodChecks, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [PeriodChecks](./literoticaapi/dataobjects/periodchecks.md)<br>

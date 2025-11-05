@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Custom JSON converter to handle string-or-integer conversions during serialization and deserialization.
 
 ```csharp
-public class StringOrIntConverter : System.Text.Json.Serialization.JsonConverter`1[[LiteroticaApi.DataObjects.StringOrInt, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class StringOrIntConverter : System.Text.Json.Serialization.JsonConverter`1[[LiteroticaApi.DataObjects.StringOrInt, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → JsonConverter → JsonConverter&lt;StringOrInt&gt; → [StringOrIntConverter](./literoticaapi/dataobjects/stringorintconverter.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the root object for detailed story information including metadata and submission content.
 
 ```csharp
-public class StoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class StoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryInfo, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [StoryInfo](./literoticaapi/dataobjects/storyinfo.md)<br>

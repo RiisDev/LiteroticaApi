@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents detailed metadata and content information for a story or work, including author and category data.
 
 ```csharp
-public class StoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class StoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [StoryDatum](./literoticaapi/dataobjects/storydatum.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the root response for an author data request.
 
 ```csharp
-public class RootAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.RootAuthor, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class RootAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.RootAuthor, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [RootAuthor](./literoticaapi/dataobjects/rootauthor.md)<br>

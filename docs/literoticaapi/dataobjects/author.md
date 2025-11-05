@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents an author profile on Literotica, including biography, statistics, and personal attributes.
 
 ```csharp
-public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Author](./literoticaapi/dataobjects/author.md)<br>

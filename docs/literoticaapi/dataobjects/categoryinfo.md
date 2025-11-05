@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents information about a story category, including its name, description, and type.
 
 ```csharp
-public class CategoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryInfo, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CategoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryInfo, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CategoryInfo](./literoticaapi/dataobjects/categoryinfo.md)<br>

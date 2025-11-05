@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single comment entry within a user's comment history.
 
 ```csharp
-public class CommentHistoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryDatum, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CommentHistoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CommentHistoryDatum](./literoticaapi/dataobjects/commenthistorydatum.md)<br>

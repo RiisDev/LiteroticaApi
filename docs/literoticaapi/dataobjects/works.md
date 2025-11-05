@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents an individual work, including metadata, author details, and associated categories.
 
 ```csharp
-public class Works : System.IEquatable`1[[LiteroticaApi.DataObjects.Works, LiteroticaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Works : System.IEquatable`1[[LiteroticaApi.DataObjects.Works, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Works](./literoticaapi/dataobjects/works.md)<br>

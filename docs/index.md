@@ -2,6 +2,8 @@
 
 ## LiteroticaApi
 
+[AuthClient](./literoticaapi/authclient.md)
+
 [Client](./literoticaapi/client.md)
 
 [Error](./literoticaapi/error.md)
@@ -91,6 +93,8 @@
 [Series](./literoticaapi/dataobjects/series.md)
 
 [SeriesDatum](./literoticaapi/dataobjects/seriesdatum.md)
+
+[SeriesDatumConverter](./literoticaapi/dataobjects/seriesdatumconverter.md)
 
 [Story](./literoticaapi/dataobjects/story.md)
 
