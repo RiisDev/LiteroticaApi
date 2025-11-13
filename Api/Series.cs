@@ -193,12 +193,12 @@ namespace LiteroticaApi.Api
 		/// <param name="category">The category to filter series by, defined in <see cref="Types.Categories"/>.</param>
 		/// <param name="letter">The first letter of the series titles to retrieve (A–Z).</param>
 		/// <param name="page">The page number to retrieve. Defaults to 1.</param>
-		/// <param name="language">The language ID. Defaults to 1/>.</param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a read-only list of <see cref="Works"/> objects that match the specified criteria.
 		/// </returns>
-		public static async Task<IReadOnlyList<Works>> GetSeriesBySort(Types.Categories category, char letter, int page = 1, int language = 1)
+		public static async Task<IReadOnlyList<Works>> GetSeriesBySort(Types.Categories category, char letter, int page = 1, Types.Languages language = Types.Languages.English)
 		{
 			if (!char.IsLetter(letter))
 				throw new ArgumentException("Letter must be between A-Z", nameof(letter));
@@ -206,7 +206,7 @@ namespace LiteroticaApi.Api
 			Dictionary<string, object> queryParams = new()
 			{
 				{ "category_id", (int)category },
-				{ "language", language },
+				{ "language", (int)language },
 				{ "letter", char.ToLowerInvariant(letter) },
 				{ "page", page }
 			};

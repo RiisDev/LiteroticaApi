@@ -13,12 +13,12 @@ Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullable
 
 ## Methods
 
-### **GetTopCommenters(WorkTypes, Period, Int32, Int32)**
+### **GetTopCommenters(WorkTypes, Period, Int32, Int32, Languages)**
 
 Retrieves a paginated list of the top commenters for a specific work type and time period.
 
 ```csharp
-public static Task<TopCommenters> GetTopCommenters(WorkTypes type, Period period, int page, int pageSize)
+public static Task<TopCommenters> GetTopCommenters(WorkTypes type, Period period, int page, int pageSize, Languages language)
 ```
 
 #### Parameters
@@ -36,18 +36,21 @@ The page number to retrieve. Defaults to 1.
 `pageSize` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
 The number of results per page. Defaults to 20.
 
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
+
 #### Returns
 
 [Task&lt;TopCommenters&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1)<br>
 A task representing the asynchronous operation. 
  The task result contains a [TopCommenters](./literoticaapi/dataobjects/topcommenters.md) object with information about the most active commenters.
 
-### **GetRecentComments(WorkTypes, Int32, Period)**
+### **GetRecentComments(WorkTypes, Int32, Period, Languages)**
 
 Retrieves a list of the most recent comments for a specific work type.
 
 ```csharp
-public static Task<IReadOnlyList<RecentComment>> GetRecentComments(WorkTypes type, int limit, Period period)
+public static Task<IReadOnlyList<RecentComment>> GetRecentComments(WorkTypes type, int limit, Period period, Languages language)
 ```
 
 #### Parameters
@@ -62,6 +65,9 @@ The maximum number of comments to retrieve. Defaults to 35.
 `period` [Period](./literoticaapi/types/period.md)<br>
 The time period filter for comments, defined by . 
  Defaults to .
+
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
 
 #### Returns
 

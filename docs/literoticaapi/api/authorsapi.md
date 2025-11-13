@@ -182,12 +182,12 @@ The time period filter (e.g., day, week, month, all). Defaults to .
 [Task&lt;TopFollowedAuthor&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1)<br>
 A task representing the asynchronous operation. The task result contains a [TopFollowedAuthor](./literoticaapi/dataobjects/topfollowedauthor.md) object.
 
-### **GetMostFavoritedAsync(Int32, Int32, Period, Int32)**
+### **GetMostFavoritedAsync(Int32, Int32, Period, Languages)**
 
 Retrieves a paginated list of the most-favourited authors.
 
 ```csharp
-public static Task<TopFollowedAuthor> GetMostFavoritedAsync(int page, int pageSize, Period period, int language)
+public static Task<TopFollowedAuthor> GetMostFavoritedAsync(int page, int pageSize, Period period, Languages language)
 ```
 
 #### Parameters
@@ -201,8 +201,8 @@ The number of authors per page. Defaults to 50, maximum 200.
 `period` [Period](./literoticaapi/types/period.md)<br>
 The time period filter (e.g., day, week, month, all). Defaults to .
 
-`language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
-The language ID. Defaults to 1/&gt;.
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
 
 #### Returns
 

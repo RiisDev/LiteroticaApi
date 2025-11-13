@@ -13,12 +13,12 @@ Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullable
 
 ## Methods
 
-### **GetRelatedTagsAsync(Int32[], Period, Int32)**
+### **GetRelatedTagsAsync(Int32[], Period, Languages)**
 
 Retrieves a list of tags that are related to the specified tag IDs.
 
 ```csharp
-public static Task<List<RelatedTag>> GetRelatedTagsAsync(Int32[] tagIds, Period period, int language)
+public static Task<List<RelatedTag>> GetRelatedTagsAsync(Int32[] tagIds, Period period, Languages language)
 ```
 
 #### Parameters
@@ -30,9 +30,8 @@ An array of tag IDs for which to retrieve related tags.
 The time period to filter by, defined in . 
  Defaults to .
 
-`language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
-The language identifier (typically `1` for English). 
- Defaults to `1`.
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
 
 #### Returns
 
@@ -41,12 +40,12 @@ A task representing the asynchronous operation.
  The task result contains a list of [RelatedTag](./literoticaapi/dataobjects/relatedtag.md) objects
  that are related to the specified tags.
 
-### **GetTopTagsAsync(Categories, Int32, Boolean, Period, Int32)**
+### **GetTopTagsAsync(Categories, Int32, Boolean, Period, Languages)**
 
 Retrieves the most popular (top) tags within a specified category.
 
 ```csharp
-public static Task<TopTags> GetTopTagsAsync(Categories category, int limit, bool periodCheck, Period period, int language)
+public static Task<TopTags> GetTopTagsAsync(Categories category, int limit, bool periodCheck, Period period, Languages language)
 ```
 
 #### Parameters
@@ -66,9 +65,8 @@ A value indicating whether the tag ranking should be period-sensitive.
 The time period to evaluate, defined in . 
  Defaults to .
 
-`language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
-The language identifier (typically `1` for English). 
- Defaults to `1`.
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
 
 #### Returns
 

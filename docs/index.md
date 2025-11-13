@@ -2,8 +2,6 @@
 
 ## LiteroticaApi
 
-[AuthClient](./literoticaapi/authclient.md)
-
 [Client](./literoticaapi/client.md)
 
 [Error](./literoticaapi/error.md)
@@ -27,6 +25,52 @@
 [TagsApi](./literoticaapi/api/tagsapi.md)
 
 [UsersApi](./literoticaapi/api/usersapi.md)
+
+## LiteroticaApi.AuthClientData
+
+[Activity](./literoticaapi/authclientdata/activity.md)
+
+[AuthClient](./literoticaapi/authclientdata/authclient.md)
+
+[User](./literoticaapi/authclientdata/user.md)
+
+## LiteroticaApi.AuthClientData.DataObjects
+
+[Activity](./literoticaapi/authclientdata/dataobjects/activity.md)
+
+[ActivityData](./literoticaapi/authclientdata/dataobjects/activitydata.md)
+
+[Beta](./literoticaapi/authclientdata/dataobjects/beta.md)
+
+[EditorDatum](./literoticaapi/authclientdata/dataobjects/editordatum.md)
+
+[Editors](./literoticaapi/authclientdata/dataobjects/editors.md)
+
+[Fact](./literoticaapi/authclientdata/dataobjects/fact.md)
+
+[FavoriteStories](./literoticaapi/authclientdata/dataobjects/favoritestories.md)
+
+[FavoriteStoriesDatum](./literoticaapi/authclientdata/dataobjects/favoritestoriesdatum.md)
+
+[Link](./literoticaapi/authclientdata/dataobjects/link.md)
+
+[List](./literoticaapi/authclientdata/dataobjects/list.md)
+
+[Meta](./literoticaapi/authclientdata/dataobjects/meta.md)
+
+[SessionInfo](./literoticaapi/authclientdata/dataobjects/sessioninfo.md)
+
+[User](./literoticaapi/authclientdata/dataobjects/user.md)
+
+[ViewSettings](./literoticaapi/authclientdata/dataobjects/viewsettings.md)
+
+[What](./literoticaapi/authclientdata/dataobjects/what.md)
+
+[WhatConverter](./literoticaapi/authclientdata/dataobjects/whatconverter.md)
+
+[Who](./literoticaapi/authclientdata/dataobjects/who.md)
+
+[Works](./literoticaapi/authclientdata/dataobjects/works.md)
 
 ## LiteroticaApi.DataObjects
 

@@ -163,12 +163,12 @@ The maximum number of recommended stories to retrieve. Defaults to 10.
 A task representing the asynchronous operation. 
  The task result contains a list of [Submission](./literoticaapi/dataobjects/submission.md) objects representing recommended stories.
 
-### **SearchForStoriesAsync(String, Categories[], Int32, Nullable&lt;WorkTypes&gt;, Boolean, Boolean, Boolean, Int32[])**
+### **SearchForStoriesAsync(String, Categories[], Int32, Nullable&lt;WorkTypes&gt;, Boolean, Boolean, Boolean, Languages[])**
 
 Searches for stories by keyword, with optional filters for categories, type, and other attributes.
 
 ```csharp
-public static Task<Search> SearchForStoriesAsync(string query, Categories[] categories, int page, Nullable<WorkTypes> type, bool editorsChoice, bool popular, bool winner, Int32[] languages)
+public static Task<Search> SearchForStoriesAsync(string query, Categories[] categories, int page, Nullable<WorkTypes> type, bool editorsChoice, bool popular, bool winner, Languages[] languages)
 ```
 
 #### Parameters
@@ -194,8 +194,8 @@ If true, limits results to popular stories.
 `winner` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
 If true, limits results to contest-winning stories.
 
-`languages` [Int32[]](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
-Optional array of language IDs. Defaults to English (1).
+`languages` [Languages[]](./literoticaapi/types/languages.md)<br>
+The languages.
 
 #### Returns
 

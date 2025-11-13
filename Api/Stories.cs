@@ -165,12 +165,12 @@ namespace LiteroticaApi.Api
 		/// <param name="editorsChoice">If true, limits results to editor's choice stories.</param>
 		/// <param name="popular">If true, limits results to popular stories.</param>
 		/// <param name="winner">If true, limits results to contest-winning stories.</param>
-		/// <param name="languages">Optional array of language IDs. Defaults to English (1).</param>
+		/// <param name="languages">The languages.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a <see cref="Search"/> object with paginated search results.
 		/// </returns>
-		public static async Task<Search> SearchForStoriesAsync(string query, Types.Categories[] categories, int page = 1, Types.WorkTypes? type = null, bool editorsChoice = false, bool popular = false, bool winner = false, int[]? languages = null)
+		public static async Task<Search> SearchForStoriesAsync(string query, Types.Categories[] categories, int page = 1, Types.WorkTypes? type = null, bool editorsChoice = false, bool popular = false, bool winner = false, Types.Languages[]? languages = null)
 		{
 			return await Client.Get<Search>("search/stories", new Dictionary<string, object?>
 			{
@@ -180,7 +180,7 @@ namespace LiteroticaApi.Api
 				{ "editorsChoice", editorsChoice },
 				{ "popular", popular },
 				{ "winner", winner },
-				{ "languages", languages ?? [1] },
+				{ "languages", Types.GetLanguageIds(languages) },
 				{ "type", type?.ToString().ToLowerInvariant() }
 			}).ConfigureAwait(false);
 		}

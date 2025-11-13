@@ -20,15 +20,16 @@ namespace LiteroticaApi.Api
 		/// </param>
 		/// <param name="page">The page number to retrieve. Defaults to 1.</param>
 		/// <param name="pageSize">The number of results per page. Defaults to 20.</param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a <see cref="TopCommenters"/> object with information about the most active commenters.
 		/// </returns>
-		public static async Task<TopCommenters> GetTopCommenters(Types.WorkTypes type, Types.Period period, int page = 1, int pageSize = 20)
+		public static async Task<TopCommenters> GetTopCommenters(Types.WorkTypes type, Types.Period period, int page = 1, int pageSize = 20, Types.Languages language = Types.Languages.English)
 		{
 			Dictionary<string, object> parameters = new()
 			{
-				{ "language", 1 },
+				{ "language", (int)language },
 				{ "type", type.ToString().ToLower() },
 				{ "period", period.ToString().ToLower() },
 				{ "page", page },
@@ -52,15 +53,16 @@ namespace LiteroticaApi.Api
 		/// The time period filter for comments, defined by <see cref="Types.Period"/>.  
 		/// Defaults to <see cref="Types.Period.All"/>.
 		/// </param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a list of <see cref="RecentComment"/> objects representing the latest comments.
 		/// </returns>
-		public static async Task<IReadOnlyList<RecentComment>> GetRecentComments(Types.WorkTypes type, int limit = 35, Types.Period period = Types.Period.All)
+		public static async Task<IReadOnlyList<RecentComment>> GetRecentComments(Types.WorkTypes type, int limit = 35, Types.Period period = Types.Period.All, Types.Languages language = Types.Languages.English)
 		{
 			Dictionary<string, object> parameters = new()
 			{
-				{ "language", 1 },
+				{ "language", (int)language },
 				{ "type", type.ToString().ToLower() },
 				{ "limit", limit },
 				{ "period", period.ToString().ToLower() }

@@ -3,7 +3,7 @@
 // ReSharper disable CheckNamespace
 #pragma warning disable IDE0130
 
-namespace LiteroticaApi
+namespace LiteroticaApi.AuthClientData
 {
 	/// <summary>
 	/// Provides a centralized HTTP client used by the Literotica API SDK.
@@ -12,7 +12,28 @@ namespace LiteroticaApi
 	/// </summary>
 	public class AuthClient
 	{
+		/// <summary>
+		/// Provides access to the authenticated Stories API
+		/// </summary>
+		public Activity Activity { get; }
+
+		/// <summary>
+		/// Provides access to the authenticated User API
+		/// </summary>
+		public User User { get; }
+
+		/// <summary>
+		/// General AuthClient builder to access authenticated endpoints.
+		/// </summary>
+		public AuthClient()
+		{
+			Activity = new Activity(this);
+			User = new User(this);
+		}
+
 		private bool _loggedIn;
+		private string? _username; // Cache for if they need to ReAuth
+		private string? _password; // Cache for if they need to ReAuth
 
 		private static readonly CookieContainer CookieContainer = new();
 		private readonly HttpClient _client = new( new HttpClientHandler
@@ -25,7 +46,7 @@ namespace LiteroticaApi
 		{
 			DefaultRequestHeaders =
 			{
-				{"User-Agent", "IrisAgent LitEroticaApi/1.0"}
+				{"User-Agent", "IrisAgent Nuget_LitEroticaApi/1.0"}
 			}
 		};
 
@@ -60,48 +81,53 @@ namespace LiteroticaApi
 		/// </returns>
 		/// <exception cref="LitEroticaApiException">Thrown when the API returns an invalid or error response.</exception>
 		/// <exception cref="LitEroticaInternalException">Thrown when a network or internal error occurs.</exception>
-		public async Task<bool> Login(string username, string password)
+		public async Task<bool> LoginAsync(string username, string password)
 		{
-			string? response = await PostAsync<string>("https://auth.literotica.com/", "login", JsonContent.Create(new Dictionary<string, string>
+			_username = username;
+			_password = password;
+
+			string? response = await PostAsync<string>("login", JsonContent.Create(new Dictionary<string, string>
 			{
 				{"login", username},
 				{"password", password}
-			}));
+			})).ConfigureAwait(false);
 
 			if (response is not "OK") throw new Exception($"Failed to login: {response}");
 
-			await GetAsync("https://auth.literotica.com/", $"check?timestamp={DateTimeOffset.UtcNow.ToUnixTimeSeconds()}");
-
-			await GetAsync("https://literotica.com/", "api/3/users/session");
+			await CreateRequest(HttpMethod.Get, $"check?timestamp={DateTimeOffset.UtcNow.ToUnixTimeSeconds()}").ConfigureAwait(false);
+			await CreateRequest(HttpMethod.Get, "users/session").ConfigureAwait(false);
 
 			List<Cookie> cookies = CookieContainer.GetAllCookies();
 
 			return cookies.Any(x => x.Name == "auth_token");
 		}
 
-		private async Task<string?> CreateRequest(HttpMethod httpMethod, string baseUrl, string endPoint, HttpContent? content = null)
+		private async Task<string?> CreateRequest(HttpMethod httpMethod, string endPoint, HttpContent? content = null, object? paramContent = null)
 		{
 			if (endPoint != "login" && !_loggedIn)
 				throw new Exception("Not logged in. Please login before making requests.");
 
-			if (string.IsNullOrEmpty(baseUrl)) return string.Empty;
+			string baseUrl = "https://literotica.com/api/3/";
 
-			if (!string.IsNullOrEmpty(endPoint))
-			{
-				if (baseUrl[^1] == '/' && endPoint[0] == '/') endPoint = endPoint[1..]; // Make sure the slash isn't duplicated
-				if (baseUrl[^1] != '/' && endPoint[0] != '/') baseUrl += "/"; // Make sure it actually contains a slash
-			}
+			if (endPoint == "login" || endPoint.Contains("check?timestamp"))
+				baseUrl = "https://auth.literotica.com/";
 
+			if (endPoint[0] == '/')
+				endPoint = endPoint[1..];
+
+			string queryString = paramContent is not null
+				? "?params=" + Uri.EscapeDataString(JsonSerializer.Serialize(paramContent))
+				: string.Empty;
+			
 			const int maxRetries = 3;
 			int retryCount = 0;
 			int backoffDelayMs = 5000;
 
 			while (retryCount < maxRetries)
 			{
-				// Set authentication headers
 				using HttpRequestMessage httpRequest = new();
 				httpRequest.Method = MapHttpMethod(httpMethod);
-				httpRequest.RequestUri = new Uri($"{baseUrl}{endPoint}");
+				httpRequest.RequestUri = new Uri($"{baseUrl}{endPoint}{queryString}");
 				httpRequest.Content = content;
 
 				using HttpResponseMessage responseMessage = await _client.SendAsync(httpRequest, HttpCompletionOption.ResponseContentRead).ConfigureAwait(false);
@@ -118,7 +144,8 @@ namespace LiteroticaApi
 					case 401:
 					case 403:
 						if (endPoint == "login") throw new LitEroticaApiException(responseContent);
-						throw new Exception("Authorization invalid or expired.");
+						await LoginAsync(_username!, _password!);
+						break;
 					case 429:
 						await Task.Delay(backoffDelayMs).ConfigureAwait(false);
 						backoffDelayMs *= 2;
@@ -138,50 +165,29 @@ namespace LiteroticaApi
 			throw new Exception($"[Log] Failed after {maxRetries} retries. Uri:{baseUrl}{endPoint}");
 		}
 
-		internal async Task<T?> GetAsync<T>(string baseUrl, string endPoint)
-			=> await SendAndConvertAsync<T>(HttpMethod.Get, baseUrl, endPoint).ConfigureAwait(false);
+		internal async Task<T?> GetAsync<T>(string endPoint, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Get, endPoint, null, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> PostAsync<T>(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await SendAndConvertAsync<T>(HttpMethod.Post, baseUrl, endPoint, httpContent).ConfigureAwait(false);
+		internal async Task<T?> PostAsync<T>(string endPoint, HttpContent? httpContent = null, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Post, endPoint, httpContent, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> PutAsync<T>(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await SendAndConvertAsync<T>(HttpMethod.Put, baseUrl, endPoint, httpContent).ConfigureAwait(false);
+		internal async Task<T?> PutAsync<T>(string endPoint, HttpContent? httpContent = null, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Put, endPoint, httpContent, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> DeleteAsync<T>(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await SendAndConvertAsync<T>(HttpMethod.Delete, baseUrl, endPoint, httpContent).ConfigureAwait(false);
+		internal async Task<T?> DeleteAsync<T>(string endPoint, HttpContent? httpContent = null, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Delete, endPoint, httpContent, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> OptionsAsync<T>(string baseUrl, string endPoint)
-			=> await SendAndConvertAsync<T>(HttpMethod.Options, baseUrl, endPoint).ConfigureAwait(false);
+		internal async Task<T?> OptionsAsync<T>(string endPoint, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Options, endPoint, null, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> HeadAsync<T>(string baseUrl, string endPoint)
-			=> await SendAndConvertAsync<T>(HttpMethod.Head, baseUrl, endPoint).ConfigureAwait(false);
+		internal async Task<T?> HeadAsync<T>(string endPoint, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Head, endPoint, null, paramContent).ConfigureAwait(false);
 
-		internal async Task<T?> OptionsAsync<T>(string baseUrl, string endPoint, HttpContent? httpContent)
-			=> await SendAndConvertAsync<T>(HttpMethod.Options, baseUrl, endPoint, httpContent).ConfigureAwait(false);
-
-		internal async Task GetAsync(string baseUrl, string endPoint)
-			=> await CreateRequest(HttpMethod.Get, baseUrl, endPoint).ConfigureAwait(false);
-
-		internal async Task PostAsync(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await CreateRequest(HttpMethod.Post, baseUrl, endPoint, httpContent).ConfigureAwait(false);
-
-		internal async Task PutAsync(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await CreateRequest(HttpMethod.Put, baseUrl, endPoint, httpContent).ConfigureAwait(false);
-
-		internal async Task DeleteAsync(string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> await CreateRequest(HttpMethod.Delete, baseUrl, endPoint, httpContent).ConfigureAwait(false);
-
-		internal async Task OptionsAsync(string baseUrl, string endPoint)
-			=> await CreateRequest(HttpMethod.Options, baseUrl, endPoint).ConfigureAwait(false);
-
-		internal async Task HeadAsync(string baseUrl, string endPoint)
-			=> await CreateRequest(HttpMethod.Head, baseUrl, endPoint).ConfigureAwait(false);
-
-		internal async Task OptionsAsync(string baseUrl, string endPoint, HttpContent? httpContent)
-			=> await CreateRequest(HttpMethod.Options, baseUrl, endPoint, httpContent).ConfigureAwait(false);
-
-		private async Task<T?> SendAndConvertAsync<T>(HttpMethod method, string baseUrl, string endPoint, HttpContent? httpContent = null)
-			=> ConvertResponse<T>(await CreateRequest(method, baseUrl, endPoint, httpContent).ConfigureAwait(false));
+		internal async Task<T?> OptionsAsync<T>(string endPoint, HttpContent? httpContent, object? paramContent = null)
+			=> await SendAndConvertAsync<T>(HttpMethod.Options, endPoint, null, httpContent).ConfigureAwait(false);
+		
+		private async Task<T?> SendAndConvertAsync<T>(HttpMethod method, string endPoint, HttpContent? httpContent = null, object? paramContent = null)
+			=> ConvertResponse<T>(await CreateRequest(method, endPoint, httpContent, paramContent).ConfigureAwait(false));
 
 #pragma warning disable IDE0046 // Convert if possible
 		private static T? ConvertResponse<T>(string? jsonData)

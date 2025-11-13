@@ -43,12 +43,12 @@ If you don't want it to output .epub but instead the raw formatting.
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown when a required file cannot be written or an I/O operation fails.
 
-### **CreateEpubFromSeries(String, String, Boolean)**
+### **CreateEpubFromSeries(String, String, Boolean, Int32)**
 
 Generates an EPUB file from an entire series on Literotica, including all its parts (stories).
 
 ```csharp
-public static Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw)
+public static Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw, int startIndex)
 ```
 
 #### Parameters
@@ -62,6 +62,9 @@ The directory where the EPUB file should be created.
 `raw` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
 If you don't want it to output .epub but instead the raw formatting.
 
+`startIndex` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+What chapter of the series to start at
+
 #### Returns
 
 [Task](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task)<br>
@@ -71,12 +74,12 @@ If you don't want it to output .epub but instead the raw formatting.
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown if the series cannot be found or has no valid stories.
 
-### **CreateEpubFromStory(String, String, Boolean)**
+### **CreateEpubFromStory(String, String, Boolean, Int32)**
 
 Generates an EPUB file from a single Literotica story.
 
 ```csharp
-public static Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw)
+public static Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw, int startIndex)
 ```
 
 #### Parameters
@@ -89,6 +92,9 @@ The directory where the EPUB file should be created.
 
 `raw` [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
 If you don't want it to output .epub but instead the raw formatting.
+
+`startIndex` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+What page to start at.
 
 #### Returns
 

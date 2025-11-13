@@ -304,5 +304,217 @@ namespace LiteroticaApi
 			/// </summary>
 			Crossdressing = 58
 		}
+
+		/// <summary>
+		/// Supported story languages on Literotica.
+		/// </summary>
+		public enum Languages
+		{
+			/// <summary>
+			/// English Language
+			/// </summary>
+			English = 1,
+
+			/// <summary>
+			/// Spanish Language
+			/// </summary>
+			/// <summary>
+			/// Spanish Language.
+			/// </summary>
+			Spanish = 2,
+			/// <summary>
+			/// German Language.
+			/// </summary>
+			German = 3,
+			/// <summary>
+			/// Dutch Language.
+			/// </summary>
+			Dutch = 5,
+			/// <summary>
+			/// Italian Language.
+			/// </summary>
+			Italian = 6,
+			/// <summary>
+			/// French Language.
+			/// </summary>
+			French = 4,
+			/// <summary>
+			/// Afrikaans Language.
+			/// </summary>
+			Afrikaans = 9,
+			/// <summary>
+			/// Portuguese Language.
+			/// </summary>
+			Portuguese = 8,
+			/// <summary>
+			/// Bengali Language.
+			/// </summary>
+			Bengali = 10,
+			/// <summary>
+			/// Chinese Language.
+			/// </summary>
+			Chinese = 11,
+			/// <summary>
+			/// Danish Language.
+			/// </summary>
+			Danish = 12,
+			/// <summary>
+			/// Esperanto Language.
+			/// </summary>
+			Esperanto = 13,
+			/// <summary>
+			/// Finnish Language.
+			/// </summary>
+			Finnish = 14,
+			/// <summary>
+			/// Swedish Language.
+			/// </summary>
+			Swedish = 20,
+			/// <summary>
+			/// Malayalam Language.
+			/// </summary>
+			Malayalam = 23,
+			/// <summary>
+			/// Urdu Language.
+			/// </summary>
+			Urdu = 22,
+			/// <summary>
+			/// Hindi Language.
+			/// </summary>
+			Hindi = 24,
+			/// <summary>
+			/// Turkish Language.
+			/// </summary>
+			Turkish = 21,
+			/// <summary>
+			/// Tamil Language.
+			/// </summary>
+			Tamil = 26,
+			/// <summary>
+			/// Telugu Language.
+			/// </summary>
+			Telugu = 27,
+			/// <summary>
+			/// Serbian Language.
+			/// </summary>
+			Serbian = 19,
+			/// <summary>
+			/// Russian Language.
+			/// </summary>
+			Russian = 18,
+			/// <summary>
+			/// Norwegian Language.
+			/// </summary>
+			Norwegian = 16,
+			/// <summary>
+			/// Japanese Language.
+			/// </summary>
+			Japanese = 15,
+			/// <summary>
+			/// Polish Language.
+			/// </summary>
+			Polish = 17,
+			/// <summary>
+			/// Other Language.
+			/// </summary>
+			Other = 999,
+			/// <summary>
+			/// Marathi Language.
+			/// </summary>
+			Marathi = 25,
+			/// <summary>
+			/// Romanian Language.
+			/// </summary>
+			Romanian = 7,
+		}
+
+		/// <summary>
+		/// Sorting options for favorite stories.
+		/// </summary>
+		public enum FavoriteStorySort
+		{
+			/// <summary>
+			/// Date the story was added to favorites.
+			/// </summary>
+			DateAdd,
+
+			/// <summary>
+			///	Title Name of the story.
+			/// </summary>
+			Title,
+
+			/// <summary>
+			///	Date the story was published.
+			/// </summary>
+			DatePublish
+		}
+
+		/// <summary>
+		/// Sorting options for editor listings.
+		/// </summary>
+		public enum EditorSort
+		{
+			/// <summary>
+			/// Last activity ID of the editor.
+			/// </summary>
+			Last_Activity_Id,
+
+			/// <summary>
+			/// Name of the editor.
+			/// </summary>
+			Name,
+
+			/// <summary>
+			/// Follower count of the editor.
+			/// </summary>
+			Followers,
+
+			/// <summary>
+			/// Work count of the editor.
+			/// </summary>
+			Works
+		}
+
+		/// <summary>
+		/// File formats supported by the editor.
+		/// Multiple formats can be combined using bitwise flags.
+		/// </summary>
+		[Flags]
+		public enum EditorFormats
+		{
+			/// <summary>
+			/// Rich Text File format.
+			/// </summary>
+			RichTextFile,
+
+			/// <summary>
+			/// Email format.
+			/// </summary>
+			Email,
+
+			/// <summary>
+			/// Text File format.
+			/// </summary>	
+			TextFile,
+
+			/// <summary>
+			/// Word Document format.
+			/// </summary>
+			WordDocument
+		}
+
+		internal static int[] GetLanguageIds(Languages[]? languages)
+		{
+			if (languages is null || languages.Length == 0) { return [1]; }
+			int[] languageIds = languages.Select(lang => (int)lang).ToArray();
+			return languageIds;
+		}
+
+		internal static int[] GetCategoryIds(Categories[]? categories)
+		{
+			if (categories is null || categories.Length == 0) { return [1]; }
+			int[] categoryIds = categories.Select(cat => (int)cat).ToArray();
+			return categoryIds;
+		}
 	}
 }

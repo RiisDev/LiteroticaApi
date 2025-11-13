@@ -18,7 +18,7 @@ namespace LiteroticaApi
 			{
 				Timeout = TimeSpan.FromSeconds(30)
 			};
-			client.DefaultRequestHeaders.Add("User-Agent", "IrisAgent LitEroticaApi/1.0");
+			client.DefaultRequestHeaders.Add("User-Agent", "IrisAgent Nuget_LitEroticaApi/1.0");
 			client.DefaultRequestHeaders.Add("Accept", "application/json");
 			return client;
 		});

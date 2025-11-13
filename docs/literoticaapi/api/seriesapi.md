@@ -202,12 +202,12 @@ The category to filter series by, defined in .
 A task representing the asynchronous operation. 
  The task result contains a read-only list of randomly selected [Works](./literoticaapi/dataobjects/works.md) objects.
 
-### **GetSeriesBySort(Categories, Char, Int32, Int32)**
+### **GetSeriesBySort(Categories, Char, Int32, Languages)**
 
 Retrieves a paginated list of series in a category sorted alphabetically by a specified starting letter.
 
 ```csharp
-public static Task<IReadOnlyList<Works>> GetSeriesBySort(Categories category, char letter, int page, int language)
+public static Task<IReadOnlyList<Works>> GetSeriesBySort(Categories category, char letter, int page, Languages language)
 ```
 
 #### Parameters
@@ -221,8 +221,8 @@ The first letter of the series titles to retrieve (A–Z).
 `page` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
 The page number to retrieve. Defaults to 1.
 
-`language` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
-The language ID. Defaults to 1/&gt;.
+`language` [Languages](./literoticaapi/types/languages.md)<br>
+The language.
 
 #### Returns
 

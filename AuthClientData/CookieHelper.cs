@@ -5,7 +5,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 
-namespace LiteroticaApi
+namespace LiteroticaApi.AuthClientData
 {
 	internal static class CookieHelper
 	{

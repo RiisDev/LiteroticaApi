@@ -229,16 +229,16 @@ namespace LiteroticaApi.Api
 		/// <param name="page">The page number to retrieve. Defaults to 1.</param>
 		/// <param name="pageSize">The number of authors per page. Defaults to 50, maximum 200.</param>
 		/// <param name="period">The time period filter (e.g., day, week, month, all). Defaults to <see cref="Period.All"/>.</param>
-		/// <param name="language">The language ID. Defaults to 1/>.</param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation. The task result contains a <see cref="TopFollowedAuthor"/> object.
 		/// </returns>
-		public static async Task<TopFollowedAuthor?> GetMostFavoritedAsync(int page = 1, int pageSize = 50, Period period = Period.All, int language = 1)
+		public static async Task<TopFollowedAuthor?> GetMostFavoritedAsync(int page = 1, int pageSize = 50, Period period = Period.All, Languages language = Languages.English)
 		{
 			Dictionary<string, object> queryParams = new()
 			{
 				{ "period", period.ToString().ToLower() },
-				{ "language", language },
+				{ "language", (int)language },
 				{ "pageSize", pageSize.InternalClamp(1, 200) },
 				{ "page", page.InternalClamp(1, int.MaxValue) }
 			};

@@ -52,12 +52,19 @@ namespace Literotica.Cli.Downloader
 				DefaultValueFactory = _ => Directory.GetCurrentDirectory()
 			};
 
+			Option<int> startAtOption = new("index", "startat", "start", "chapter", "page")
+			{
+				Description = "Starting chapter or page index to start downloading from (default: 0)",
+				DefaultValueFactory = _ => 0
+			};
+
 			RootCommand rootCommand = new("Story Downloader CLI")
 			{
 				sourceArgument,
 				logOption,
 				formatOption,
-				outputOption
+				outputOption,
+				startAtOption
 			};
 
 
@@ -67,6 +74,7 @@ namespace Literotica.Cli.Downloader
 				bool logEnabled = parseResult.GetRequiredValue(logOption);
 				string format = parseResult.GetRequiredValue(formatOption);
 				string outputDir = parseResult.GetRequiredValue(outputOption);
+				int startAt = parseResult.GetRequiredValue(startAtOption);
 
 				bool urlInput = source.Contains("literotica.com");
 
@@ -80,7 +88,7 @@ namespace Literotica.Cli.Downloader
 				if (logEnabled)
 					Console.WriteLine($"Found {urls.Length} urls...");
 
-				await HandleOutput(urls, format, outputDir, logEnabled);
+				await HandleOutput(urls, format, outputDir, logEnabled, startAt);
 			});
 
 			ParseResult parseResult = rootCommand.Parse(args);
@@ -89,7 +97,7 @@ namespace Literotica.Cli.Downloader
 			return await parseResult.InvokeAsync();
 		}
 
-		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled)
+		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled, int startIndex)
 		{
 			foreach (string url in urls)
 			{
@@ -101,8 +109,8 @@ namespace Literotica.Cli.Downloader
 
 				if (!format.Contains("epub", StringComparison.CurrentCultureIgnoreCase))
 				{
-					if (isSeries) await HandleSeries(url, outputDir, singleFile, logEnabled);
-					else await HandleStory(url, outputDir, logEnabled);
+					if (isSeries) await HandleSeries(url, outputDir, singleFile, logEnabled, startIndex);
+					else await HandleStory(url, outputDir, logEnabled, startIndex);
 				}
 				else
 				{
@@ -121,7 +129,7 @@ namespace Literotica.Cli.Downloader
 			}
 		}
 
-		private static async Task HandleSeries(string url, string outputDir, bool singleFile, bool logEnabled)
+		private static async Task HandleSeries(string url, string outputDir, bool singleFile, bool logEnabled, int startAt)
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Verifying series url...");
@@ -145,8 +153,12 @@ namespace Literotica.Cli.Downloader
 				Console.WriteLine("[HandleSeries] Downloading chapters...");
 
 			Dictionary<string, string> chapters = [];
-			foreach (Part story in seriesData.Parts)
+
+
+			for (int storyIndex = startAt; storyIndex < seriesData.Parts.Count; storyIndex++)
 			{
+				Part story = seriesData.Parts[storyIndex];
+
 				if (logEnabled)
 					Console.WriteLine($"[HandleSeries] Downloading chapter: {story.Title}...");
 
@@ -211,7 +223,7 @@ namespace Literotica.Cli.Downloader
 			}
 		}
 
-		private static async Task HandleStory(string url, string outputDir, bool logEnabled)
+		private static async Task HandleStory(string url, string outputDir, bool logEnabled, int startAt)
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Verifying story url...");
@@ -226,7 +238,9 @@ namespace Literotica.Cli.Downloader
 
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Downloading story content...");
-			string[] pages = await StoryApi.GetStoryContentAsync(storyData.Submission.Url);
+
+			int skipCount = Math.Max(startAt - 1, 0);
+			string[] pages = (await StoryApi.GetStoryContentAsync(storyData.Submission.Url)).Skip(skipCount).ToArray();
 
 			string storyContent = string.Join(Environment.NewLine + Environment.NewLine, pages);
 			string authorDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(storyData.Submission.Author.Username));

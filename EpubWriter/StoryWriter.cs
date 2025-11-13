@@ -234,8 +234,9 @@ namespace LiteroticaApi.EpubWriter
 		/// <param name="seriesUrl">The URL of the Literotica series to download and convert.</param>
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
 		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
+		/// <param name="startIndex">What chapter of the series to start at</param>
 		/// <exception cref="Exception">Thrown if the series cannot be found or has no valid stories.</exception>
-		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw = false)
+		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw = false, int startIndex = 0)
 		{
 			OnLog?.Invoke("[CreateEpubFromSeries] Verifying series url...");
 			string seriesSlug = await UrlUtil.GetSeriesId(seriesUrl);
@@ -270,12 +271,15 @@ namespace LiteroticaApi.EpubWriter
 
 			// Fetch content for each story in the series.
 			Dictionary<string, string> chapters = [];
-			foreach (Part story in seriesData.Parts)
+
+			for (int storyIndex = startIndex; storyIndex < seriesData.Parts.Count; storyIndex++)
 			{
+				Part story = seriesData.Parts[storyIndex];
 				OnLog?.Invoke($"[CreateEpubFromSeries] Fetching content: {story.Title}");
 				string[] pages = await StoryApi.GetStoryContentAsync(story.Url);
 				chapters.Add(story.Title, string.Join(Environment.NewLine + Environment.NewLine, pages));
 			}
+
 
 			// Prepare temporary directory for writing chapter files.
 			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(seriesData.Title), "Chapters");
@@ -309,8 +313,9 @@ namespace LiteroticaApi.EpubWriter
 		/// <param name="storyUrl">The URL of the story to convert.</param>
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
 		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
+		/// <param name="startIndex">What page to start at.</param>
 		/// <exception cref="Exception">Thrown if the story or author information cannot be retrieved.</exception>
-		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw = false)
+		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw = false, int startIndex = 1)
 		{
 			OnLog?.Invoke("[CreateEpubFromStory] Verifying story url...");
 			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
@@ -322,7 +327,9 @@ namespace LiteroticaApi.EpubWriter
 				throw new Exception("The specified story could not be found or contains no valid content.");
 
 			OnLog?.Invoke("[CreateEpubFromStory] Fetching story content...");
-			string[] storyText = await StoryApi.GetStoryContentAsync(storySlug);
+
+			int skipCount = Math.Max(startIndex - 1, 0);
+			string[] storyText = (await StoryApi.GetStoryContentAsync(storyData.Submission.Url)).Skip(skipCount).ToArray();
 
 			// Prepare directory for temporary text file storage.
 			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(storyData.Submission.Title), "Chapters");

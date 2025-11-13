@@ -16,22 +16,19 @@ namespace LiteroticaApi.Api
 		/// The time period to filter by, defined in <see cref="Types.Period"/>.  
 		/// Defaults to <see cref="Types.Period.All"/>.
 		/// </param>
-		/// <param name="language">
-		/// The language identifier (typically <c>1</c> for English).  
-		/// Defaults to <c>1</c>.
-		/// </param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a list of <see cref="RelatedTag"/> objects
 		/// that are related to the specified tags.
 		/// </returns>
-		public static async Task<List<RelatedTag>> GetRelatedTagsAsync(int[] tagIds, Types.Period period = Types.Period.All, int language = 1)
+		public static async Task<List<RelatedTag>> GetRelatedTagsAsync(int[] tagIds, Types.Period period = Types.Period.All, Types.Languages language = Types.Languages.English)
 		{
 			return await Client.Get<List<RelatedTag>>("tagsportal/related", new Dictionary<string, object>
 			{
 				{ "tags", tagIds },
 				{ "period", period.ToString().ToLowerInvariant() },
-				{ "language", language }
+				{ "language", (int)language }
 			}).ConfigureAwait(false);
 		}
 
@@ -53,15 +50,12 @@ namespace LiteroticaApi.Api
 		/// The time period to evaluate, defined in <see cref="Types.Period"/>.  
 		/// Defaults to <see cref="Types.Period.All"/>.
 		/// </param>
-		/// <param name="language">
-		/// The language identifier (typically <c>1</c> for English).  
-		/// Defaults to <c>1</c>.
-		/// </param>
+		/// <param name="language">The language.</param>
 		/// <returns>
 		/// A task representing the asynchronous operation.  
 		/// The task result contains a <see cref="TopTags"/> object with metadata about the most popular tags.
 		/// </returns>
-		public static async Task<TopTags> GetTopTagsAsync(Types.Categories category, int limit = 500, bool periodCheck = true, Types.Period period = Types.Period.All, int language = 1)
+		public static async Task<TopTags> GetTopTagsAsync(Types.Categories category, int limit = 500, bool periodCheck = true, Types.Period period = Types.Period.All, Types.Languages language = Types.Languages.English)
 		{
 			return await Client.Get<TopTags>("tagsportal/top", new Dictionary<string, object>
 			{
@@ -69,7 +63,7 @@ namespace LiteroticaApi.Api
 				{ "periodCheck", periodCheck },
 				{ "category", (int)category },
 				{ "period", period.ToString().ToLowerInvariant() },
-				{ "language", language }
+				{ "language", (int)language }
 			}).ConfigureAwait(false);
 		}
 

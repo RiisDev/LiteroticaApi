@@ -1,0 +1,199 @@
+# Editors
+
+Namespace: LiteroticaApi.AuthClientData.DataObjects
+
+Represents a paginated list of available editors.
+
+```csharp
+public class Editors : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Editors, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+```
+
+Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Editors](./literoticaapi/authclientdata/dataobjects/editors.md)<br>
+Implements [IEquatable&lt;Editors&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1)<br>
+Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullablecontextattribute.md), [NullableAttribute](./system/runtime/compilerservices/nullableattribute.md)
+
+## Properties
+
+### **EqualityContract**
+
+```csharp
+protected Type EqualityContract { get; }
+```
+
+#### Property Value
+
+[Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)<br>
+
+### **CurrentPage**
+
+```csharp
+public Nullable<int> CurrentPage { get; set; }
+```
+
+#### Property Value
+
+[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+### **LastPage**
+
+```csharp
+public Nullable<int> LastPage { get; set; }
+```
+
+#### Property Value
+
+[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+### **Total**
+
+```csharp
+public Nullable<int> Total { get; set; }
+```
+
+#### Property Value
+
+[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+### **PerPage**
+
+```csharp
+public Nullable<int> PerPage { get; set; }
+```
+
+#### Property Value
+
+[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+### **Data**
+
+```csharp
+public IReadOnlyList<EditorDatum> Data { get; set; }
+```
+
+#### Property Value
+
+[IReadOnlyList&lt;EditorDatum&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
+
+## Constructors
+
+### **Editors(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;EditorDatum&gt;)**
+
+Represents a paginated list of available editors.
+
+```csharp
+public Editors(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<EditorDatum> Data)
+```
+
+#### Parameters
+
+`CurrentPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+`LastPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+`Total` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+`PerPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+
+`Data` [IReadOnlyList&lt;EditorDatum&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
+
+### **Editors(Editors)**
+
+```csharp
+protected Editors(Editors original)
+```
+
+#### Parameters
+
+`original` [Editors](./literoticaapi/authclientdata/dataobjects/editors.md)<br>
+
+## Methods
+
+### **ToString()**
+
+```csharp
+public string ToString()
+```
+
+#### Returns
+
+[String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
+
+### **PrintMembers(StringBuilder)**
+
+```csharp
+protected bool PrintMembers(StringBuilder builder)
+```
+
+#### Parameters
+
+`builder` [StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)<br>
+
+#### Returns
+
+[Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+
+### **GetHashCode()**
+
+```csharp
+public int GetHashCode()
+```
+
+#### Returns
+
+[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+
+### **Equals(Object)**
+
+```csharp
+public bool Equals(object obj)
+```
+
+#### Parameters
+
+`obj` [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
+
+#### Returns
+
+[Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+
+### **Equals(Editors)**
+
+```csharp
+public bool Equals(Editors other)
+```
+
+#### Parameters
+
+`other` [Editors](./literoticaapi/authclientdata/dataobjects/editors.md)<br>
+
+#### Returns
+
+[Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)<br>
+
+### **&lt;Clone&gt;$()**
+
+```csharp
+public Editors <Clone>$()
+```
+
+#### Returns
+
+[Editors](./literoticaapi/authclientdata/dataobjects/editors.md)<br>
+
+### **Deconstruct(Nullable`1&, Nullable`1&, Nullable`1&, Nullable`1&, IReadOnlyList`1&)**
+
+```csharp
+public void Deconstruct(Nullable`1& CurrentPage, Nullable`1& LastPage, Nullable`1& Total, Nullable`1& PerPage, IReadOnlyList`1& Data)
+```
+
+#### Parameters
+
+`CurrentPage` [Nullable`1&](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1&)<br>
+
+`LastPage` [Nullable`1&](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1&)<br>
+
+`Total` [Nullable`1&](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1&)<br>
+
+`PerPage` [Nullable`1&](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1&)<br>
+
+`Data` [IReadOnlyList`1&](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1&)<br>
