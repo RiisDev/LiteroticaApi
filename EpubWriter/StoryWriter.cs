@@ -78,8 +78,9 @@ namespace LiteroticaApi.EpubWriter
 		/// <param name="story">The <see cref="EpubStory"/> containing metadata, chapters, and optional cover.</param>
 		/// <param name="outputDirectory">The directory where the final EPUB file should be saved. Defaults to the base directory.</param>
 		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
+		/// <param name="coverPath">Forcefully set cover art for Epub</param>
 		/// <exception cref="Exception">Thrown when a required file cannot be written or an I/O operation fails.</exception>
-		public static void CreateEpub(EpubStory story, string? outputDirectory = null, bool raw = false)
+		public static void CreateEpub(EpubStory story, string? outputDirectory = null, bool raw = false, string coverPath = "")
 		{
 			string baseDirectory = string.IsNullOrEmpty(outputDirectory)
 				? AppDomain.CurrentDomain.BaseDirectory
@@ -110,15 +111,15 @@ namespace LiteroticaApi.EpubWriter
 
 			OnLog?.Invoke("[CreateEpub] Checking for cover art...");
 			
-			if (!string.IsNullOrEmpty(story.CoverPath))
+			if (!string.IsNullOrEmpty(story.CoverPath) || !string.IsNullOrEmpty(coverPath))
 			{
-				string coverSourcePath = story.CoverPath!;
+				string coverSourcePath = string.IsNullOrEmpty(coverPath) ? story.CoverPath! : coverPath;
 				string coverDestDir = Path.Combine(storyDirectory, "EPUB", "images");
 				Directory.CreateDirectory(coverDestDir);
 				string coverFileName = "cover" + Path.GetExtension(coverSourcePath);
 				string coverDestPath = Path.Combine(coverDestDir, coverFileName);
 
-				if (coverSourcePath.StartsWith("https:", StringComparison.OrdinalIgnoreCase))
+				if (coverSourcePath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
 				{
 					try
 					{
@@ -235,8 +236,10 @@ namespace LiteroticaApi.EpubWriter
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
 		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
 		/// <param name="startIndex">What chapter of the series to start at</param>
+		/// <param name="endIndex">What chapter of the series to end at</param>
+		/// <param name="designatedCover">Forcefully set cover art for Epub</param>
 		/// <exception cref="Exception">Thrown if the series cannot be found or has no valid stories.</exception>
-		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw = false, int startIndex = 0)
+		public static async Task CreateEpubFromSeries(string seriesUrl, string outputDirectory, bool raw = false, int startIndex = 0, int endIndex = 2147483647, string designatedCover = "")
 		{
 			OnLog?.Invoke("[CreateEpubFromSeries] Verifying series url...");
 			string seriesSlug = await UrlUtil.GetSeriesId(seriesUrl);
@@ -259,8 +262,12 @@ namespace LiteroticaApi.EpubWriter
 			string? coverPath;
 			try
 			{
-				Cover cover = await SeriesApi.GetSeriesCoverAsync(seriesSlug);
-				coverPath = cover.Data.Mobile.X1.FilePath;
+				if (string.IsNullOrEmpty(designatedCover))
+				{
+					Cover cover = await SeriesApi.GetSeriesCoverAsync(seriesSlug);
+					coverPath = cover.Data.Mobile.X1.FilePath;
+				}
+				else coverPath = designatedCover;
 			}
 			catch
 			{
@@ -274,13 +281,14 @@ namespace LiteroticaApi.EpubWriter
 
 			for (int storyIndex = startIndex; storyIndex < seriesData.Parts.Count; storyIndex++)
 			{
+				if (storyIndex > endIndex) break;
+
 				Part story = seriesData.Parts[storyIndex];
 				OnLog?.Invoke($"[CreateEpubFromSeries] Fetching content: {story.Title}");
 				string[] pages = await StoryApi.GetStoryContentAsync(story.Url);
 				chapters.Add(story.Title, string.Join(Environment.NewLine + Environment.NewLine, pages));
 			}
-
-
+			
 			// Prepare temporary directory for writing chapter files.
 			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(seriesData.Title), "Chapters");
 			Directory.CreateDirectory(storyLocation);
@@ -297,14 +305,14 @@ namespace LiteroticaApi.EpubWriter
 			EpubStory epubStory = new(
 				Title: seriesData.Title,
 				Language: "English",
-				CoverPath: string.IsNullOrEmpty(coverPath) ? null : coverPath,
+				CoverPath: string.IsNullOrEmpty(designatedCover) ? string.IsNullOrEmpty(coverPath) ? null : coverPath : designatedCover,
 				Author: author.Username,
 				Series: new EpubSeries(seriesData.Title, 1),
 				Tags: [],
 				Chapters: Directory.GetFiles(storyLocation)
 			);
 
-			CreateEpub(epubStory, outputDirectory, raw);
+			CreateEpub(epubStory, outputDirectory, raw, coverPath: designatedCover);
 		}
 
 		/// <summary>
@@ -314,8 +322,10 @@ namespace LiteroticaApi.EpubWriter
 		/// <param name="outputDirectory">The directory where the EPUB file should be created.</param>
 		/// <param name="raw">If you don't want it to output .epub but instead the raw formatting.</param>
 		/// <param name="startIndex">What page to start at.</param>
+		/// <param name="endIndex">What chapter of the series to end at</param>
+		/// <param name="designatedCover">Forcefully set cover art for Epub</param>
 		/// <exception cref="Exception">Thrown if the story or author information cannot be retrieved.</exception>
-		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw = false, int startIndex = 1)
+		public static async Task CreateEpubFromStory(string storyUrl, string outputDirectory, bool raw = false, int startIndex = 1, int endIndex = 2147483647, string designatedCover = "")
 		{
 			OnLog?.Invoke("[CreateEpubFromStory] Verifying story url...");
 			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
@@ -328,8 +338,14 @@ namespace LiteroticaApi.EpubWriter
 
 			OnLog?.Invoke("[CreateEpubFromStory] Fetching story content...");
 
-			int skipCount = Math.Max(startIndex - 1, 0);
-			string[] storyText = (await StoryApi.GetStoryContentAsync(storyData.Submission.Url)).Skip(skipCount).ToArray();
+			string[] fullStoryText = await StoryApi.GetStoryContentAsync(storyData.Submission.Url);
+			int start = Math.Max(startIndex - 1, 0);
+			int end = Math.Min(endIndex, fullStoryText.Length);
+
+			if (start > end)
+				throw new Exception("Invalid start or end index for story content.");
+
+			string[] storyText = fullStoryText[start..end];
 
 			// Prepare directory for temporary text file storage.
 			string storyLocation = Path.Combine(TempDir, UrlUtil.ToSafeFileName(storyData.Submission.Title), "Chapters");
@@ -344,14 +360,14 @@ namespace LiteroticaApi.EpubWriter
 			EpubStory epubStory = new(
 				Title: storyData.Submission.Title,
 				Language: "English",
-				CoverPath: null,
+				CoverPath: string.IsNullOrEmpty(designatedCover) ? null : designatedCover,
 				Author: storyData.Submission.Author.Username,
 				Series: new EpubSeries(storyData.Submission.Title, 1),
 				Tags: storyData.Submission.Tags.Select(tag => tag.TagText.ToString()).ToArray(),
 				Chapters: Directory.GetFiles(storyLocation)
 			);
 
-			CreateEpub(epubStory, outputDirectory, raw);
+			CreateEpub(epubStory, outputDirectory, raw, coverPath: designatedCover);
 		}
 	}
 }

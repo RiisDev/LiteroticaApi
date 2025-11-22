@@ -33,6 +33,29 @@ namespace Literotica.Cli.Downloader
 					return null;
 				}
 			};
+
+			Option<string> coverPathOption = new ("--cover", "-c" )
+			{
+				Description = "Path to a custom cover image to use for EPUB output. (Does not support bulk downloading)",
+				CustomParser = result =>
+				{
+					string resultData = result.Tokens.Single().Value;
+					if (Uri.TryCreate(resultData, UriKind.Absolute, out Uri? uriValue))
+					{
+						return uriValue.ToString();
+					}
+
+					if (File.Exists(resultData))
+					{
+						return resultData;
+					}
+
+					result.AddError("Url is invalid or the designated file does not exist");
+					return null;
+				},
+				DefaultValueFactory = _ => string.Empty
+			};
+
 			Option<bool> logOption = new("--log", "-l")
 			{
 				Description = "Enable logging output to the console.",
@@ -52,10 +75,16 @@ namespace Literotica.Cli.Downloader
 				DefaultValueFactory = _ => Directory.GetCurrentDirectory()
 			};
 
-			Option<int> startAtOption = new("index", "startat", "start", "chapter", "page")
+			Option<int> startAtOption = new("--index", "--startat", "--start", "--chapter", "--page")
 			{
 				Description = "Starting chapter or page index to start downloading from (default: 0)",
 				DefaultValueFactory = _ => 0
+			};
+
+			Option<int> endAtOption = new("--end-index", "--endat", "--end", "--last-chapter", "--last-page")
+			{
+				Description = "Chapter to end or finish on, (default: int.Max)",
+				DefaultValueFactory = _ => int.MaxValue
 			};
 
 			RootCommand rootCommand = new("Story Downloader CLI")
@@ -64,17 +93,21 @@ namespace Literotica.Cli.Downloader
 				logOption,
 				formatOption,
 				outputOption,
-				startAtOption
+				startAtOption,
+				endAtOption,
+				coverPathOption
 			};
 
 
 			rootCommand.SetAction(async parseResult =>
 			{
 				string source = parseResult.GetRequiredValue(sourceArgument);
-				bool logEnabled = parseResult.GetRequiredValue(logOption);
 				string format = parseResult.GetRequiredValue(formatOption);
 				string outputDir = parseResult.GetRequiredValue(outputOption);
+				string coverPath = parseResult.GetRequiredValue(coverPathOption);
+				bool logEnabled = parseResult.GetRequiredValue(logOption);
 				int startAt = parseResult.GetRequiredValue(startAtOption);
+				int endAt = parseResult.GetRequiredValue(endAtOption);
 
 				bool urlInput = source.Contains("literotica.com");
 
@@ -85,10 +118,16 @@ namespace Literotica.Cli.Downloader
 					.Where(line => !string.IsNullOrWhiteSpace(line))
 					.ToArray();
 
+				if (urls.Length > 1 && !string.IsNullOrEmpty(coverPath))
+				{
+					Console.WriteLine("Custom cover image is not supported for bulk downloading. Ignoring cover option.");
+					coverPath = string.Empty;
+				}
+				
 				if (logEnabled)
 					Console.WriteLine($"Found {urls.Length} urls...");
 
-				await HandleOutput(urls, format, outputDir, logEnabled, startAt);
+				await HandleOutput(urls, format, outputDir, logEnabled, startAt, endAt, coverPath);
 			});
 
 			ParseResult parseResult = rootCommand.Parse(args);
@@ -97,7 +136,7 @@ namespace Literotica.Cli.Downloader
 			return await parseResult.InvokeAsync();
 		}
 
-		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled, int startIndex)
+		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled, int startIndex, int endIndex, string coverPath)
 		{
 			foreach (string url in urls)
 			{
@@ -109,8 +148,8 @@ namespace Literotica.Cli.Downloader
 
 				if (!format.Contains("epub", StringComparison.CurrentCultureIgnoreCase))
 				{
-					if (isSeries) await HandleSeries(url, outputDir, singleFile, logEnabled, startIndex);
-					else await HandleStory(url, outputDir, logEnabled, startIndex);
+					if (isSeries) await HandleSeries(url, outputDir, singleFile, logEnabled, startIndex, endIndex, coverPath);
+					else await HandleStory(url, outputDir, logEnabled, startIndex, endIndex, coverPath);
 				}
 				else
 				{
@@ -122,14 +161,14 @@ namespace Literotica.Cli.Downloader
 
 					bool raw = format.Contains("raw", StringComparison.CurrentCultureIgnoreCase);
 
-					if (isSeries) await StoryWriter.CreateEpubFromSeries(url, outputDir, raw);
-					else await StoryWriter.CreateEpubFromStory(url, outputDir, raw);
+					if (isSeries) await StoryWriter.CreateEpubFromSeries(url, outputDir, raw, startIndex, endIndex, coverPath);
+					else await StoryWriter.CreateEpubFromStory(url, outputDir, raw, startIndex, endIndex, coverPath);
 				}
 
 			}
 		}
 
-		private static async Task HandleSeries(string url, string outputDir, bool singleFile, bool logEnabled, int startAt)
+		private static async Task HandleSeries(string url, string outputDir, bool singleFile, bool logEnabled, int startAt, int endAt, string coverPath)
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Verifying series url...");
@@ -153,10 +192,11 @@ namespace Literotica.Cli.Downloader
 				Console.WriteLine("[HandleSeries] Downloading chapters...");
 
 			Dictionary<string, string> chapters = [];
-
-
+			
 			for (int storyIndex = startAt; storyIndex < seriesData.Parts.Count; storyIndex++)
 			{
+				if (storyIndex > endAt - 1) break;
+
 				Part story = seriesData.Parts[storyIndex];
 
 				if (logEnabled)
@@ -170,12 +210,51 @@ namespace Literotica.Cli.Downloader
 			{
 				if (logEnabled)
 					Console.WriteLine("[HandleSeries] Writing to single file...");
-
+				
 				string seriesDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(author?.Username ?? "Unknown Author"));
 				string seriesFilePath = Path.Combine(seriesDir, $"{UrlUtil.ToSafeFileName(seriesData.Title)}.txt");
 
 				Directory.CreateDirectory(seriesDir);
 
+				if (!string.IsNullOrEmpty(coverPath))
+				{
+					string coverDestPath = Path.Combine(seriesDir, Path.GetFileName(coverPath));
+
+					if (File.Exists(coverPath))
+					{
+						try { File.Copy(coverPath, coverDestPath, true); }
+						catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not copy cover image. {ex.Message}"); }
+					}
+					else if (coverPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+					{
+						try
+						{
+							Console.WriteLine("[HandleSeries] Detected URL based cover path, attempting download...");
+							using HttpClient httpClient = new();
+							HttpResponseMessage response = httpClient.GetAsync(coverPath).Result;
+
+							if (response.IsSuccessStatusCode)
+							{
+								await using FileStream fileStream = new(
+									coverDestPath,
+									FileMode.Create,
+									FileAccess.Write,
+									FileShare.None,
+									bufferSize: 8192,
+									useAsync: true);
+
+								response.Content.CopyToAsync(fileStream).Wait();
+								Console.WriteLine($"[CreateEpub] Downloaded cover from URL: {coverPath}");
+							}
+							else
+							{
+								Console.WriteLine($"[CreateEpub] Failed to download cover (HTTP {response.StatusCode}) from {coverPath}");
+							}
+						}
+						catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not download cover image. {ex.Message}"); }
+					}
+				}
+				
 				await using StreamWriter writer = new(seriesFilePath);
 
 				await writer.WriteLineAsync($"""
@@ -210,6 +289,45 @@ namespace Literotica.Cli.Downloader
 				string seriesDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(author?.Username ?? "Unknown Author"), UrlUtil.ToSafeFileName(seriesData.Title));
 				Directory.CreateDirectory(seriesDir);
 
+				if (!string.IsNullOrEmpty(coverPath))
+				{
+					string coverDestPath = Path.Combine(seriesDir, Path.GetFileName(coverPath));
+
+					if (File.Exists(coverPath))
+					{
+						try { File.Copy(coverPath, coverDestPath, true); }
+						catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not copy cover image. {ex.Message}"); }
+					}
+					else if (coverPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+					{
+						try
+						{
+							Console.WriteLine("[HandleSeries] Detected URL based cover path, attempting download...");
+							using HttpClient httpClient = new();
+							HttpResponseMessage response = httpClient.GetAsync(coverPath).Result;
+
+							if (response.IsSuccessStatusCode)
+							{
+								await using FileStream fileStream = new(
+									coverDestPath,
+									FileMode.Create,
+									FileAccess.Write,
+									FileShare.None,
+									bufferSize: 8192,
+									useAsync: true);
+
+								response.Content.CopyToAsync(fileStream).Wait();
+								Console.WriteLine($"[CreateEpub] Downloaded cover from URL: {coverPath}");
+							}
+							else
+							{
+								Console.WriteLine($"[CreateEpub] Failed to download cover (HTTP {response.StatusCode}) from {coverPath}");
+							}
+						}
+						catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not download cover image. {ex.Message}"); }
+					}
+				}
+
 				foreach (KeyValuePair<string, string> chapter in chapters)
 				{
 					if (logEnabled)
@@ -223,7 +341,7 @@ namespace Literotica.Cli.Downloader
 			}
 		}
 
-		private static async Task HandleStory(string url, string outputDir, bool logEnabled, int startAt)
+		private static async Task HandleStory(string url, string outputDir, bool logEnabled, int startAt, int endAt, string coverPath)
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Verifying story url...");
@@ -239,8 +357,14 @@ namespace Literotica.Cli.Downloader
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Downloading story content...");
 
-			int skipCount = Math.Max(startAt - 1, 0);
-			string[] pages = (await StoryApi.GetStoryContentAsync(storyData.Submission.Url)).Skip(skipCount).ToArray();
+			string[] fullStoryText = await StoryApi.GetStoryContentAsync(storyData.Submission.Url);
+			int start = Math.Max(startAt - 1, 0);
+			int end = Math.Min(endAt, fullStoryText.Length);
+
+			if (start > end)
+				throw new Exception("Invalid start or end index for story content.");
+
+			string[] pages = fullStoryText[start..end];
 
 			string storyContent = string.Join(Environment.NewLine + Environment.NewLine, pages);
 			string authorDir = Path.Combine(outputDir, UrlUtil.ToSafeFileName(storyData.Submission.Author.Username));
@@ -249,6 +373,45 @@ namespace Literotica.Cli.Downloader
 			
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Writing story to file...");
+
+			if (!string.IsNullOrEmpty(coverPath))
+			{
+				string coverDestPath = Path.Combine(authorDir, $"{UrlUtil.ToSafeFileName(storyData.Submission.Title)}-{Path.GetFileName(coverPath)}");
+
+				if (File.Exists(coverPath))
+				{
+					try { File.Copy(coverPath, coverDestPath, true); }
+					catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not copy cover image. {ex.Message}"); }
+				}
+				else if (coverPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+				{
+					try
+					{
+						Console.WriteLine("[HandleSeries] Detected URL based cover path, attempting download...");
+						using HttpClient httpClient = new();
+						HttpResponseMessage response = httpClient.GetAsync(coverPath).Result;
+
+						if (response.IsSuccessStatusCode)
+						{
+							await using FileStream fileStream = new(
+								coverDestPath,
+								FileMode.Create,
+								FileAccess.Write,
+								FileShare.None,
+								bufferSize: 8192,
+								useAsync: true);
+
+							response.Content.CopyToAsync(fileStream).Wait();
+							Console.WriteLine($"[CreateEpub] Downloaded cover from URL: {coverPath}");
+						}
+						else
+						{
+							Console.WriteLine($"[CreateEpub] Failed to download cover (HTTP {response.StatusCode}) from {coverPath}");
+						}
+					}
+					catch (Exception ex) { Console.WriteLine($"[HandleSeries] Warning: Could not download cover image. {ex.Message}"); }
+				}
+			}
 
 			await using StreamWriter writer = new(storyFilePath);
 
