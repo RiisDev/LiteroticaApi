@@ -8,6 +8,13 @@ namespace LiteroticaApi.EpubWriter.Util
 {
 	internal static class WriterUtil
 	{
+		private static readonly Regex InvalidXmlCharsRegex = new(
+			@"(?<![\uD800-\uDBFF])[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]",
+			RegexOptions.Compiled
+		);
+
+		internal static string RemoveControlCharacters(this string input) => InvalidXmlCharsRegex.Replace(input, string.Empty);
+
 		internal static void CleanChapterFile(string chapterPathInput, StoryWriter.OnLogEventHandler? onLog = null)
 		{
 
@@ -596,7 +603,7 @@ namespace LiteroticaApi.EpubWriter.Util
 						new XElement(XName.Get("text", ncxNamespace), Path.GetFileNameWithoutExtension(story.Chapters[i]))
 					),
 					new XElement(XName.Get("content", ncxNamespace),
-						new XAttribute("src", $"text/chapter{i + 1}.xhtml")
+						new XAttribute("src", $"text/ch{i + 1:000}.xhtml")
 					)
 				);
 			}

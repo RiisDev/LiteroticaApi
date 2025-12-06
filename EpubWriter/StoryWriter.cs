@@ -194,6 +194,8 @@ namespace LiteroticaApi.EpubWriter
 				string chapterPathInput = story.Chapters[i];
 				string chapterContent = File.ReadAllText(chapterPathInput);
 
+				chapterContent = chapterContent.RemoveControlCharacters();
+
 				XDocument chapterDoc = WriterUtil.GenerateChapterXhtml(
 					Path.GetFileNameWithoutExtension(chapterPathInput),
 					chapterContent,
