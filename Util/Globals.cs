@@ -9,6 +9,6 @@ namespace LiteroticaApi
 		internal static int? InternalClamp(this int? value, int min, int max) => value == null ? min : value < min ? min : value > max ? max : value;
 		internal static int InternalClamp(this int value, int min, int max) => value < min ? min : value > max ? max : value;
 
-		internal static bool IsTrue(this bool? value) => value != null && value == true;
+		internal static bool IsTrue(this bool? value) => value is true;
 	}
 }

@@ -67,11 +67,6 @@ It includes a fully featured EPUB writer that can export stories or entire serie
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="EpubWriter\Standards\" />
-	  <EmbeddedResource Include="EpubWriter\Standards\**\*" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Compile Remove="Literotica.Cli\**" />
 		<None Remove="Literotica.Cli\**" />
 		<Content Remove="Literotica.Cli\**" />
