@@ -1,5 +1,5 @@
-﻿using LiteroticaApi.DataObjects;
-using LiteroticaApi.Util;
+﻿using EpubManager.ContentSources;
+using LiteroticaApi.DataObjects;
 
 namespace LiteroticaApi.Api
 {
@@ -23,7 +23,7 @@ namespace LiteroticaApi.Api
 		/// </exception>
 		public static async Task<Series?> GetSeriesInfoAsync(string seriesUrl)
 		{
-			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
+			string seriesId = await Literotica.UrlUtil.GetSeriesIdAsync(seriesUrl).ConfigureAwait(false);
 
 			InternalSeriesRoot internalSeries = await Client.Get<InternalSeriesRoot>($"series/{seriesId}").ConfigureAwait(false);
 			
@@ -51,7 +51,7 @@ namespace LiteroticaApi.Api
 		/// <exception cref="Exception">Thrown if the provided <paramref name="seriesUrl"/> is invalid.</exception>
 		public static async Task<Cover> GetSeriesCoverAsync(string seriesUrl)
 		{
-			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
+			string seriesId = await Literotica.UrlUtil.GetSeriesIdAsync(seriesUrl).ConfigureAwait(false);
 
 			return await Client.Get<Cover>($"series/{seriesId}/cover").ConfigureAwait(false);
 		}
@@ -68,7 +68,7 @@ namespace LiteroticaApi.Api
 		/// <exception cref="Exception">Thrown if the provided <paramref name="seriesUrl"/> is invalid.</exception>
 		public static async Task<IReadOnlyList<Story>?> GetSeriesWorksAsync(string seriesUrl)
 		{
-			string seriesId = await UrlUtil.GetSeriesId(seriesUrl).ConfigureAwait(false);
+			string seriesId = await Literotica.UrlUtil.GetSeriesIdAsync(seriesUrl).ConfigureAwait(false);
 
 			return await Client.Get<IReadOnlyList<Story>?>($"series/{seriesId}/works").ConfigureAwait(false);
 		}

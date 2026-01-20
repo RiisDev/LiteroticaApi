@@ -2,14 +2,15 @@
 using System.CommandLine.Parsing;
 using LiteroticaApi.Api;
 using LiteroticaApi.DataObjects;
-using LiteroticaApi.EpubWriter;
-using LiteroticaApi.Util;
+using EpubManager.Util;
 
 namespace Literotica.Cli.Downloader
 {
 	public class Program
 	{
 		private static bool EventHandled { get; set; }
+
+		private static readonly EpubManager.ContentSources.Literotica StoryWriter = new ();
 
 		public static async Task<int> Main(string[] args)
 		{
@@ -156,15 +157,13 @@ namespace Literotica.Cli.Downloader
 					if (logEnabled && !EventHandled)
 					{
 						EventHandled = true;
-						StoryWriter.OnLog += Console.WriteLine;
 					}
 
 					bool raw = format.Contains("raw", StringComparison.CurrentCultureIgnoreCase);
 
-					if (isSeries) await StoryWriter.CreateEpubFromSeries(url, outputDir, raw, startIndex, endIndex, coverPath);
-					else await StoryWriter.CreateEpubFromStory(url, outputDir, raw, startIndex, endIndex, coverPath);
+					if (isSeries) await StoryWriter.CreateEpubFromSeriesAsync(url, outputDir, coverPath, raw, startIndex, endIndex);
+					else await StoryWriter.CreateEpubFromStoryAsync(url, outputDir, coverPath, raw);
 				}
-
 			}
 		}
 
@@ -173,7 +172,7 @@ namespace Literotica.Cli.Downloader
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Verifying series url...");
 
-			string seriesSlug = await UrlUtil.GetSeriesId(url);
+			string seriesSlug = await EpubManager.ContentSources.Literotica.UrlUtil.GetSeriesIdAsync(url);
 
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Fetching series info from api...");
@@ -345,7 +344,7 @@ namespace Literotica.Cli.Downloader
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Verifying story url...");
-			string storySlug = await UrlUtil.GetStorySlug(url).ConfigureAwait(false);
+			string storySlug = await EpubManager.ContentSources.Literotica.UrlUtil.GetStorySlugAsync(url).ConfigureAwait(false);
 
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Fetching story info from api...");

@@ -1,5 +1,5 @@
-﻿using LiteroticaApi.DataObjects;
-using LiteroticaApi.Util;
+﻿using EpubManager.ContentSources;
+using LiteroticaApi.DataObjects;
 
 namespace LiteroticaApi.Api
 {
@@ -36,7 +36,7 @@ namespace LiteroticaApi.Api
 				{ "pageSize", pageSize }
 			};
 
-			return await Client.Get<TopCommenters>("comments/topcommenters", parameters).ConfigureAwait(false); ;
+			return await Client.Get<TopCommenters>("comments/topcommenters", parameters).ConfigureAwait(false); 
 		}
 
 		/// <summary>
@@ -68,7 +68,7 @@ namespace LiteroticaApi.Api
 				{ "period", period.ToString().ToLower() }
 			};
 
-			return await Client.Get<IReadOnlyList<RecentComment>>("comments/recent", parameters).ConfigureAwait(false); ;
+			return await Client.Get<IReadOnlyList<RecentComment>>("comments/recent", parameters).ConfigureAwait(false); 
 		}
 
 		/// <summary>
@@ -86,9 +86,6 @@ namespace LiteroticaApi.Api
 		/// <exception cref="Exception">
 		/// Thrown when the story slug cannot be extracted from the provided <paramref name="storyUrl"/>.
 		/// </exception>
-		/// <remarks>
-		/// This method uses <see cref="UrlUtil.GetStorySlug(string)"/> to resolve the story slug before performing the API request.
-		/// </remarks>
 		public static async Task<CommentHistory> GetStoryComments(string storyUrl, int page = 1, int limit = 100)
 		{
 			Dictionary<string, object> parameters = new()
@@ -98,8 +95,8 @@ namespace LiteroticaApi.Api
 				{ "sort", "created-desc" }
 			};
 
-			string storySlug = await UrlUtil.GetStorySlug(storyUrl).ConfigureAwait(false);
-			return await Client.Get<CommentHistory>($"stories/{storySlug}/comments/history", parameters).ConfigureAwait(false); ;
+			string storySlug = await Literotica.UrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
+			return await Client.Get<CommentHistory>($"stories/{storySlug}/comments/history", parameters).ConfigureAwait(false); 
 		}
 
 	}
