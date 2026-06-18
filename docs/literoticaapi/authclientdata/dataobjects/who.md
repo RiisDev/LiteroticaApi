@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents a user involved in an activity — either the actor or the target.
 
 ```csharp
-public class Who : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Who, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Who : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Who, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Who](./literoticaapi/authclientdata/dataobjects/who.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents available statistical checks across multiple time periods such as week, month, and today.
 
 ```csharp
-public class PeriodChecks : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodChecks, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class PeriodChecks : System.IEquatable`1[[LiteroticaApi.DataObjects.PeriodChecks, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [PeriodChecks](./literoticaapi/dataobjects/periodchecks.md)<br>
@@ -27,62 +27,62 @@ protected Type EqualityContract { get; }
 ### **Month**
 
 ```csharp
-public Nullable<int> Month { get; set; }
+public Nullable<long> Month { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Week**
 
 ```csharp
-public Nullable<int> Week { get; set; }
+public Nullable<long> Week { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Today**
 
 ```csharp
-public Nullable<int> Today { get; set; }
+public Nullable<long> Today { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Allperiod**
 
 ```csharp
-public Nullable<int> Allperiod { get; set; }
+public Nullable<long> Allperiod { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **PeriodChecks(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+### **PeriodChecks(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;)**
 
 Represents available statistical checks across multiple time periods such as week, month, and today.
 
 ```csharp
-public PeriodChecks(Nullable<int> Month, Nullable<int> Week, Nullable<int> Today, Nullable<int> Allperiod)
+public PeriodChecks(Nullable<long> Month, Nullable<long> Week, Nullable<long> Today, Nullable<long> Allperiod)
 ```
 
 #### Parameters
 
-`Month` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Month` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Week` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Week` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Today` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Today` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Allperiod` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Allperiod` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PeriodChecks(PeriodChecks)**
 

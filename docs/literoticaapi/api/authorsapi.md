@@ -13,17 +13,17 @@ Attributes [NullableContextAttribute](./system/runtime/compilerservices/nullable
 
 ## Methods
 
-### **GetAuthorByIdAsync(Int32)**
+### **GetAuthorByIdAsync(Int64)**
 
 Retrieves an [Author](./literoticaapi/dataobjects/author.md) by their numeric author ID.
 
 ```csharp
-public static Task<Author> GetAuthorByIdAsync(int authorId)
+public static Task<Author> GetAuthorByIdAsync(long authorId)
 ```
 
 #### Parameters
 
-`authorId` [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)<br>
+`authorId` [Int64](https://docs.microsoft.com/en-us/dotnet/api/system.int64)<br>
 The unique identifier of the author.
 
 #### Returns

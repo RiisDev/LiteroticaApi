@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a paginated list of the most-followed authors on Literotica.
 
 ```csharp
-public class TopFollowedAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthor, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopFollowedAuthor : System.IEquatable`1[[LiteroticaApi.DataObjects.TopFollowedAuthor, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopFollowedAuthor](./literoticaapi/dataobjects/topfollowedauthor.md)<br>
@@ -27,42 +27,42 @@ protected Type EqualityContract { get; }
 ### **CurrentPage**
 
 ```csharp
-public Nullable<int> CurrentPage { get; set; }
+public Nullable<long> CurrentPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **LastPage**
 
 ```csharp
-public Nullable<int> LastPage { get; set; }
+public Nullable<long> LastPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Total**
 
 ```csharp
-public Nullable<int> Total { get; set; }
+public Nullable<long> Total { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PerPage**
 
 ```csharp
-public Nullable<int> PerPage { get; set; }
+public Nullable<long> PerPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Data**
 
@@ -76,23 +76,23 @@ public IReadOnlyList<Author> Data { get; set; }
 
 ## Constructors
 
-### **TopFollowedAuthor(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Author&gt;)**
+### **TopFollowedAuthor(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, IReadOnlyList&lt;Author&gt;)**
 
 Represents a paginated list of the most-followed authors on Literotica.
 
 ```csharp
-public TopFollowedAuthor(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, IReadOnlyList<Author> Data)
+public TopFollowedAuthor(Nullable<long> CurrentPage, Nullable<long> LastPage, Nullable<long> Total, Nullable<long> PerPage, IReadOnlyList<Author> Data)
 ```
 
 #### Parameters
 
-`CurrentPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CurrentPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`LastPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`LastPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Total` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Total` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`PerPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PerPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Data` [IReadOnlyList&lt;Author&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 

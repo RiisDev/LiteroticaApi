@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single top commenter entry with basic identification and activity metrics.
 
 ```csharp
-public class TopCommentersDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopCommentersDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersDatum, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopCommentersDatum](./literoticaapi/dataobjects/topcommentersdatum.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Name**
 
@@ -47,30 +47,30 @@ public string Name { get; set; }
 ### **TotalComments**
 
 ```csharp
-public Nullable<int> TotalComments { get; set; }
+public Nullable<long> TotalComments { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **TopCommentersDatum(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;)**
+### **TopCommentersDatum(Nullable&lt;Int64&gt;, String, Nullable&lt;Int64&gt;)**
 
 Represents a single top commenter entry with basic identification and activity metrics.
 
 ```csharp
-public TopCommentersDatum(Nullable<int> Id, string Name, Nullable<int> TotalComments)
+public TopCommentersDatum(Nullable<long> Id, string Name, Nullable<long> TotalComments)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Name` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`TotalComments` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`TotalComments` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **TopCommentersDatum(TopCommentersDatum)**
 

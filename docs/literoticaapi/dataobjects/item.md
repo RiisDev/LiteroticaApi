@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single story item within a series or category, including metadata and type.
 
 ```csharp
-public class Item : System.IEquatable`1[[LiteroticaApi.DataObjects.Item, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Item : System.IEquatable`1[[LiteroticaApi.DataObjects.Item, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Item](./literoticaapi/dataobjects/item.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **CategoryInfo**
 
@@ -47,12 +47,12 @@ public CategoryInfo CategoryInfo { get; set; }
 ### **Category**
 
 ```csharp
-public Nullable<int> Category { get; set; }
+public Nullable<long> Category { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Title**
 
@@ -86,21 +86,21 @@ public string Url { get; set; }
 
 ## Constructors
 
-### **Item(Nullable&lt;Int32&gt;, CategoryInfo, Nullable&lt;Int32&gt;, String, String, String)**
+### **Item(Nullable&lt;Int64&gt;, CategoryInfo, Nullable&lt;Int64&gt;, String, String, String)**
 
 Represents a single story item within a series or category, including metadata and type.
 
 ```csharp
-public Item(Nullable<int> Id, CategoryInfo CategoryInfo, Nullable<int> Category, string Title, string Type, string Url)
+public Item(Nullable<long> Id, CategoryInfo CategoryInfo, Nullable<long> Category, string Title, string Type, string Url)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `CategoryInfo` [CategoryInfo](./literoticaapi/dataobjects/categoryinfo.md)<br>
 
-`Category` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Category` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Title` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

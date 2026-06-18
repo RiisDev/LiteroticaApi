@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a series of related stories or works, including parts, metadata, and creation details.
 
 ```csharp
-public class Series : System.IEquatable`1[[LiteroticaApi.DataObjects.Series, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Series : System.IEquatable`1[[LiteroticaApi.DataObjects.Series, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Series](./literoticaapi/dataobjects/series.md)<br>
@@ -27,22 +27,22 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **UserId**
 
 ```csharp
-public Nullable<int> UserId { get; set; }
+public Nullable<long> UserId { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Url**
 
@@ -87,12 +87,12 @@ public string Title { get; set; }
 ### **Language**
 
 ```csharp
-public Nullable<int> Language { get; set; }
+public Nullable<long> Language { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **State**
 
@@ -117,52 +117,52 @@ public object Description { get; set; }
 ### **ViewCount**
 
 ```csharp
-public Nullable<int> ViewCount { get; set; }
+public Nullable<long> ViewCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **CommentsCount**
 
 ```csharp
-public Nullable<int> CommentsCount { get; set; }
+public Nullable<long> CommentsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavoritesCount**
 
 ```csharp
-public Nullable<int> FavoritesCount { get; set; }
+public Nullable<long> FavoritesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **ListsCount**
 
 ```csharp
-public Nullable<int> ListsCount { get; set; }
+public Nullable<long> ListsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **WorkCount**
 
 ```csharp
-public Nullable<int> WorkCount { get; set; }
+public Nullable<long> WorkCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Parts**
 
@@ -176,19 +176,19 @@ public IReadOnlyList<Part> Parts { get; set; }
 
 ## Constructors
 
-### **Series(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;, String, Nullable&lt;Int32&gt;, String, Object, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Part&gt;)**
+### **Series(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;, String, Nullable&lt;Int64&gt;, String, Object, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, IReadOnlyList&lt;Part&gt;)**
 
 Represents a series of related stories or works, including parts, metadata, and creation details.
 
 ```csharp
-public Series(Nullable<int> Id, Nullable<int> UserId, string Url, Nullable<DateTime> CreatedAt, Nullable<DateTime> ModifiedAt, string Title, Nullable<int> Language, string State, object Description, Nullable<int> ViewCount, Nullable<int> CommentsCount, Nullable<int> FavoritesCount, Nullable<int> ListsCount, Nullable<int> WorkCount, IReadOnlyList<Part> Parts)
+public Series(Nullable<long> Id, Nullable<long> UserId, string Url, Nullable<DateTime> CreatedAt, Nullable<DateTime> ModifiedAt, string Title, Nullable<long> Language, string State, object Description, Nullable<long> ViewCount, Nullable<long> CommentsCount, Nullable<long> FavoritesCount, Nullable<long> ListsCount, Nullable<long> WorkCount, IReadOnlyList<Part> Parts)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`UserId` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`UserId` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Url` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -198,21 +198,21 @@ public Series(Nullable<int> Id, Nullable<int> UserId, string Url, Nullable<DateT
 
 `Title` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Language` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Language` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `State` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `Description` [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
 
-`ViewCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`ViewCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`CommentsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CommentsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavoritesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavoritesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`ListsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`ListsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`WorkCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`WorkCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Parts` [IReadOnlyList&lt;Part&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 

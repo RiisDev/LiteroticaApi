@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents an individual profile fact such as height, weight, or preferences.
 
 ```csharp
-public class Fact : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Fact, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Fact : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Fact, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Fact](./literoticaapi/authclientdata/dataobjects/fact.md)<br>

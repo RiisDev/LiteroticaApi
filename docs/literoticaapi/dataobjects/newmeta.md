@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata for newly added submissions.
 
 ```csharp
-public class NewMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.NewMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class NewMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.NewMeta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [NewMeta](./literoticaapi/dataobjects/newmeta.md)<br>
@@ -27,26 +27,26 @@ protected Type EqualityContract { get; }
 ### **SubmissionsCount**
 
 ```csharp
-public Nullable<int> SubmissionsCount { get; set; }
+public Nullable<long> SubmissionsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **NewMeta(Nullable&lt;Int32&gt;)**
+### **NewMeta(Nullable&lt;Int64&gt;)**
 
 Represents metadata for newly added submissions.
 
 ```csharp
-public NewMeta(Nullable<int> SubmissionsCount)
+public NewMeta(Nullable<long> SubmissionsCount)
 ```
 
 #### Parameters
 
-`SubmissionsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SubmissionsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **NewMeta(NewMeta)**
 

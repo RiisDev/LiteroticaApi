@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
 
 ```csharp
-public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class BookList : System.IEquatable`1[[LiteroticaApi.DataObjects.BookList, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [BookList](./literoticaapi/dataobjects/booklist.md)<br>
@@ -31,12 +31,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Description**
 
@@ -51,12 +51,12 @@ public string Description { get; set; }
 ### **StoriesCount**
 
 ```csharp
-public Nullable<int> StoriesCount { get; set; }
+public Nullable<long> StoriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SubmissionType**
 
@@ -91,12 +91,12 @@ public string Urlname { get; set; }
 ### **UserId**
 
 ```csharp
-public Nullable<int> UserId { get; set; }
+public Nullable<long> UserId { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **CreatedAt**
 
@@ -120,21 +120,21 @@ public Nullable<DateTime> UpdatedAt { get; set; }
 
 ## Constructors
 
-### **BookList(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, String, String, String, Nullable&lt;Int32&gt;, String, Nullable&lt;DateTime&gt;)**
+### **BookList(Nullable&lt;Int64&gt;, String, Nullable&lt;Int64&gt;, String, String, String, Nullable&lt;Int64&gt;, String, Nullable&lt;DateTime&gt;)**
 
 Represents a user-created list of books or stories on Literotica, containing metadata such as title, description, and creation date.
 
 ```csharp
-public BookList(Nullable<int> Id, string Description, Nullable<int> StoriesCount, string SubmissionType, string Title, string Urlname, Nullable<int> UserId, string CreatedAt, Nullable<DateTime> UpdatedAt)
+public BookList(Nullable<long> Id, string Description, Nullable<long> StoriesCount, string SubmissionType, string Title, string Urlname, Nullable<long> UserId, string CreatedAt, Nullable<DateTime> UpdatedAt)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Description` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`StoriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`StoriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `SubmissionType` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -142,7 +142,7 @@ public BookList(Nullable<int> Id, string Description, Nullable<int> StoriesCount
 
 `Urlname` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`UserId` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`UserId` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `CreatedAt` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

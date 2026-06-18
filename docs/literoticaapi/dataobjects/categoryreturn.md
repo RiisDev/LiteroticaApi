@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents detailed information about a category, including its name, descriptions, and submission count.
 
 ```csharp
-public class CategoryReturn : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryReturn, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CategoryReturn : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryReturn, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CategoryReturn](./literoticaapi/dataobjects/categoryreturn.md)<br>
@@ -27,22 +27,22 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Language**
 
 ```csharp
-public Nullable<int> Language { get; set; }
+public Nullable<long> Language { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Ldesc**
 
@@ -107,28 +107,28 @@ public string Type { get; set; }
 ### **SubmissionCount**
 
 ```csharp
-public Nullable<int> SubmissionCount { get; set; }
+public Nullable<long> SubmissionCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **CategoryReturn(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, String, String, String, String, Nullable&lt;Int32&gt;)**
+### **CategoryReturn(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, String, String, String, String, String, Nullable&lt;Int64&gt;)**
 
 Represents detailed information about a category, including its name, descriptions, and submission count.
 
 ```csharp
-public CategoryReturn(Nullable<int> Id, Nullable<int> Language, string Ldesc, string Name, string PageUrl, string Sdesc, string TopUrl, string Type, Nullable<int> SubmissionCount)
+public CategoryReturn(Nullable<long> Id, Nullable<long> Language, string Ldesc, string Name, string PageUrl, string Sdesc, string TopUrl, string Type, Nullable<long> SubmissionCount)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Language` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Language` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Ldesc` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -142,7 +142,7 @@ public CategoryReturn(Nullable<int> Id, Nullable<int> Language, string Ldesc, st
 
 `Type` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`SubmissionCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SubmissionCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **CategoryReturn(CategoryReturn)**
 

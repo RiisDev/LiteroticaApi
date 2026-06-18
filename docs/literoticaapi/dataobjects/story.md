@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a full story entity, including author data, metadata, and its relation to series or collections.
 
 ```csharp
-public class Story : System.IEquatable`1[[LiteroticaApi.DataObjects.Story, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Story : System.IEquatable`1[[LiteroticaApi.DataObjects.Story, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Story](./literoticaapi/dataobjects/story.md)<br>
@@ -27,22 +27,22 @@ protected Type EqualityContract { get; }
 ### **AllowVote**
 
 ```csharp
-public Nullable<int> AllowVote { get; set; }
+public Nullable<long> AllowVote { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **AllowDownload**
 
 ```csharp
-public Nullable<int> AllowDownload { get; set; }
+public Nullable<long> AllowDownload { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Author**
 
@@ -77,32 +77,32 @@ public CategoryInfo CategoryInfo { get; set; }
 ### **Category**
 
 ```csharp
-public Nullable<int> Category { get; set; }
+public Nullable<long> Category { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **CommentCount**
 
 ```csharp
-public Nullable<int> CommentCount { get; set; }
+public Nullable<long> CommentCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **ContestWinner**
 
 ```csharp
-public Nullable<int> ContestWinner { get; set; }
+public Nullable<long> ContestWinner { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **DateApprove**
 
@@ -127,32 +127,32 @@ public string Description { get; set; }
 ### **EnableComments**
 
 ```csharp
-public Nullable<int> EnableComments { get; set; }
+public Nullable<long> EnableComments { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavoriteCount**
 
 ```csharp
-public Nullable<int> FavoriteCount { get; set; }
+public Nullable<long> FavoriteCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **IsHot**
 
@@ -177,22 +177,22 @@ public Nullable<bool> IsNew { get; set; }
 ### **Language**
 
 ```csharp
-public Nullable<int> Language { get; set; }
+public Nullable<long> Language { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Newlanguage**
 
 ```csharp
-public Nullable<int> Newlanguage { get; set; }
+public Nullable<long> Newlanguage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Rank**
 
@@ -217,12 +217,12 @@ public Nullable<double> RateAll { get; set; }
 ### **ReadingListsCount**
 
 ```csharp
-public Nullable<int> ReadingListsCount { get; set; }
+public Nullable<long> ReadingListsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Tags**
 
@@ -267,12 +267,12 @@ public string Url { get; set; }
 ### **ViewCount**
 
 ```csharp
-public Nullable<int> ViewCount { get; set; }
+public Nullable<long> ViewCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **WritersPick**
 
@@ -297,28 +297,28 @@ public string Status { get; set; }
 ### **SeriesCount**
 
 ```csharp
-public Nullable<int> SeriesCount { get; set; }
+public Nullable<long> SeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **Story(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Author, String, CategoryInfo, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Double&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;Tag&gt;, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, String, Nullable&lt;Int32&gt;)**
+### **Story(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Author, String, CategoryInfo, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Boolean&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, Nullable&lt;Double&gt;, Nullable&lt;Int64&gt;, IReadOnlyList&lt;Tag&gt;, String, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Boolean&gt;, String, Nullable&lt;Int64&gt;)**
 
 Represents a full story entity, including author data, metadata, and its relation to series or collections.
 
 ```csharp
-public Story(Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author, string Authorname, CategoryInfo CategoryInfo, Nullable<int> Category, Nullable<int> CommentCount, Nullable<int> ContestWinner, string DateApprove, string Description, Nullable<int> EnableComments, Nullable<int> FavoriteCount, Nullable<int> Id, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<int> Language, Nullable<int> Newlanguage, string Rank, Nullable<double> RateAll, Nullable<int> ReadingListsCount, IReadOnlyList<Tag> Tags, string Title, string Type, string Url, Nullable<int> ViewCount, Nullable<bool> WritersPick, string Status, Nullable<int> SeriesCount)
+public Story(Nullable<long> AllowVote, Nullable<long> AllowDownload, Author Author, string Authorname, CategoryInfo CategoryInfo, Nullable<long> Category, Nullable<long> CommentCount, Nullable<long> ContestWinner, string DateApprove, string Description, Nullable<long> EnableComments, Nullable<long> FavoriteCount, Nullable<long> Id, Nullable<bool> IsHot, Nullable<bool> IsNew, Nullable<long> Language, Nullable<long> Newlanguage, string Rank, Nullable<double> RateAll, Nullable<long> ReadingListsCount, IReadOnlyList<Tag> Tags, string Title, string Type, string Url, Nullable<long> ViewCount, Nullable<bool> WritersPick, string Status, Nullable<long> SeriesCount)
 ```
 
 #### Parameters
 
-`AllowVote` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`AllowVote` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`AllowDownload` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`AllowDownload` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Author` [Author](./literoticaapi/dataobjects/author.md)<br>
 
@@ -326,35 +326,35 @@ public Story(Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author
 
 `CategoryInfo` [CategoryInfo](./literoticaapi/dataobjects/categoryinfo.md)<br>
 
-`Category` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Category` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`CommentCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CommentCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`ContestWinner` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`ContestWinner` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `DateApprove` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `Description` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`EnableComments` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`EnableComments` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavoriteCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavoriteCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `IsHot` [Nullable&lt;Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `IsNew` [Nullable&lt;Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Language` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Language` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Newlanguage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Newlanguage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Rank` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `RateAll` [Nullable&lt;Double&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`ReadingListsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`ReadingListsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Tags` [IReadOnlyList&lt;Tag&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 
@@ -364,13 +364,13 @@ public Story(Nullable<int> AllowVote, Nullable<int> AllowDownload, Author Author
 
 `Url` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`ViewCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`ViewCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `WritersPick` [Nullable&lt;Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Status` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`SeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Story(Story)**
 

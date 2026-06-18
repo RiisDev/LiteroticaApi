@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Metadata and pagination structure for the top commenters API response.
 
 ```csharp
-public class TopCommentersMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class TopCommentersMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.TopCommentersMeta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [TopCommentersMeta](./literoticaapi/dataobjects/topcommentersmeta.md)<br>
@@ -27,62 +27,62 @@ protected Type EqualityContract { get; }
 ### **CurrentPage**
 
 ```csharp
-public Nullable<int> CurrentPage { get; set; }
+public Nullable<long> CurrentPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **LastPage**
 
 ```csharp
-public Nullable<int> LastPage { get; set; }
+public Nullable<long> LastPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Total**
 
 ```csharp
-public Nullable<int> Total { get; set; }
+public Nullable<long> Total { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PerPage**
 
 ```csharp
-public Nullable<int> PerPage { get; set; }
+public Nullable<long> PerPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **TopCommentersMeta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+### **TopCommentersMeta(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;)**
 
 Metadata and pagination structure for the top commenters API response.
 
 ```csharp
-public TopCommentersMeta(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage)
+public TopCommentersMeta(Nullable<long> CurrentPage, Nullable<long> LastPage, Nullable<long> Total, Nullable<long> PerPage)
 ```
 
 #### Parameters
 
-`CurrentPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CurrentPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`LastPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`LastPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Total` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Total` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`PerPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PerPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **TopCommentersMeta(TopCommentersMeta)**
 

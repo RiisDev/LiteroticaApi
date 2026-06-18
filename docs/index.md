@@ -1,5 +1,31 @@
 # LiteroticaApi
 
+## EpubManager
+
+[Client](./epubmanager/client.md)
+
+## EpubManager.ContentSources
+
+[EpubSeries](./epubmanager/contentsources/epubseries.md)
+
+[EpubStory](./epubmanager/contentsources/epubstory.md)
+
+[IStoryWriter](./epubmanager/contentsources/istorywriter.md)
+
+[IStoryWriterUtil](./epubmanager/contentsources/istorywriterutil.md)
+
+[Literotica](./epubmanager/contentsources/literotica.md)
+
+[LiteroticaUrlUtil](./epubmanager/contentsources/literoticaurlutil.md)
+
+[StoryWriter](./epubmanager/contentsources/storywriter.md)
+
+[StoryWriterUtil](./epubmanager/contentsources/storywriterutil.md)
+
+## EpubManager.Util
+
+[UrlUtil](./epubmanager/util/urlutil.md)
+
 ## LiteroticaApi
 
 [Client](./literoticaapi/client.md)
@@ -183,15 +209,3 @@
 [X2](./literoticaapi/dataobjects/x2.md)
 
 [X3](./literoticaapi/dataobjects/x3.md)
-
-## LiteroticaApi.EpubWriter
-
-[EpubSeries](./literoticaapi/epubwriter/epubseries.md)
-
-[EpubStory](./literoticaapi/epubwriter/epubstory.md)
-
-[StoryWriter](./literoticaapi/epubwriter/storywriter.md)
-
-## LiteroticaApi.Util
-
-[UrlUtil](./literoticaapi/util/urlutil.md)

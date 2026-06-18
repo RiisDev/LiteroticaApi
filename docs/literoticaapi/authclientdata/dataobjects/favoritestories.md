@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents a user's collection of favorite stories and related list metadata.
 
 ```csharp
-public class FavoriteStories : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.FavoriteStories, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class FavoriteStories : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.FavoriteStories, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [FavoriteStories](./literoticaapi/authclientdata/dataobjects/favoritestories.md)<br>

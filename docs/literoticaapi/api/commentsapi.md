@@ -104,7 +104,3 @@ A task representing the asynchronous operation.
 
 [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)<br>
 Thrown when the story slug cannot be extracted from the provided `storyUrl`.
-
-**Remarks:**
-
-This method uses [UrlUtil.GetStorySlug(String)](./literoticaapi/util/urlutil.md#getstoryslugstring) to resolve the story slug before performing the API request.

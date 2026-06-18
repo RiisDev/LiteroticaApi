@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents the subject of an activity, which may be either a biography change or a story reference.
 
 ```csharp
-public class What : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.What, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class What : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.What, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [What](./literoticaapi/authclientdata/dataobjects/what.md)<br>

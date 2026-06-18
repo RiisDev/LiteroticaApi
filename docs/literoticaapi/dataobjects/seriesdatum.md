@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a series containing multiple story items and its related metadata.
 
 ```csharp
-public class SeriesDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.SeriesDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SeriesDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.SeriesDatum, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SeriesDatum](./literoticaapi/dataobjects/seriesdatum.md)<br>

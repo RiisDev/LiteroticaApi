@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents user-specific content viewing preferences such as font, spacing, and playback rate.
 
 ```csharp
-public class ViewSettings : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.ViewSettings, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class ViewSettings : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.ViewSettings, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [ViewSettings](./literoticaapi/authclientdata/dataobjects/viewsettings.md)<br>

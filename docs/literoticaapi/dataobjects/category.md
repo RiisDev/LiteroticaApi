@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a story or work category, including its unique identifier and URL.
 
 ```csharp
-public class Category : System.IEquatable`1[[LiteroticaApi.DataObjects.Category, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Category : System.IEquatable`1[[LiteroticaApi.DataObjects.Category, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Category](./literoticaapi/dataobjects/category.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Url**
 
@@ -46,17 +46,17 @@ public string Url { get; set; }
 
 ## Constructors
 
-### **Category(Nullable&lt;Int32&gt;, String)**
+### **Category(Nullable&lt;Int64&gt;, String)**
 
 Represents a story or work category, including its unique identifier and URL.
 
 ```csharp
-public Category(Nullable<int> Id, string Url)
+public Category(Nullable<long> Id, string Url)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Url` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents a hyperlink reference with display label and active state.
 
 ```csharp
-public class Link : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Link, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Link : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Link, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Link](./literoticaapi/authclientdata/dataobjects/link.md)<br>

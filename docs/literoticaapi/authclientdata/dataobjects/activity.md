@@ -6,7 +6,7 @@ Represents a user's activity feed, including a list of recent activity data
  and the count of new unseen activities.
 
 ```csharp
-public class Activity : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Activity, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Activity : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Activity, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Activity](./literoticaapi/authclientdata/dataobjects/activity.md)<br>

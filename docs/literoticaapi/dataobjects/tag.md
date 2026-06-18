@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a tag entity used for categorizing stories, including its text and ban status.
 
 ```csharp
-public class Tag : System.IEquatable`1[[LiteroticaApi.DataObjects.Tag, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Tag : System.IEquatable`1[[LiteroticaApi.DataObjects.Tag, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Tag](./literoticaapi/dataobjects/tag.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **TagText**
 
@@ -47,30 +47,30 @@ public StringOrInt TagText { get; set; }
 ### **IsBanned**
 
 ```csharp
-public Nullable<int> IsBanned { get; set; }
+public Nullable<long> IsBanned { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **Tag(Nullable&lt;Int32&gt;, StringOrInt, Nullable&lt;Int32&gt;)**
+### **Tag(Nullable&lt;Int64&gt;, StringOrInt, Nullable&lt;Int64&gt;)**
 
 Represents a tag entity used for categorizing stories, including its text and ban status.
 
 ```csharp
-public Tag(Nullable<int> Id, StringOrInt TagText, Nullable<int> IsBanned)
+public Tag(Nullable<long> Id, StringOrInt TagText, Nullable<long> IsBanned)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `TagText` [StringOrInt](./literoticaapi/dataobjects/stringorint.md)<br>
 
-`IsBanned` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`IsBanned` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Tag(Tag)**
 

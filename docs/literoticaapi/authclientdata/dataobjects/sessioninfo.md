@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Contains detailed information about the currently authenticated user session.
 
 ```csharp
-public class SessionInfo : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.SessionInfo, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SessionInfo : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.SessionInfo, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SessionInfo](./literoticaapi/authclientdata/dataobjects/sessioninfo.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata information about a story, series, or submission, including pagination and ordering.
 
 ```csharp
-public class Meta : System.IEquatable`1[[LiteroticaApi.DataObjects.Meta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Meta : System.IEquatable`1[[LiteroticaApi.DataObjects.Meta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Meta](./literoticaapi/dataobjects/meta.md)<br>
@@ -27,22 +27,22 @@ protected Type EqualityContract { get; }
 ### **PagesCount**
 
 ```csharp
-public Nullable<int> PagesCount { get; set; }
+public Nullable<long> PagesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Title**
 
@@ -87,28 +87,28 @@ public string UpdatedAt { get; set; }
 ### **Order**
 
 ```csharp
-public IReadOnlyList<Nullable<int>> Order { get; set; }
+public IReadOnlyList<Nullable<long>> Order { get; set; }
 ```
 
 #### Property Value
 
-[IReadOnlyList&lt;Nullable&lt;Int32&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
+[IReadOnlyList&lt;Nullable&lt;Int64&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 
 ## Constructors
 
-### **Meta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, String, String, IReadOnlyList&lt;Nullable&lt;Int32&gt;&gt;)**
+### **Meta(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, String, String, String, IReadOnlyList&lt;Nullable&lt;Int64&gt;&gt;)**
 
 Represents metadata information about a story, series, or submission, including pagination and ordering.
 
 ```csharp
-public Meta(Nullable<int> PagesCount, Nullable<int> Id, string Title, string Url, string CreatedAt, string UpdatedAt, IReadOnlyList<Nullable<int>> Order)
+public Meta(Nullable<long> PagesCount, Nullable<long> Id, string Title, string Url, string CreatedAt, string UpdatedAt, IReadOnlyList<Nullable<long>> Order)
 ```
 
 #### Parameters
 
-`PagesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PagesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Title` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -118,7 +118,7 @@ public Meta(Nullable<int> PagesCount, Nullable<int> Id, string Title, string Url
 
 `UpdatedAt` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Order` [IReadOnlyList&lt;Nullable&lt;Int32&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
+`Order` [IReadOnlyList&lt;Nullable&lt;Int64&gt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 
 ### **Meta(Meta)**
 

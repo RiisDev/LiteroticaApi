@@ -6,7 +6,7 @@ Represents an individual activity event, such as a story post, biography update,
  or user interaction on the platform.
 
 ```csharp
-public class ActivityData : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.ActivityData, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class ActivityData : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.ActivityData, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [ActivityData](./literoticaapi/authclientdata/dataobjects/activitydata.md)<br>

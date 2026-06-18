@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents metadata specific to tag-based search queries.
 
 ```csharp
-public class SearchByTagMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTagMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SearchByTagMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchByTagMeta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SearchByTagMeta](./literoticaapi/dataobjects/searchbytagmeta.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **SubmissionsCount**
 
 ```csharp
-public Nullable<int> SubmissionsCount { get; set; }
+public Nullable<long> SubmissionsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PeriodChecks**
 
@@ -46,17 +46,17 @@ public PeriodChecks PeriodChecks { get; set; }
 
 ## Constructors
 
-### **SearchByTagMeta(Nullable&lt;Int32&gt;, PeriodChecks)**
+### **SearchByTagMeta(Nullable&lt;Int64&gt;, PeriodChecks)**
 
 Represents metadata specific to tag-based search queries.
 
 ```csharp
-public SearchByTagMeta(Nullable<int> SubmissionsCount, PeriodChecks PeriodChecks)
+public SearchByTagMeta(Nullable<long> SubmissionsCount, PeriodChecks PeriodChecks)
 ```
 
 #### Parameters
 
-`SubmissionsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SubmissionsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `PeriodChecks` [PeriodChecks](./literoticaapi/dataobjects/periodchecks.md)<br>
 

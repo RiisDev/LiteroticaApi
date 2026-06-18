@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents a paginated collection of favorite story entries.
 
 ```csharp
-public class Works : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Works, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Works : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Works, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Works](./literoticaapi/authclientdata/dataobjects/works.md)<br>

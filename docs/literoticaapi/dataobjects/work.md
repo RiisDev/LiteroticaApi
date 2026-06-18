@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a minimal reference to a work, containing its ID and URL.
 
 ```csharp
-public class Work : System.IEquatable`1[[LiteroticaApi.DataObjects.Work, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Work : System.IEquatable`1[[LiteroticaApi.DataObjects.Work, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Work](./literoticaapi/dataobjects/work.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Url**
 
@@ -46,17 +46,17 @@ public string Url { get; set; }
 
 ## Constructors
 
-### **Work(Nullable&lt;Int32&gt;, String)**
+### **Work(Nullable&lt;Int64&gt;, String)**
 
 Represents a minimal reference to a work, containing its ID and URL.
 
 ```csharp
-public Work(Nullable<int> Id, string Url)
+public Work(Nullable<long> Id, string Url)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Url` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a single comment entry within a user's comment history.
 
 ```csharp
-public class CommentHistoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CommentHistoryDatum : System.IEquatable`1[[LiteroticaApi.DataObjects.CommentHistoryDatum, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CommentHistoryDatum](./literoticaapi/dataobjects/commenthistorydatum.md)<br>
@@ -27,42 +27,42 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Date**
 
 ```csharp
-public Nullable<int> Date { get; set; }
+public Nullable<long> Date { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Rate**
 
 ```csharp
-public Nullable<int> Rate { get; set; }
+public Nullable<long> Rate { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Type**
 
 ```csharp
-public Nullable<int> Type { get; set; }
+public Nullable<long> Type { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Text**
 
@@ -96,23 +96,23 @@ public Author Author { get; set; }
 
 ## Constructors
 
-### **CommentHistoryDatum(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Author)**
+### **CommentHistoryDatum(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, String, Author)**
 
 Represents a single comment entry within a user's comment history.
 
 ```csharp
-public CommentHistoryDatum(Nullable<int> Id, Nullable<int> Date, Nullable<int> Rate, Nullable<int> Type, string Text, string Title, Author Author)
+public CommentHistoryDatum(Nullable<long> Id, Nullable<long> Date, Nullable<long> Rate, Nullable<long> Type, string Text, string Title, Author Author)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Date` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Date` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Rate` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Rate` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Type` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Type` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Text` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

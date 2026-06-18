@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents paginated data containing multiple stories or works, including series indicators and metadata.
 
 ```csharp
-public class WorksData : System.IEquatable`1[[LiteroticaApi.DataObjects.WorksData, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class WorksData : System.IEquatable`1[[LiteroticaApi.DataObjects.WorksData, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [WorksData](./literoticaapi/dataobjects/worksdata.md)<br>
@@ -27,42 +27,42 @@ protected Type EqualityContract { get; }
 ### **CurrentPage**
 
 ```csharp
-public Nullable<int> CurrentPage { get; set; }
+public Nullable<long> CurrentPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **LastPage**
 
 ```csharp
-public Nullable<int> LastPage { get; set; }
+public Nullable<long> LastPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Total**
 
 ```csharp
-public Nullable<int> Total { get; set; }
+public Nullable<long> Total { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PerPage**
 
 ```csharp
-public Nullable<int> PerPage { get; set; }
+public Nullable<long> PerPage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **HasSeries**
 
@@ -86,23 +86,23 @@ public IReadOnlyList<StoryDatum> Data { get; set; }
 
 ## Constructors
 
-### **WorksData(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Boolean&gt;, IReadOnlyList&lt;StoryDatum&gt;)**
+### **WorksData(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Boolean&gt;, IReadOnlyList&lt;StoryDatum&gt;)**
 
 Represents paginated data containing multiple stories or works, including series indicators and metadata.
 
 ```csharp
-public WorksData(Nullable<int> CurrentPage, Nullable<int> LastPage, Nullable<int> Total, Nullable<int> PerPage, Nullable<bool> HasSeries, IReadOnlyList<StoryDatum> Data)
+public WorksData(Nullable<long> CurrentPage, Nullable<long> LastPage, Nullable<long> Total, Nullable<long> PerPage, Nullable<bool> HasSeries, IReadOnlyList<StoryDatum> Data)
 ```
 
 #### Parameters
 
-`CurrentPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CurrentPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`LastPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`LastPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Total` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Total` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`PerPage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PerPage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `HasSeries` [Nullable&lt;Boolean&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 

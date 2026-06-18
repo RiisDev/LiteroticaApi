@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents a tag that is related to another tag, including its ID, display text, and usage count.
 
 ```csharp
-public class RelatedTag : System.IEquatable`1[[LiteroticaApi.DataObjects.RelatedTag, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class RelatedTag : System.IEquatable`1[[LiteroticaApi.DataObjects.RelatedTag, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [RelatedTag](./literoticaapi/dataobjects/relatedtag.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Tag**
 
@@ -47,30 +47,30 @@ public StringOrInt Tag { get; set; }
 ### **Cnt**
 
 ```csharp
-public Nullable<int> Cnt { get; set; }
+public Nullable<long> Cnt { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **RelatedTag(Nullable&lt;Int32&gt;, StringOrInt, Nullable&lt;Int32&gt;)**
+### **RelatedTag(Nullable&lt;Int64&gt;, StringOrInt, Nullable&lt;Int64&gt;)**
 
 Represents a tag that is related to another tag, including its ID, display text, and usage count.
 
 ```csharp
-public RelatedTag(Nullable<int> Id, StringOrInt Tag, Nullable<int> Cnt)
+public RelatedTag(Nullable<long> Id, StringOrInt Tag, Nullable<long> Cnt)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Tag` [StringOrInt](./literoticaapi/dataobjects/stringorint.md)<br>
 
-`Cnt` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Cnt` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **RelatedTag(RelatedTag)**
 

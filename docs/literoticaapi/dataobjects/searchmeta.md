@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents pagination metadata for search queries.
 
 ```csharp
-public class SearchMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchMeta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class SearchMeta : System.IEquatable`1[[LiteroticaApi.DataObjects.SearchMeta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [SearchMeta](./literoticaapi/dataobjects/searchmeta.md)<br>
@@ -27,38 +27,38 @@ protected Type EqualityContract { get; }
 ### **PageSize**
 
 ```csharp
-public Nullable<int> PageSize { get; set; }
+public Nullable<long> PageSize { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Total**
 
 ```csharp
-public Nullable<int> Total { get; set; }
+public Nullable<long> Total { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ## Constructors
 
-### **SearchMeta(Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;)**
+### **SearchMeta(Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;)**
 
 Represents pagination metadata for search queries.
 
 ```csharp
-public SearchMeta(Nullable<int> PageSize, Nullable<int> Total)
+public SearchMeta(Nullable<long> PageSize, Nullable<long> Total)
 ```
 
 #### Parameters
 
-`PageSize` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PageSize` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Total` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Total` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SearchMeta(SearchMeta)**
 

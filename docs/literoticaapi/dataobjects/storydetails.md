@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents the details of an individual story, including metadata such as category, language, and URL.
 
 ```csharp
-public class StoryDetails : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDetails, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class StoryDetails : System.IEquatable`1[[LiteroticaApi.DataObjects.StoryDetails, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [StoryDetails](./literoticaapi/dataobjects/storydetails.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Category**
 
 ```csharp
-public Nullable<int> Category { get; set; }
+public Nullable<long> Category { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Description**
 
@@ -47,32 +47,32 @@ public string Description { get; set; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Language**
 
 ```csharp
-public Nullable<int> Language { get; set; }
+public Nullable<long> Language { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Newlanguage**
 
 ```csharp
-public Nullable<int> Newlanguage { get; set; }
+public Nullable<long> Newlanguage { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Name**
 
@@ -87,12 +87,12 @@ public string Name { get; set; }
 ### **Storyid**
 
 ```csharp
-public Nullable<int> Storyid { get; set; }
+public Nullable<long> Storyid { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Tag**
 
@@ -126,29 +126,29 @@ public string Url { get; set; }
 
 ## Constructors
 
-### **StoryDetails(Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Nullable&lt;Int32&gt;, String, String, String)**
+### **StoryDetails(Nullable&lt;Int64&gt;, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, Nullable&lt;Int64&gt;, String, String, String)**
 
 Represents the details of an individual story, including metadata such as category, language, and URL.
 
 ```csharp
-public StoryDetails(Nullable<int> Category, string Description, Nullable<int> Id, Nullable<int> Language, Nullable<int> Newlanguage, string Name, Nullable<int> Storyid, string Tag, string Type, string Url)
+public StoryDetails(Nullable<long> Category, string Description, Nullable<long> Id, Nullable<long> Language, Nullable<long> Newlanguage, string Name, Nullable<long> Storyid, string Tag, string Type, string Url)
 ```
 
 #### Parameters
 
-`Category` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Category` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Description` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Language` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Language` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Newlanguage` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Newlanguage` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Name` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Storyid` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Storyid` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Tag` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

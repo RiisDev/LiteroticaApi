@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Contains pagination and metadata details for paginated API responses.
 
 ```csharp
-public class Meta : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Meta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Meta : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Meta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Meta](./literoticaapi/authclientdata/dataobjects/meta.md)<br>

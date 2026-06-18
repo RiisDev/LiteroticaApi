@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents a Literotica user with profile details, activity counts, and statistics.
 
 ```csharp
-public class User : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.User, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class User : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.User, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [User](./literoticaapi/authclientdata/dataobjects/user.md)<br>

@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents an editor's capabilities, assigned languages, and related user information.
 
 ```csharp
-public class EditorDatum : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.EditorDatum, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class EditorDatum : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.EditorDatum, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [EditorDatum](./literoticaapi/authclientdata/dataobjects/editordatum.md)<br>

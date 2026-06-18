@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents information about a story category, including its name, description, and type.
 
 ```csharp
-public class CategoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryInfo, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class CategoryInfo : System.IEquatable`1[[LiteroticaApi.DataObjects.CategoryInfo, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [CategoryInfo](./literoticaapi/dataobjects/categoryinfo.md)<br>
@@ -27,12 +27,12 @@ protected Type EqualityContract { get; }
 ### **Id**
 
 ```csharp
-public Nullable<int> Id { get; set; }
+public Nullable<long> Id { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Name**
 
@@ -86,17 +86,17 @@ public string PageUrl { get; set; }
 
 ## Constructors
 
-### **CategoryInfo(Nullable&lt;Int32&gt;, String, String, String, String, String)**
+### **CategoryInfo(Nullable&lt;Int64&gt;, String, String, String, String, String)**
 
 Represents information about a story category, including its name, description, and type.
 
 ```csharp
-public CategoryInfo(Nullable<int> Id, string Name, string Ldesc, string Sdesc, string Type, string PageUrl)
+public CategoryInfo(Nullable<long> Id, string Name, string Ldesc, string Sdesc, string Type, string PageUrl)
 ```
 
 #### Parameters
 
-`Id` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Id` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Name` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 

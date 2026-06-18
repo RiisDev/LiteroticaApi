@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.AuthClientData.DataObjects
 Represents beta feature flags for user account features.
 
 ```csharp
-public class Beta : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Beta, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Beta : System.IEquatable`1[[LiteroticaApi.AuthClientData.DataObjects.Beta, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Beta](./literoticaapi/authclientdata/dataobjects/beta.md)<br>

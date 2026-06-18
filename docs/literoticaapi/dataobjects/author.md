@@ -5,7 +5,7 @@ Namespace: LiteroticaApi.DataObjects
 Represents an author profile on Literotica, including biography, statistics, and personal attributes.
 
 ```csharp
-public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, LiteroticaApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]
+public class Author : System.IEquatable`1[[LiteroticaApi.DataObjects.Author, LiteroticaApi, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null]]
 ```
 
 Inheritance [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object) → [Author](./literoticaapi/dataobjects/author.md)<br>
@@ -62,22 +62,22 @@ public string Biography { get; set; }
 ### **CommentsCount**
 
 ```csharp
-public Nullable<int> CommentsCount { get; set; }
+public Nullable<long> CommentsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Customtitle**
 
 ```csharp
-public Nullable<int> Customtitle { get; set; }
+public Nullable<long> Customtitle { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Drink**
 
@@ -102,42 +102,42 @@ public string EditorStatus { get; set; }
 ### **FollowedStoriesCount**
 
 ```csharp
-public Nullable<int> FollowedStoriesCount { get; set; }
+public Nullable<long> FollowedStoriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FollowersCount**
 
 ```csharp
-public Nullable<int> FollowersCount { get; set; }
+public Nullable<long> FollowersCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FollowingsCount**
 
 ```csharp
-public Nullable<int> FollowingsCount { get; set; }
+public Nullable<long> FollowingsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **HasPhoto**
 
 ```csharp
-public Nullable<int> HasPhoto { get; set; }
+public Nullable<long> HasPhoto { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Homepage**
 
@@ -192,12 +192,12 @@ public string Status { get; set; }
 ### **Options**
 
 ```csharp
-public Nullable<int> Options { get; set; }
+public Nullable<long> Options { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Pets**
 
@@ -222,192 +222,192 @@ public string Smoke { get; set; }
 ### **StoriesCount**
 
 ```csharp
-public Nullable<int> StoriesCount { get; set; }
+public Nullable<long> StoriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PoemsCount**
 
 ```csharp
-public Nullable<int> PoemsCount { get; set; }
+public Nullable<long> PoemsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **IllustrationsCount**
 
 ```csharp
-public Nullable<int> IllustrationsCount { get; set; }
+public Nullable<long> IllustrationsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **AudiosCount**
 
 ```csharp
-public Nullable<int> AudiosCount { get; set; }
+public Nullable<long> AudiosCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SgsCount**
 
 ```csharp
-public Nullable<int> SgsCount { get; set; }
+public Nullable<long> SgsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SeriesCount**
 
 ```csharp
-public Nullable<int> SeriesCount { get; set; }
+public Nullable<long> SeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **StoriesAndSeriesCount**
 
 ```csharp
-public Nullable<int> StoriesAndSeriesCount { get; set; }
+public Nullable<long> StoriesAndSeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **AudiosAndSeriesCount**
 
 ```csharp
-public Nullable<int> AudiosAndSeriesCount { get; set; }
+public Nullable<long> AudiosAndSeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **PoemsAndSeriesCount**
 
 ```csharp
-public Nullable<int> PoemsAndSeriesCount { get; set; }
+public Nullable<long> PoemsAndSeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **IllustrasAndSeriesCount**
 
 ```csharp
-public Nullable<int> IllustrasAndSeriesCount { get; set; }
+public Nullable<long> IllustrasAndSeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SgsAndSeriesCount**
 
 ```csharp
-public Nullable<int> SgsAndSeriesCount { get; set; }
+public Nullable<long> SgsAndSeriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavStoriesCount**
 
 ```csharp
-public Nullable<int> FavStoriesCount { get; set; }
+public Nullable<long> FavStoriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavPoemsCount**
 
 ```csharp
-public Nullable<int> FavPoemsCount { get; set; }
+public Nullable<long> FavPoemsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavSgsCount**
 
 ```csharp
-public Nullable<int> FavSgsCount { get; set; }
+public Nullable<long> FavSgsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavArtworksCount**
 
 ```csharp
-public Nullable<int> FavArtworksCount { get; set; }
+public Nullable<long> FavArtworksCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavAudiosCount**
 
 ```csharp
-public Nullable<int> FavAudiosCount { get; set; }
+public Nullable<long> FavAudiosCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **FavAuthorsCount**
 
 ```csharp
-public Nullable<int> FavAuthorsCount { get; set; }
+public Nullable<long> FavAuthorsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **SubmissionsCount**
 
 ```csharp
-public Nullable<int> SubmissionsCount { get; set; }
+public Nullable<long> SubmissionsCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Userid**
 
 ```csharp
-public Nullable<int> Userid { get; set; }
+public Nullable<long> Userid { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Username**
 
@@ -442,12 +442,12 @@ public string Usertitle { get; set; }
 ### **FavoritesCount**
 
 ```csharp
-public Nullable<int> FavoritesCount { get; set; }
+public Nullable<long> FavoritesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **LastUpdate**
 
@@ -482,12 +482,12 @@ public string LastUpdateApprox { get; set; }
 ### **FavoriteStoriesCount**
 
 ```csharp
-public Nullable<int> FavoriteStoriesCount { get; set; }
+public Nullable<long> FavoriteStoriesCount { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Sex**
 
@@ -562,22 +562,22 @@ public string Datingstat { get; set; }
 ### **Allowfeedback**
 
 ```csharp
-public Nullable<int> Allowfeedback { get; set; }
+public Nullable<long> Allowfeedback { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **DisableAllFeedback**
 
 ```csharp
-public Nullable<int> DisableAllFeedback { get; set; }
+public Nullable<long> DisableAllFeedback { get; set; }
 ```
 
 #### Property Value
 
-[Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+[Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 ### **Lists**
 
@@ -621,12 +621,12 @@ public string SupportMeLink { get; set; }
 
 ## Constructors
 
-### **Author(String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, String, Object, String, String, String, Nullable&lt;Int32&gt;, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, StringOrInt, String, String, Nullable&lt;Int32&gt;, Nullable&lt;DateTime&gt;, String, String, Nullable&lt;Int32&gt;, String, String, String, String, String, String, String, Nullable&lt;Int32&gt;, Nullable&lt;Int32&gt;, IReadOnlyList&lt;BookList&gt;, Object, String, String)**
+### **Author(String, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, String, Object, String, String, String, Nullable&lt;Int64&gt;, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, StringOrInt, String, String, Nullable&lt;Int64&gt;, Nullable&lt;DateTime&gt;, String, String, Nullable&lt;Int64&gt;, String, String, String, String, String, String, String, Nullable&lt;Int64&gt;, Nullable&lt;Int64&gt;, IReadOnlyList&lt;BookList&gt;, Object, String, String)**
 
 Represents an author profile on Literotica, including biography, statistics, and personal attributes.
 
 ```csharp
-public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCount, Nullable<int> Customtitle, string Drink, string EditorStatus, Nullable<int> FollowedStoriesCount, Nullable<int> FollowersCount, Nullable<int> FollowingsCount, Nullable<int> HasPhoto, string Homepage, object Icq, string Joindate, string Location, string Status, Nullable<int> Options, string Pets, string Smoke, Nullable<int> StoriesCount, Nullable<int> PoemsCount, Nullable<int> IllustrationsCount, Nullable<int> AudiosCount, Nullable<int> SgsCount, Nullable<int> SeriesCount, Nullable<int> StoriesAndSeriesCount, Nullable<int> AudiosAndSeriesCount, Nullable<int> PoemsAndSeriesCount, Nullable<int> IllustrasAndSeriesCount, Nullable<int> SgsAndSeriesCount, Nullable<int> FavStoriesCount, Nullable<int> FavPoemsCount, Nullable<int> FavSgsCount, Nullable<int> FavArtworksCount, Nullable<int> FavAudiosCount, Nullable<int> FavAuthorsCount, Nullable<int> SubmissionsCount, Nullable<int> Userid, StringOrInt Username, string Userpic, string Usertitle, Nullable<int> FavoritesCount, Nullable<DateTime> LastUpdate, string JoindateApprox, string LastUpdateApprox, Nullable<int> FavoriteStoriesCount, string Sex, string Weight, string Height, string Orientation, string Interests, string Fetishes, string Datingstat, Nullable<int> Allowfeedback, Nullable<int> DisableAllFeedback, IReadOnlyList<BookList> Lists, object ListsContent, string SupportMeService, string SupportMeLink)
+public Author(string Aim, string Bio, string Biography, Nullable<long> CommentsCount, Nullable<long> Customtitle, string Drink, string EditorStatus, Nullable<long> FollowedStoriesCount, Nullable<long> FollowersCount, Nullable<long> FollowingsCount, Nullable<long> HasPhoto, string Homepage, object Icq, string Joindate, string Location, string Status, Nullable<long> Options, string Pets, string Smoke, Nullable<long> StoriesCount, Nullable<long> PoemsCount, Nullable<long> IllustrationsCount, Nullable<long> AudiosCount, Nullable<long> SgsCount, Nullable<long> SeriesCount, Nullable<long> StoriesAndSeriesCount, Nullable<long> AudiosAndSeriesCount, Nullable<long> PoemsAndSeriesCount, Nullable<long> IllustrasAndSeriesCount, Nullable<long> SgsAndSeriesCount, Nullable<long> FavStoriesCount, Nullable<long> FavPoemsCount, Nullable<long> FavSgsCount, Nullable<long> FavArtworksCount, Nullable<long> FavAudiosCount, Nullable<long> FavAuthorsCount, Nullable<long> SubmissionsCount, Nullable<long> Userid, StringOrInt Username, string Userpic, string Usertitle, Nullable<long> FavoritesCount, Nullable<DateTime> LastUpdate, string JoindateApprox, string LastUpdateApprox, Nullable<long> FavoriteStoriesCount, string Sex, string Weight, string Height, string Orientation, string Interests, string Fetishes, string Datingstat, Nullable<long> Allowfeedback, Nullable<long> DisableAllFeedback, IReadOnlyList<BookList> Lists, object ListsContent, string SupportMeService, string SupportMeLink)
 ```
 
 #### Parameters
@@ -637,21 +637,21 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 
 `Biography` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`CommentsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`CommentsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Customtitle` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Customtitle` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Drink` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `EditorStatus` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`FollowedStoriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FollowedStoriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FollowersCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FollowersCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FollowingsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FollowingsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`HasPhoto` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`HasPhoto` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Homepage` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -663,49 +663,49 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 
 `Status` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Options` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Options` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Pets` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
 `Smoke` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`StoriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`StoriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`PoemsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PoemsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`IllustrationsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`IllustrationsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`AudiosCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`AudiosCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`SgsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SgsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`SeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`StoriesAndSeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`StoriesAndSeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`AudiosAndSeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`AudiosAndSeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`PoemsAndSeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`PoemsAndSeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`IllustrasAndSeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`IllustrasAndSeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`SgsAndSeriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SgsAndSeriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavStoriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavStoriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavPoemsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavPoemsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavSgsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavSgsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavArtworksCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavArtworksCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavAudiosCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavAudiosCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`FavAuthorsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavAuthorsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`SubmissionsCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`SubmissionsCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`Userid` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Userid` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Username` [StringOrInt](./literoticaapi/dataobjects/stringorint.md)<br>
 
@@ -713,7 +713,7 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 
 `Usertitle` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`FavoritesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavoritesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `LastUpdate` [Nullable&lt;DateTime&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
@@ -721,7 +721,7 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 
 `LastUpdateApprox` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`FavoriteStoriesCount` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`FavoriteStoriesCount` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Sex` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
@@ -737,9 +737,9 @@ public Author(string Aim, string Bio, string Biography, Nullable<int> CommentsCo
 
 `Datingstat` [String](https://docs.microsoft.com/en-us/dotnet/api/system.string)<br>
 
-`Allowfeedback` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`Allowfeedback` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
-`DisableAllFeedback` [Nullable&lt;Int32&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
+`DisableAllFeedback` [Nullable&lt;Int64&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.nullable-1)<br>
 
 `Lists` [IReadOnlyList&lt;BookList&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1)<br>
 
