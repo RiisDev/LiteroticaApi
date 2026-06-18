@@ -17,7 +17,7 @@ namespace LiteroticaApi.Api
 		/// or <c>null</c> if the author could not be found.
 		/// </returns>
 		/// <exception cref="LitEroticaApiException">Thrown when the API response contains null or invalid data.</exception>
-		public static async Task<Author?> GetAuthorByIdAsync(int authorId)
+		public static async Task<Author?> GetAuthorByIdAsync(long authorId)
 		{
 			List<InternalAuthor>? authorData = await Client.Get<List<InternalAuthor>>($"authors/{authorId}").ConfigureAwait(false);
 			

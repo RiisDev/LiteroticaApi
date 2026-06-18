@@ -4,10 +4,10 @@
 	/// Represents pagination and metadata information for a user's comment history on a specific story.
 	/// </summary>
 	public record CommentHistoryMeta(
-		[property: JsonPropertyName("current_page")] int? CurrentPage,
-		[property: JsonPropertyName("last_page")] int? LastPage,
-		[property: JsonPropertyName("total")] int? Total,
-		[property: JsonPropertyName("per_page")] int? PerPage,
+		[property: JsonPropertyName("current_page")] long? CurrentPage,
+		[property: JsonPropertyName("last_page")] long? LastPage,
+		[property: JsonPropertyName("total")] long? Total,
+		[property: JsonPropertyName("per_page")] long? PerPage,
 		[property: JsonPropertyName("work")] Story Work
 	);
 
@@ -15,10 +15,10 @@
 	/// Represents a single comment entry within a user's comment history.
 	/// </summary>
 	public record CommentHistoryDatum(
-		[property: JsonPropertyName("id")] int? Id,
-		[property: JsonPropertyName("date")] int? Date,
-		[property: JsonPropertyName("rate")] int? Rate,
-		[property: JsonPropertyName("type")] int? Type,
+		[property: JsonPropertyName("id")] long? Id,
+		[property: JsonPropertyName("date")] long? Date,
+		[property: JsonPropertyName("rate")] long? Rate,
+		[property: JsonPropertyName("type")] long? Type,
 		[property: JsonPropertyName("text")] string Text,
 		[property: JsonPropertyName("title")] string Title,
 		[property: JsonPropertyName("author")] Author Author
@@ -36,10 +36,10 @@
 	/// Represents a recent comment made on a work, typically used in global or author-wide comment feeds.
 	/// </summary>
 	public record RecentComment(
-		[property: JsonPropertyName("id")] int? Id,
-		[property: JsonPropertyName("date")] int? Date,
-		[property: JsonPropertyName("rate")] int? Rate,
-		[property: JsonPropertyName("type")] int? Type,
+		[property: JsonPropertyName("id")] long? Id,
+		[property: JsonPropertyName("date")] long? Date,
+		[property: JsonPropertyName("rate")] long? Rate,
+		[property: JsonPropertyName("type")] long? Type,
 		[property: JsonPropertyName("story")] Story Story,
 		[property: JsonPropertyName("text")] string Text,
 		[property: JsonPropertyName("title")] string Title,
@@ -50,19 +50,19 @@
 	/// Represents a single top commenter entry with basic identification and activity metrics.
 	/// </summary>
 	public record TopCommentersDatum(
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("name")] string Name,
-		[property: JsonPropertyName("total_comments")] int? TotalComments
+		[property: JsonPropertyName("total_comments")] long? TotalComments
 	);
 
 	/// <summary>
 	/// Metadata and pagination structure for the top commenters API response.
 	/// </summary>
 	public record TopCommentersMeta(
-		[property: JsonPropertyName("current_page")] int? CurrentPage,
-		[property: JsonPropertyName("last_page")] int? LastPage,
-		[property: JsonPropertyName("total")] int? Total,
-		[property: JsonPropertyName("per_page")] int? PerPage
+		[property: JsonPropertyName("current_page")] long? CurrentPage,
+		[property: JsonPropertyName("last_page")] long? LastPage,
+		[property: JsonPropertyName("total")] long? Total,
+		[property: JsonPropertyName("per_page")] long? PerPage
 	);
 
 	/// <summary>

@@ -4,21 +4,21 @@
 	/// Represents internal data about a specific series, including metadata, user, and content details.
 	/// </summary>
 	internal record Data(
-		[property: JsonPropertyName("id")] int? Id,
-		[property: JsonPropertyName("user_id")] int? UserId,
+		[property: JsonPropertyName("id")] long? Id,
+		[property: JsonPropertyName("user_id")] long? UserId,
 		[property: JsonPropertyName("url")] object? Url,
 		[property: JsonPropertyName("created_at")] DateTime? CreatedAt,
 		[property: JsonPropertyName("modified_at")] DateTime? ModifiedAt,
 		[property: JsonPropertyName("title")] string Title,
-		[property: JsonPropertyName("language")] int? Language,
+		[property: JsonPropertyName("language")] long? Language,
 		[property: JsonPropertyName("state")] string State,
 		[property: JsonPropertyName("description")] object Description,
-		[property: JsonPropertyName("view_count")] int? ViewCount,
-		[property: JsonPropertyName("comments_count")] int? CommentsCount,
-		[property: JsonPropertyName("favorites_count")] int? FavoritesCount,
-		[property: JsonPropertyName("lists_count")] int? ListsCount,
+		[property: JsonPropertyName("view_count")] long? ViewCount,
+		[property: JsonPropertyName("comments_count")] long? CommentsCount,
+		[property: JsonPropertyName("favorites_count")] long? FavoritesCount,
+		[property: JsonPropertyName("lists_count")] long? ListsCount,
 		[property: JsonPropertyName("user")] Author User,
-		[property: JsonPropertyName("work_count")] int? WorkCount,
+		[property: JsonPropertyName("work_count")] long? WorkCount,
 		[property: JsonPropertyName("introduction")] object? Introduction
 	);
 
@@ -68,8 +68,8 @@
 	/// Represents a standard image resolution entry (x1 scale).
 	/// </summary>
 	public record X1(
-		[property: JsonPropertyName("width")] int? Width,
-		[property: JsonPropertyName("height")] int? Height,
+		[property: JsonPropertyName("width")] long? Width,
+		[property: JsonPropertyName("height")] long? Height,
 		[property: JsonPropertyName("file_path")] string FilePath
 	);
 
@@ -77,8 +77,8 @@
 	/// Represents a medium-resolution image asset (x2 scale).
 	/// </summary>
 	public record X2(
-		[property: JsonPropertyName("width")] int? Width,
-		[property: JsonPropertyName("height")] int? Height,
+		[property: JsonPropertyName("width")] long? Width,
+		[property: JsonPropertyName("height")] long? Height,
 		[property: JsonPropertyName("file_path")] string FilePath
 	);
 
@@ -86,8 +86,8 @@
 	/// Represents a high-resolution image asset (x3 scale).
 	/// </summary>
 	public record X3(
-		[property: JsonPropertyName("width")] int? Width,
-		[property: JsonPropertyName("height")] int? Height,
+		[property: JsonPropertyName("width")] long? Width,
+		[property: JsonPropertyName("height")] long? Height,
 		[property: JsonPropertyName("file_path")] string FilePath
 	);
 
@@ -95,7 +95,7 @@
 	/// Represents a story or work category, including its unique identifier and URL.
 	/// </summary>
 	public record Category(
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("url")] string Url
 	);
 
@@ -103,19 +103,19 @@
 	/// Represents an individual work, including metadata, author details, and associated categories.
 	/// </summary>
 	public record Works(
-		[property: JsonPropertyName("id")] int? Id,
-		[property: JsonPropertyName("user_id")] int? UserId,
+		[property: JsonPropertyName("id")] long? Id,
+		[property: JsonPropertyName("user_id")] long? UserId,
 		[property: JsonPropertyName("url")] object Url,
 		[property: JsonPropertyName("created_at")] DateTime? CreatedAt,
 		[property: JsonPropertyName("modified_at")] DateTime? ModifiedAt,
 		[property: JsonPropertyName("title")] string Title,
-		[property: JsonPropertyName("language")] int? Language,
+		[property: JsonPropertyName("language")] long? Language,
 		[property: JsonPropertyName("state")] string State,
 		[property: JsonPropertyName("description")] object Description,
-		[property: JsonPropertyName("view_count")] int? ViewCount,
-		[property: JsonPropertyName("comments_count")] int? CommentsCount,
-		[property: JsonPropertyName("favorites_count")] int? FavoritesCount,
-		[property: JsonPropertyName("lists_count")] int? ListsCount,
+		[property: JsonPropertyName("view_count")] long? ViewCount,
+		[property: JsonPropertyName("comments_count")] long? CommentsCount,
+		[property: JsonPropertyName("favorites_count")] long? FavoritesCount,
+		[property: JsonPropertyName("lists_count")] long? ListsCount,
 		[property: JsonPropertyName("author_name")] string AuthorName,
 		[property: JsonPropertyName("categories")] IReadOnlyList<Category> Categories,
 		[property: JsonPropertyName("works")] IReadOnlyList<Work> WorksInfo
@@ -132,7 +132,7 @@
 	/// Represents a minimal reference to a work, containing its ID and URL.
 	/// </summary>
 	public record Work(
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("url")] string Url
 	);
 }

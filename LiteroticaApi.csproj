@@ -31,9 +31,7 @@
 		<PackageProjectUrl>https://github.com/RiisDev/LiteroticaApi</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/RiisDev/LiteroticaApi</RepositoryUrl>
 		<PackageTags>literotica, epub, epubwriter, api</PackageTags>
-		<PackageReleaseNotes>* AuthClient introduction, check documentation for available systems
-* Created Language enum that binds to lit's number scheme, update method params
-* StoryWriter now has start indexes param for pages or chapters</PackageReleaseNotes>
+		<PackageReleaseNotes>* Fixed int? parsing on Ids as they now have enough to be long?</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>LiteroticaApi is a modern, asynchronous .NET SDK for retrieving stories, series, authors, tags, and metadata from Literotica.com.  
 It includes a fully featured EPUB writer that can export stories or entire series into EPUB 3.0 format, complete with metadata, chapters, cover pages, and navigation files.  
@@ -79,8 +77,8 @@ It includes a fully featured EPUB writer that can export stories or entire serie
 		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<FileVersion>2.1.0</FileVersion>
-		<AssemblyVersion>2.1.0</AssemblyVersion>
-		<Version>2.1.0</Version>
+		<FileVersion>2.1.1</FileVersion>
+		<AssemblyVersion>2.1.1</AssemblyVersion>
+		<Version>2.1.1</Version>
 	</PropertyGroup>
 </Project>

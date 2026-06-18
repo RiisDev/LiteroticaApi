@@ -4,9 +4,9 @@
 	/// Represents a single story item within a series or category, including metadata and type.
 	/// </summary>
 	public record Item(
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("category_info")] CategoryInfo CategoryInfo,
-		[property: JsonPropertyName("category")] int? Category,
+		[property: JsonPropertyName("category")] long? Category,
 		[property: JsonPropertyName("title")] string Title,
 		[property: JsonPropertyName("type")] string Type,
 		[property: JsonPropertyName("url")] string Url
@@ -16,50 +16,50 @@
 	/// Represents metadata information about a story, series, or submission, including pagination and ordering.
 	/// </summary>
 	public record Meta(
-		[property: JsonPropertyName("pages_count")] int? PagesCount,
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("pages_count")] long? PagesCount,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("title")] string Title,
 		[property: JsonPropertyName("url")] string Url,
 		[property: JsonPropertyName("created_at")] string CreatedAt,
 		[property: JsonPropertyName("updated_at")] string UpdatedAt,
-		[property: JsonPropertyName("order")] IReadOnlyList<int?> Order
+		[property: JsonPropertyName("order")] IReadOnlyList<long?> Order
 	);
 
 	/// <summary>
 	/// Represents a detailed submission (story) including author information, metadata, rating, and tags.
 	/// </summary>
 	public record Submission(
-		[property: JsonPropertyName("allow_vote")] int? AllowVote,
-		[property: JsonPropertyName("allow_download")] int? AllowDownload,
+		[property: JsonPropertyName("allow_vote")] long? AllowVote,
+		[property: JsonPropertyName("allow_download")] long? AllowDownload,
 		[property: JsonPropertyName("author")] Author Author,
 		[property: JsonPropertyName("authorname"), JsonConverter(typeof(StringOrIntConverter))] StringOrInt Authorname,
 		[property: JsonPropertyName("category_info")] CategoryInfo CategoryInfo,
-		[property: JsonPropertyName("category")] int? Category,
-		[property: JsonPropertyName("comment_count")] int? CommentCount,
-		[property: JsonPropertyName("contest_winner")] int? ContestWinner,
+		[property: JsonPropertyName("category")] long? Category,
+		[property: JsonPropertyName("comment_count")] long? CommentCount,
+		[property: JsonPropertyName("contest_winner")] long? ContestWinner,
 		[property: JsonPropertyName("date_approve")] string DateApprove,
 		[property: JsonPropertyName("description")] string Description,
-		[property: JsonPropertyName("enable_comments")] int? EnableComments,
-		[property: JsonPropertyName("favorite_count")] int? FavoriteCount,
-		[property: JsonPropertyName("id")] int? Id,
+		[property: JsonPropertyName("enable_comments")] long? EnableComments,
+		[property: JsonPropertyName("favorite_count")] long? FavoriteCount,
+		[property: JsonPropertyName("id")] long? Id,
 		[property: JsonPropertyName("is_hot")] bool? IsHot,
 		[property: JsonPropertyName("is_new")] bool? IsNew,
-		[property: JsonPropertyName("language")] int? Language,
-		[property: JsonPropertyName("newlanguage")] int? Newlanguage,
+		[property: JsonPropertyName("language")] long? Language,
+		[property: JsonPropertyName("newlanguage")] long? Newlanguage,
 		[property: JsonPropertyName("rank")] object Rank,
 		[property: JsonPropertyName("rate_all")] double? RateAll,
-		[property: JsonPropertyName("reading_lists_count")] int? ReadingListsCount,
+		[property: JsonPropertyName("reading_lists_count")] long? ReadingListsCount,
 		[property: JsonPropertyName("tags")] IReadOnlyList<Tag> Tags,
 		[property: JsonPropertyName("title")] string Title,
 		[property: JsonPropertyName("type")] string Type,
 		[property: JsonPropertyName("url")] string Url,
-		[property: JsonPropertyName("view_count")] int? ViewCount,
+		[property: JsonPropertyName("view_count")] long? ViewCount,
 		[property: JsonPropertyName("writers_pick")] bool? WritersPick,
 		[property: JsonPropertyName("status")] string Status,
-		[property: JsonPropertyName("followedAuthors")] IReadOnlyList<int?> FollowedAuthors,
+		[property: JsonPropertyName("followedAuthors")] IReadOnlyList<long?> FollowedAuthors,
 		[property: JsonPropertyName("series"), JsonConverter(typeof(SeriesDatumConverter))] SeriesDatum? Series,
-		[property: JsonPropertyName("reading_time")] int? ReadingTime,
-		[property: JsonPropertyName("words_count")] int? WordsCount,
+		[property: JsonPropertyName("reading_time")] long? ReadingTime,
+		[property: JsonPropertyName("words_count")] long? WordsCount,
 		[property: JsonPropertyName("contests")] IReadOnlyList<object> Contests
 	);
 
@@ -84,13 +84,13 @@
 	/// Represents the details of an individual story, including metadata such as category, language, and URL.
 	/// </summary>
 	public record StoryDetails(
-		[property: JsonPropertyName("category")] int? Category,
+		[property: JsonPropertyName("category")] long? Category,
 		[property: JsonPropertyName("description")] string Description,
-		[property: JsonPropertyName("id")] int? Id,
-		[property: JsonPropertyName("language")] int? Language,
-		[property: JsonPropertyName("newlanguage")] int? Newlanguage,
+		[property: JsonPropertyName("id")] long? Id,
+		[property: JsonPropertyName("language")] long? Language,
+		[property: JsonPropertyName("newlanguage")] long? Newlanguage,
 		[property: JsonPropertyName("name")] string Name,
-		[property: JsonPropertyName("storyid")] int? Storyid,
+		[property: JsonPropertyName("storyid")] long? Storyid,
 		[property: JsonPropertyName("tag")] string Tag,
 		[property: JsonPropertyName("type")] string Type,
 		[property: JsonPropertyName("url")] string Url
@@ -100,8 +100,8 @@
 	/// Represents pagination metadata for search queries.
 	/// </summary>
 	public record SearchMeta(
-		[property: JsonPropertyName("pageSize")] int? PageSize,
-		[property: JsonPropertyName("total")] int? Total
+		[property: JsonPropertyName("pageSize")] long? PageSize,
+		[property: JsonPropertyName("total")] long? Total
 	);
 
 	/// <summary>
@@ -116,7 +116,7 @@
 	/// Represents metadata specific to tag-based search queries.
 	/// </summary>
 	public record SearchByTagMeta(
-		[property: JsonPropertyName("submissions_count")] int? SubmissionsCount,
+		[property: JsonPropertyName("submissions_count")] long? SubmissionsCount,
 		[property: JsonPropertyName("period_checks")] PeriodChecks PeriodChecks
 	);
 
@@ -132,10 +132,10 @@
 	/// Represents a paginated list of top-rated or most popular submissions.
 	/// </summary>
 	public record Top(
-		[property: JsonPropertyName("current_page")] int? CurrentPage,
-		[property: JsonPropertyName("last_page")] int? LastPage,
-		[property: JsonPropertyName("total")] int? Total,
-		[property: JsonPropertyName("per_page")] int? PerPage,
+		[property: JsonPropertyName("current_page")] long? CurrentPage,
+		[property: JsonPropertyName("last_page")] long? LastPage,
+		[property: JsonPropertyName("total")] long? Total,
+		[property: JsonPropertyName("per_page")] long? PerPage,
 		[property: JsonPropertyName("data")] IReadOnlyList<Submission> Data
 	);
 
@@ -143,7 +143,7 @@
 	/// Represents metadata for newly added submissions.
 	/// </summary>
 	public record NewMeta(
-		[property: JsonPropertyName("submissions_count")] int? SubmissionsCount
+		[property: JsonPropertyName("submissions_count")] long? SubmissionsCount
 	);
 
 	/// <summary>
