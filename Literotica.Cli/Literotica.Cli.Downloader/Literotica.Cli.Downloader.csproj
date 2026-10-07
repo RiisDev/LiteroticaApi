@@ -16,12 +16,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EpubManager.Writers.Literotica" Version="1.0.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-rc.2.25502.107" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\LiteroticaApi.csproj" />
-    <ProjectReference Include="..\..\..\..\Sources\EpubManager\EpubManager.Writers.Literotica\EpubManager.Writers.Literotica.csproj" />
   </ItemGroup>
 
 </Project>
