@@ -1,4 +1,3 @@
-﻿using EpubManager.ContentSources;
 using LiteroticaApi.DataObjects;
 
 namespace LiteroticaApi.Api
@@ -28,7 +27,7 @@ namespace LiteroticaApi.Api
 		/// </exception>
 		public static async Task<string[]> GetStoryContentAsync(string storyUrl)
 		{
-			string storySlug = await Literotica.UrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
+			string storySlug = await LiteroticaUrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
 			List<string> pages = [];
 
 			StoryRoot? storyData = await Client.Get<StoryRoot>($"stories/{storySlug}",
@@ -67,7 +66,7 @@ namespace LiteroticaApi.Api
 		/// </returns>
 		public static async Task<StoryInfo?> GetStoryInfoAsync(string storyUrl)
 		{
-			string storySlug = await Literotica.UrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
+			string storySlug = await LiteroticaUrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
 			return await Client.Get<StoryInfo>($"stories/{storySlug}").ConfigureAwait(false);
 		}
 

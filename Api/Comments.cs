@@ -1,4 +1,3 @@
-﻿using EpubManager.ContentSources;
 using LiteroticaApi.DataObjects;
 
 namespace LiteroticaApi.Api
@@ -95,7 +94,7 @@ namespace LiteroticaApi.Api
 				{ "sort", "created-desc" }
 			};
 
-			string storySlug = await Literotica.UrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
+			string storySlug = await LiteroticaUrlUtil.GetStorySlugAsync(storyUrl).ConfigureAwait(false);
 			return await Client.Get<CommentHistory>($"stories/{storySlug}/comments/history", parameters).ConfigureAwait(false); 
 		}
 

@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\LiteroticaApi.csproj" />
+    <ProjectReference Include="..\..\..\..\Sources\EpubManager\EpubManager.Writers.Literotica\EpubManager.Writers.Literotica.csproj" />
   </ItemGroup>
 
 </Project>

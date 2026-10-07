@@ -2,6 +2,7 @@
 using System.CommandLine.Parsing;
 using LiteroticaApi.Api;
 using LiteroticaApi.DataObjects;
+using EpubManager.ContentSources;
 using EpubManager.Util;
 
 namespace Literotica.Cli.Downloader
@@ -10,7 +11,7 @@ namespace Literotica.Cli.Downloader
 	{
 		private static bool EventHandled { get; set; }
 
-		private static readonly EpubManager.ContentSources.Literotica StoryWriter = new ();
+		private static readonly EpubManager.Writers.Literotica StoryWriter = new ();
 
 		public static async Task<int> Main(string[] args)
 		{
@@ -88,6 +89,86 @@ namespace Literotica.Cli.Downloader
 				DefaultValueFactory = _ => int.MaxValue
 			};
 
+			// EPUB appearance and metadata (ignored for txt / singlefile output). Defaults match the stock look.
+			EpubStyle defaults = EpubStyle.Default;
+
+			Option<string> languageOption = new("--language")
+			{
+				Description = "Book language: a code such as en or pt-BR, or a name such as French. (default: writer default, English)",
+				DefaultValueFactory = _ => string.Empty
+			};
+			Option<string> descriptionOption = new("--description")
+			{
+				Description = "Synopsis shown on the title page. Use \\n\\n for a new paragraph, or --description-file.",
+				DefaultValueFactory = _ => string.Empty
+			};
+			Option<string> descriptionFileOption = new("--description-file")
+			{
+				Description = "Path to a text file containing the synopsis (blank lines separate paragraphs).",
+				DefaultValueFactory = _ => string.Empty
+			};
+			descriptionFileOption.Validators.Add(result =>
+			{
+				string value = result.GetValueOrDefault<string>() ?? string.Empty;
+				if (value.Length > 0 && !File.Exists(value)) result.AddError($"Description file does not exist: {value}");
+			});
+
+			Option<string> fontOption = new("--font")
+			{
+				Description = "Body font: Serif | SansSerif | Monospace (default: Serif)",
+				DefaultValueFactory = _ => defaults.Font.ToString()
+			};
+			fontOption.AcceptOnlyFromAmong(Enum.GetNames(typeof(EpubFont)));
+
+			Option<int> fontSizeOption = new("--font-size")
+			{
+				Description = "Base text size in percent, 50-300 (default: 100)",
+				DefaultValueFactory = _ => defaults.FontSizePercent
+			};
+			fontSizeOption.Validators.Add(result =>
+			{
+				int value = result.GetValueOrDefault<int>();
+				if (value < 50 || value > 300) result.AddError("--font-size must be between 50 and 300.");
+			});
+
+			Option<double> lineHeightOption = new("--line-height")
+			{
+				Description = "Line height multiplier, 1.0-3.0 (default: 1.2)",
+				DefaultValueFactory = _ => defaults.LineHeight
+			};
+			lineHeightOption.Validators.Add(result =>
+			{
+				double value = result.GetValueOrDefault<double>();
+				if (double.IsNaN(value) || value < 1.0 || value > 3.0) result.AddError("--line-height must be between 1.0 and 3.0.");
+			});
+
+			Option<string> alignOption = new("--align")
+			{
+				Description = "Paragraph alignment: Left | Justify (default: Left)",
+				DefaultValueFactory = _ => defaults.TextAlign.ToString()
+			};
+			alignOption.AcceptOnlyFromAmong(Enum.GetNames(typeof(EpubTextAlign)));
+
+			Option<string> paragraphsOption = new("--paragraphs")
+			{
+				Description = "Paragraph separation: Spaced | Indented (default: Spaced)",
+				DefaultValueFactory = _ => defaults.ParagraphStyle.ToString()
+			};
+			paragraphsOption.AcceptOnlyFromAmong(Enum.GetNames(typeof(EpubParagraphStyle)));
+
+			Option<string> headingAlignOption = new("--heading-align")
+			{
+				Description = "Chapter heading alignment: Left | Center (default: Left)",
+				DefaultValueFactory = _ => defaults.ChapterHeadingAlign.ToString()
+			};
+			headingAlignOption.AcceptOnlyFromAmong(Enum.GetNames(typeof(EpubHeadingAlign)));
+
+			Option<string> sceneBreakOption = new("--scene-break")
+			{
+				Description = "Text shown at scene breaks; an empty value draws a thin line (default: \"* * *\")",
+				DefaultValueFactory = _ => defaults.SceneBreak
+			};
+
 			RootCommand rootCommand = new("Story Downloader CLI")
 			{
 				sourceArgument,
@@ -96,7 +177,17 @@ namespace Literotica.Cli.Downloader
 				outputOption,
 				startAtOption,
 				endAtOption,
-				coverPathOption
+				coverPathOption,
+				languageOption,
+				descriptionOption,
+				descriptionFileOption,
+				fontOption,
+				fontSizeOption,
+				lineHeightOption,
+				alignOption,
+				paragraphsOption,
+				headingAlignOption,
+				sceneBreakOption
 			};
 
 
@@ -109,6 +200,29 @@ namespace Literotica.Cli.Downloader
 				bool logEnabled = parseResult.GetRequiredValue(logOption);
 				int startAt = parseResult.GetRequiredValue(startAtOption);
 				int endAt = parseResult.GetRequiredValue(endAtOption);
+
+				string description = parseResult.GetRequiredValue(descriptionOption).Replace("\\n", "\n");
+				string descriptionFile = parseResult.GetRequiredValue(descriptionFileOption);
+				if (descriptionFile.Length > 0) description = await File.ReadAllTextAsync(descriptionFile);
+
+				EpubOptions epubOptions = new()
+				{
+					Language = parseResult.GetRequiredValue(languageOption),
+					Description = description,
+					Style = new EpubStyle
+					{
+						Font = Enum.Parse<EpubFont>(parseResult.GetRequiredValue(fontOption), true),
+						FontSizePercent = parseResult.GetRequiredValue(fontSizeOption),
+						LineHeight = parseResult.GetRequiredValue(lineHeightOption),
+						TextAlign = Enum.Parse<EpubTextAlign>(parseResult.GetRequiredValue(alignOption), true),
+						ParagraphStyle = Enum.Parse<EpubParagraphStyle>(parseResult.GetRequiredValue(paragraphsOption), true),
+						ChapterHeadingAlign = Enum.Parse<EpubHeadingAlign>(parseResult.GetRequiredValue(headingAlignOption), true),
+						SceneBreak = parseResult.GetRequiredValue(sceneBreakOption)
+					}
+				};
+
+				if (!format.Contains("epub", StringComparison.OrdinalIgnoreCase) && (epubOptions.Description.Length > 0 || epubOptions.Language.Length > 0 || epubOptions.Style != EpubStyle.Default))
+					Console.WriteLine("Language, description and style options only apply to epub output. Ignoring them.");
 
 				bool urlInput = source.Contains("literotica.com");
 
@@ -128,7 +242,7 @@ namespace Literotica.Cli.Downloader
 				if (logEnabled)
 					Console.WriteLine($"Found {urls.Length} urls...");
 
-				await HandleOutput(urls, format, outputDir, logEnabled, startAt, endAt, coverPath);
+				await HandleOutput(urls, format, outputDir, logEnabled, startAt, endAt, coverPath, epubOptions);
 			});
 
 			ParseResult parseResult = rootCommand.Parse(args);
@@ -137,7 +251,7 @@ namespace Literotica.Cli.Downloader
 			return await parseResult.InvokeAsync();
 		}
 
-		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled, int startIndex, int endIndex, string coverPath)
+		private static async Task HandleOutput(string[] urls, string format, string outputDir, bool logEnabled, int startIndex, int endIndex, string coverPath, EpubOptions epubOptions)
 		{
 			foreach (string url in urls)
 			{
@@ -161,8 +275,8 @@ namespace Literotica.Cli.Downloader
 
 					bool raw = format.Contains("raw", StringComparison.CurrentCultureIgnoreCase);
 
-					if (isSeries) await StoryWriter.CreateEpubFromSeriesAsync(url, outputDir, coverPath, raw, startIndex, endIndex);
-					else await StoryWriter.CreateEpubFromStoryAsync(url, outputDir, coverPath, raw);
+					if (isSeries) await StoryWriter.CreateEpubFromSeriesAsync(url, outputDir, coverPath, raw, startIndex, endIndex, epubOptions);
+					else await StoryWriter.CreateEpubFromStoryAsync(url, outputDir, coverPath, raw, epubOptions);
 				}
 			}
 		}
@@ -172,7 +286,7 @@ namespace Literotica.Cli.Downloader
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Verifying series url...");
 
-			string seriesSlug = await EpubManager.ContentSources.Literotica.UrlUtil.GetSeriesIdAsync(url);
+			string seriesSlug = await EpubManager.Writers.Literotica.UrlUtil.GetSeriesIdAsync(url);
 
 			if (logEnabled)
 				Console.WriteLine("[HandleSeries] Fetching series info from api...");
@@ -344,7 +458,7 @@ namespace Literotica.Cli.Downloader
 		{
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Verifying story url...");
-			string storySlug = await EpubManager.ContentSources.Literotica.UrlUtil.GetStorySlugAsync(url).ConfigureAwait(false);
+			string storySlug = await EpubManager.Writers.Literotica.UrlUtil.GetStorySlugAsync(url).ConfigureAwait(false);
 
 			if (logEnabled)
 				Console.WriteLine("[HandleStory] Fetching story info from api...");
